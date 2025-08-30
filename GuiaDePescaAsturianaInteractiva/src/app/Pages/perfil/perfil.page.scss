@@ -1,0 +1,383 @@
+@import 'src/theme/variables.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url('/assets/img/fondos/perfil-fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+ion-header,
+ion-toolbar {
+  --background: #3a3f44;
+  --color: white;
+  box-shadow: none;
+  border: none;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  margin-bottom: 7px;
+
+}
+
+.cancelar-btn {
+  --background: #992020e5 !important;
+  --background-activated: #7a1a1ae5 !important;
+  --background-focused: #7a1a1ae5 !important;
+  --background-hover: #7a1a1ae5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+.modificar-password {
+  text-transform: none!important;
+  font-size: 0.4rem;
+  font-weight: 100;
+  --background: transparent;
+  --color: #d1d1d1;
+  --border-color: #007bff;
+  --border-style: solid;
+  --border-width: 1.5px;
+  --background-hover: rgba(0, 123, 255, 0.1);
+  --background-activated: rgba(0, 123, 255, 0.2);
+    display: block;       /* necesario para que funcione margin auto */
+  margin: 0 auto;       /* esto lo centra horizontalmente */
+  text-align: center;
+}
+
+.gestion{
+  padding: 0.5rem!important;
+}
+
+.btn-gestion {
+  display: flex;
+  text-align: center;
+  margin-top: 1rem auto;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  --background: #0066ff;
+  --background-hover: #0052cc;
+  --background-activated: #0041aa;
+  --color: #ffffff;
+
+  --border-radius: 10px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --min-height: 40px;
+
+  box-shadow: 0 4px 12px rgba(54, 53, 53, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+
+ion-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  padding-left: 16px;
+  color: white;
+}
+
+ion-buttons[slot="end"] {
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-start;
+  margin-right: 8px;
+  margin-left: auto;
+  height: 100%;
+  justify-content: center;
+  
+  ion-button {
+    --color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    height: 20px;
+    margin: 2px 0;
+    letter-spacing: 0.5px;
+    --background: transparent;
+    --background-hover: transparent;
+    --background-activated: transparent;
+    --background-focused: transparent;
+    --ripple-color: transparent;
+  }
+}
+
+ion-content {
+  --background: transparent;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.perfil-container {
+  padding: 1rem;
+  padding-bottom: 6rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+ion-card {
+  background: rgba(33, 37, 41, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+  overflow: hidden;
+}
+
+ion-card-header {
+  padding: 16px;
+  background: rgba(33, 37, 41, 0.95);
+  border-bottom: none;
+}
+
+ion-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+ion-card-content {
+  padding: 16px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+ion-card-content p {
+  margin: 12px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+ion-card-content p strong {
+  font-size: medium;
+  color: rgba(255, 255, 255);
+  margin-right: 5px;
+}
+
+ion-card-content ion-button[expand="block"] {
+  --background: #0066ff;
+  --background-activated: #0052cc;
+  --color: white;
+  max-width: 100%;
+  margin: 1rem auto 0.5rem;
+  height: 44px;
+  font-size: 1rem;
+  font-weight: 600;
+  --border-radius: 8px;
+  text-transform: none;
+}
+
+form {
+  background: rgba(33, 37, 41, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+ion-item {
+  --background: var(--color-input-bg);
+  --border-radius: 10px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --min-height: 50px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+ion-item:last-of-type {
+  margin-bottom: 16px;
+}
+
+ion-label {
+  --color: var( --color-input-text) !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+ion-input {
+  --color: var(--color-input-text);
+  font-size: 1rem;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-end: 40px; 
+}
+
+.contenedor-password {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+ion-item ion-icon.icono-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #666;
+  z-index: 10;
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+}
+
+ion-item .input-password {
+  position: relative;
+}
+
+ion-item ion-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #666;
+  z-index: 10;
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+}
+
+form ion-button {
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  height: 48px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+form ion-button[type="submit"] {
+  --background: #0066ff;
+  --background-activated: #0052cc;
+  --color: white;
+}
+
+form ion-button[color="medium"] {
+  --background: #666666;
+  --background-activated: #555555;
+  --color: white;
+}
+
+/* Estilos mejorados para los mensajes de error */
+.mt-2 {
+  margin-top: 8px;
+}
+
+.alert {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.9);
+  color: white;
+  border-left: 3px solid #ff1744;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los mensajes individuales dentro del alert */
+.alert-danger div {
+  padding: 4px 0;
+  position: relative;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Añadir un pequeño icono antes de cada mensaje de error */
+.alert-danger div::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  color: #ff8a8a;
+}
+
+/* Animación para los mensajes de error */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-tabs {
+  background: rgba(33, 37, 41, 0.95);
+}
+
+ion-tab-bar {
+  --background: transparent;
+  border-top: none;
+  padding: 5px 0;
+}
+
+ion-tab-button {
+  --color: rgba(255, 255, 255, 0.6);
+  --color-selected: #0066ff;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+}
+
+ion-tab-button ion-icon {
+  font-size: 24px;
+}
+
+ion-tab-button ion-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+ion-card, form {
+  animation: fadeIn 0.3s ease-out;
+}
+
+ion-datetime {
+  --background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+ion-spinner {
+  display: block;
+  margin: 2rem auto;
+  --color: #0066ff;
+}

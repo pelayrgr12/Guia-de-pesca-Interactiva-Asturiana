@@ -1,0 +1,131 @@
+@import 'src/theme/variables.scss';
+
+
+ion-content.login-background {
+  --background: none;
+  background-image: url('/assets/img/fondos/login-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: var(--color-overlay); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start; 
+  padding-top: 3vh; 
+}
+
+.login-card {
+  margin: 1rem;
+  background: var(--color-login-card-bg);
+  border-radius: 20px;
+  padding: 1rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-texto-principal);
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+ion-input {
+  color: var(--color-texto-principal);
+}
+
+ion-button {
+  --background: var(--color-primario);
+  --background-activated: var(--color-primario-hover);
+  --border-radius: 12px;
+  font-weight: 500;
+}
+ion-content {
+  --background: transparent;
+  overflow-y: hidden !important;
+  position: relative;
+  z-index: 1;
+}
+
+
+.extra-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.linkPassword,
+.link {
+  color: var(--color-primario);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.link:hover,
+.linkPassword:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  font-size: 0.85rem;
+  background-color: var(--color-alerta-bg);
+  border: 1px solid var(--color-alerta-borde);
+  color: var(--color-alerta-texto);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+
+.contenedor-password {
+  position: relative;
+  width: 100%;
+}
+
+.input-password {
+  box-sizing: border-box;
+   color: var(--color-input-password);
+  padding: 15px 40px 15px 15px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.icono-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--color-icono-password);
+  font-size: 20px;
+  z-index: 10;
+  pointer-events: all; /* asegúrate de que capte el clic */
+}
+
+//https://pixabay.com/es/photos/mar-embarcadero-costa-muelle-cielo-3023812/
+//https://pixabay.com/es/photos/paisaje-puerto-de-cudillero-asturias-1682374/
+//https://pixabay.com/es/photos/mar-asturias-nubes-costa-1366260/
+//https://pixabay.com/es/photos/playa-asturias-espa%C3%B1a-mar-cielo-4945630/
+//https://pixabay.com/es/photos/puerto-barcos-embarcaci%C3%B3n-cudillero-7144712/
+//https://pixabay.com/es/photos/control-s-adentro-habitaci%C3%B3n-1853330/
+//https://pixabay.com/es/photos/barco-de-pesca-pescador-mar-pesca-5736839/
+//https://pixabay.com/es/photos/gancho-pesca-anzuelo-de-pesca-7418284/

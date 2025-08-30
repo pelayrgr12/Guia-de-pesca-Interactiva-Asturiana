@@ -1,0 +1,611 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url('/assets/img/fondos/historial-fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* HEADER Y TOOLBAR */
+ion-header ion-toolbar {
+  --background: rgba(34, 34, 34, 0.95);
+  --color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+ion-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.boton-flotante {
+  margin: 0.5rem 0;
+  text-align: right;
+}
+
+.boton-flotante ion-button {
+  --background: #0066ff;
+  --color: #ffffff;
+  --border-radius: 6px;
+  font-size: 0.8rem;
+  height: 32px;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+/* CONTENIDO PRINCIPAL */
+ion-content {
+  --background: transparent;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.historial-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 6rem; 
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ESTILOS DEL BUSCADOR */
+.buscador {
+  margin: 0.5rem;
+  background: rgba(34, 34, 34, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Ajustes para los items dentro del buscador */
+.buscador ion-item {
+  --background: rgba(30, 30, 30, 0.95);
+  --border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-end: 12px;
+  --highlight-color-focused: transparent;
+  --highlight-height: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 8px;
+}
+
+/* Estilos para los iconos dentro del buscador */
+.buscador ion-icon {
+  color: #ffffff !important;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+/* Estilos para el input de búsqueda */
+.buscador ion-input {
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+}
+
+/* Estilos para los botones dentro del buscador */
+.buscador ion-button {
+  --background: transparent;
+  --color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.5);
+  --border-radius: 20px;
+  --border-width: 1px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  font-size: 0.85rem;
+  height: 36px;
+  font-weight: 500;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Estilos para los botones de acción (Buscar, Cancelar) */
+.buscador ion-row ion-button[color="medium"] {
+  --background: rgba(60, 60, 60, 0.8);
+  --color: #ffffff;
+  --border-radius: 6px;
+  margin: 0 4px;
+}
+
+.buscador ion-row ion-button[color="primary"] {
+  --background: #0066ff;
+  --color: #ffffff;
+  --border-radius: 6px;
+  margin: 0 4px;
+}
+
+/* Estilos para las etiquetas dentro del buscador */
+.buscador ion-label {
+  color: #ffffff !important;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* Estilos para los botones con fechas */
+.buscador ion-button ion-icon {
+  margin-right: 4px;
+}
+
+/* Ajuste para el padding de la fila de botones */
+.buscador ion-row.ion-padding {
+  padding: 8px 0 !important;
+}
+
+/* Estilos para la etiqueta de rango de fechas */
+.buscador .label-rango {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+/* Estilos para el item que contiene la etiqueta de rango */
+.buscador ion-item:last-child {
+  --background: transparent;
+  --border-color: transparent;
+  --box-shadow: none;
+}
+
+/* ESTILOS PARA FORMULARIOS Y ELEMENTOS DE ENTRADA */
+form {
+  background: rgba(34, 34, 34, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ion-item {
+  --background: rgba(30, 30, 30, 0.95);
+  --border-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+  border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-end: 12px;
+  --highlight-color-focused: transparent;
+  --highlight-height: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+ion-label {
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Ajuste general para todos los inputs y textareas */
+ion-input,
+ion-textarea {
+  --color: #ffffff !important;
+  --placeholder-color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.95rem;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+}
+
+/* ESTILOS PARA CALENDARIO */
+ion-item.calendario {
+  --background: #1e1e1e !important;
+  --color: white !important;
+  --border-color: transparent !important;
+  --highlight-color-focused: transparent !important;
+  --highlight-height: 0 !important;
+  border-radius: 8px !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+ion-item.calendario ion-icon {
+  color: white !important;
+  margin-right: 8px !important;
+}
+
+ion-item.calendario input.native-date {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px !important;
+  font-size: 0.95rem !important;
+  width: 100% !important;
+
+}
+
+ion-input input[type="date"]::-webkit-calendar-picker-indicator,
+input.native-date::-webkit-calendar-picker-indicator {
+  filter: invert(1); 
+  opacity: 1;
+  cursor: pointer;
+}
+input[type="date"]:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+ion-datetime {
+  --background: rgba(34, 34, 34, 0.95);
+  --color: #ffffff |;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-datetime-button {
+  --background: rgba(30, 30, 30, 0.95);
+  --color: #ffffff;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+}
+
+ion-popover {
+  --width: 300px;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-modal ion-datetime {
+  --background: rgba(34, 34, 34, 0.95);
+  --color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.calendario-modal::part(content) {
+  --width: 300px;
+  --height: auto;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fecha-edicion {
+  --background: transparent;
+  --border-color: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  margin: 0;
+}
+
+/* ESTILOS PARA SELECTOR DE ARCHIVOS */
+input[type="file"] {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.file-upload-container {
+  --background: rgba(34, 34, 34, 0.9) !important;
+  --border-color: transparent !important;
+  border-radius: 8px !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  --padding-start: 12px !important;
+  --padding-end: 12px !important;
+  --inner-padding-end: 12px !important;
+  --highlight-color-focused: transparent !important;
+  --highlight-height: 0 !important;
+}
+
+.file-upload-container ion-label {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+}
+
+.custom-file-upload {
+  width: 100%;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.file-upload-button {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.file-upload-button:active {
+  background: #333333;
+}
+
+.file-upload-button ion-icon {
+  font-size: 1.3rem;
+  margin-right: 10px;
+  color: #0066ff;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-names {
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.file-count {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+
+
+.preview-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edicion ion-item ion-icon[name="calendar-outline"] {
+  color: #ffffff !important;
+  opacity: 0.8; /* opcional, igualar a otros iconos */
+}
+
+.preview-image:hover {
+  transform: scale(1.05);
+}
+
+.remove-image {
+  position: absolute;
+  top: 8px; /* antes estaba -8px */
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6); /* más opaco */
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.remove-image ion-icon {
+  color: #992020e5;
+  font-size: 20px;
+}
+
+
+/* ESTILOS PARA BOTONES */
+ion-button[expand="block"] {
+  margin-top: 0.5rem;
+  height: 44px;
+  font-size: 0.95rem;
+  --border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+
+ion-button[color="medium"] {
+  --background: #666666;
+  --color: white;
+}
+
+/* ESTILOS PARA LISTA DE HISTORIALES */
+ion-list {
+  background: transparent !important;
+  padding: 0;
+}
+
+ion-card {
+  background: rgba(34, 34, 34, 0.9);
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+ion-card-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+ion-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+  margin: 0;
+}
+
+ion-card-content {
+  padding: 16px;
+}
+
+ion-card-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+}
+
+.imagen{
+  width: 100%;
+  height: auto!important; 
+  margin-bottom: 10px;
+}
+
+.imagenes img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* BOTONES DE ACCIÓN */
+.botones-accion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.botones-accion ion-button {
+  flex: 1;
+  margin: 0 4px;
+  height: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  --border-radius: 6px;
+}
+
+
+
+ion-card ion-card-header ion-item ion-input[type="date"],
+ion-card ion-card-header ion-item input.native-date {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px !important;
+  font-size: 0.95rem !important;
+  width: 100% !important;
+  color-scheme: white !important;
+  ::picker-icon {
+    color: white !important;
+  }
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+/* Cambiar el color del icono del calendario */
+ion-card ion-card-header ion-item input[type="date"]::-webkit-calendar-picker-indicator,
+ion-card ion-card-header ion-item input.native-date::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+}
+
+/* Estilos para el textarea en el modo de edición */
+ion-card ion-card-content ion-item ion-textarea {
+  --color: #ffffff !important;
+  --placeholder-color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.95rem !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+  --padding-top: 8px !important;
+  --padding-bottom: 8px !important;
+}
+
+/* Estilos para los botones de acción en el modo de edición */
+ion-card .botones-accion ion-button[class="success"] {
+  --background: #28a745;
+  --color: #ffffff;
+}
+.boton-editar{
+  --background: #0d6efd;
+  --color: #ffffff;
+}
+
+.boton-eliminar {
+  --background: #992020e5 !important;
+  --color: #ffffff;
+}
+
+.boton-guardar{
+  --background: #28a745;
+  --color: #ffffff;
+}
+
+
+
+
+.sin-historial {
+  text-align: center;
+  background: rgba(34, 34, 34, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 360px) {
+  .imagenes img {
+     width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 8px
+
+  }
+  
+  ion-card-title {
+    font-size: 0.9rem;
+  }
+  
+  .botones-accion {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .botones-accion ion-button {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+}

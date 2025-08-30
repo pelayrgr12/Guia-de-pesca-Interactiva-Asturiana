@@ -1,0 +1,4186 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GuiaDePescaAsturianaInteractiva documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">GuiaDePescaAsturianaInteractiva documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HistorialPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Pages/historial/historial.page.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Página para visualizar, filtrar y gestionar el historial de capturas</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-historial</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>IonImg</code>
+                            <code>IonContent</code>
+                            <code>IonHeader</code>
+                            <code>IonTitle</code>
+                            <code>IonToolbar</code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>IonButtons</code>
+                            <code>IonButton</code>
+                            <code>IonCard</code>
+                            <code>IonCardContent</code>
+                            <code>IonCardTitle</code>
+                            <code>IonCardHeader</code>
+                            <code>IonList</code>
+                            <code>IonLabel</code>
+                            <code>IonItem</code>
+                            <code>IonInput</code>
+                            <code>IonTextarea</code>
+                            <code>IonDatetime</code>
+                            <code>IonIcon</code>
+                            <code>IonDatetimeButton</code>
+                            <code>IonModal</code>
+                            <code>IonPopover</code>
+                            <code>IonNote</code>
+                            <code>IonRow</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./historial.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./historial.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#activateRotuer" >activateRotuer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#alertController" >alertController</a>
+                            </li>
+                            <li>
+                                <a href="#archivosImagenes" >archivosImagenes</a>
+                            </li>
+                            <li>
+                                <a href="#campoActivo" >campoActivo</a>
+                            </li>
+                            <li>
+                                <a href="#copiasOriginales" >copiasOriginales</a>
+                            </li>
+                            <li>
+                                <a href="#fechaActual" >fechaActual</a>
+                            </li>
+                            <li>
+                                <a href="#fechaDesde" >fechaDesde</a>
+                            </li>
+                            <li>
+                                <a href="#fechaHasta" >fechaHasta</a>
+                            </li>
+                            <li>
+                                <a href="#fechaTemporal" >fechaTemporal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#fileInput" >fileInput</a>
+                            </li>
+                            <li>
+                                <a href="#filtroTexto" >filtroTexto</a>
+                            </li>
+                            <li>
+                                <a href="#historiales" >historiales</a>
+                            </li>
+                            <li>
+                                <a href="#historialesFiltrados" >historialesFiltrados</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#historialService" >historialService</a>
+                            </li>
+                            <li>
+                                <a href="#idPunto" >idPunto</a>
+                            </li>
+                            <li>
+                                <a href="#imagenesBlob" >imagenesBlob</a>
+                            </li>
+                            <li>
+                                <a href="#imagenesHistorial" >imagenesHistorial</a>
+                            </li>
+                            <li>
+                                <a href="#imagePreviewUrls" >imagePreviewUrls</a>
+                            </li>
+                            <li>
+                                <a href="#modalAbierto" >modalAbierto</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarFechas" >mostrarFechas</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarFormulario" >mostrarFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#nuevaCaptura" >nuevaCaptura</a>
+                            </li>
+                            <li>
+                                <a href="#selectedFileNames" >selectedFileNames</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#toastController" >toastController</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aplicarFiltros" >aplicarFiltros</a>
+                            </li>
+                            <li>
+                                <a href="#cancelarEdicion" >cancelarEdicion</a>
+                            </li>
+                            <li>
+                                <a href="#cancelarFiltro" >cancelarFiltro</a>
+                            </li>
+                            <li>
+                                <a href="#cancelarFormulario" >cancelarFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#cargarImagenes" >cargarImagenes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cargarImagenesDeHistoriales" >cargarImagenesDeHistoriales</a>
+                            </li>
+                            <li>
+                                <a href="#cargarImagenesEdicion" >cargarImagenesEdicion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#confirmarAccion" >confirmarAccion</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarFecha" >confirmarFecha</a>
+                            </li>
+                            <li>
+                                <a href="#editarHistorial" >editarHistorial</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#eliminarHistorial" >eliminarHistorial</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#eliminarImagenExistente" >eliminarImagenExistente</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarNuevaImagen" >eliminarNuevaImagen</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getHistorial" >getHistorial</a>
+                            </li>
+                            <li>
+                                <a href="#getImagenes" >getImagenes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#guardarCaptura" >guardarCaptura</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#guardarEdicion" >guardarEdicion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#mostrarMensaje" >mostrarMensaje</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFechaChange" >onFechaChange</a>
+                            </li>
+                            <li>
+                                <a href="#removeImage" >removeImage</a>
+                            </li>
+                            <li>
+                                <a href="#toggleFormulario" >toggleFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#verificarAdmin" >verificarAdmin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, cdr: ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/Pages/historial/historial.page.ts:88</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aplicarFiltros"></a>
+                    <span class="name">
+                        <span ><b>aplicarFiltros</b></span>
+                        <a href="#aplicarFiltros"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aplicarFiltros()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="275"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:275</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Aplica filtros de texto y fecha sobre los historiales</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelarEdicion"></a>
+                    <span class="name">
+                        <span ><b>cancelarEdicion</b></span>
+                        <a href="#cancelarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelarEdicion(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="465"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:465</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cancela la edición y restaura el historial original</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelarFiltro"></a>
+                    <span class="name">
+                        <span ><b>cancelarFiltro</b></span>
+                        <a href="#cancelarFiltro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelarFiltro()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="268"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:268</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelarFormulario"></a>
+                    <span class="name">
+                        <span ><b>cancelarFormulario</b></span>
+                        <a href="#cancelarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelarFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="376"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:376</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarImagenes"></a>
+                    <span class="name">
+                        <span ><b>cargarImagenes</b></span>
+                        <a href="#cargarImagenes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarImagenes(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="192"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga imágenes seleccionadas para una nueva captura</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarImagenesDeHistoriales"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>cargarImagenesDeHistoriales</b></span>
+                        <a href="#cargarImagenesDeHistoriales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cargarImagenesDeHistoriales(historiales: <a href="../interfaces/Historial.html" target="_self">Historial[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="133"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:133</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga las imágenes de los historiales usando el servicio</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>historiales</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Historial.html" target="_self" >Historial[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarImagenesEdicion"></a>
+                    <span class="name">
+                        <span ><b>cargarImagenesEdicion</b></span>
+                        <a href="#cargarImagenesEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarImagenesEdicion(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, historial: <a href="../interfaces/Historial.html" target="_self">Historial</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="405"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:405</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga nuevas imágenes para un historial en edición</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>historial</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Historial.html" target="_self" >Historial</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarAccion"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>confirmarAccion</b></span>
+                        <a href="#confirmarAccion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>confirmarAccion(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="316"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:316</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Lanza un alert de confirmación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarFecha"></a>
+                    <span class="name">
+                        <span ><b>confirmarFecha</b></span>
+                        <a href="#confirmarFecha"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarFecha(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="254"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:254</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Confirma la fecha seleccionada</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarHistorial"></a>
+                    <span class="name">
+                        <span ><b>editarHistorial</b></span>
+                        <a href="#editarHistorial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarHistorial(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="340"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:340</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Activa el modo edición en un historial</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarHistorial"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>eliminarHistorial</b></span>
+                        <a href="#eliminarHistorial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eliminarHistorial(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="295"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:295</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un historial tras confirmar</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarImagenExistente"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>eliminarImagenExistente</b></span>
+                        <a href="#eliminarImagenExistente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eliminarImagenExistente(historial: <a href="../interfaces/Historial.html" target="_self">Historial</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="399"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:399</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>historial</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Historial.html" target="_self" >Historial</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarNuevaImagen"></a>
+                    <span class="name">
+                        <span ><b>eliminarNuevaImagen</b></span>
+                        <a href="#eliminarNuevaImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarNuevaImagen(historial: <a href="../interfaces/Historial.html" target="_self">Historial</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="428"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:428</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una imagen recién añadida en modo edición</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>historial</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Historial.html" target="_self" >Historial</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHistorial"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getHistorial</b></span>
+                        <a href="#getHistorial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getHistorial(idPunto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene historiales de un punto y carga sus imágenes</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>idPunto</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getImagenes"></a>
+                    <span class="name">
+                        <span ><b>getImagenes</b></span>
+                        <a href="#getImagenes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getImagenes(idHistorial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra imágenes asociadas a un historial</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>idHistorial</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarCaptura"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>guardarCaptura</b></span>
+                        <a href="#guardarCaptura"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>guardarCaptura()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guarda una nueva captura con imágenes</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarEdicion"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>guardarEdicion</b></span>
+                        <a href="#guardarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>guardarEdicion(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="434"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:434</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guarda los cambios hechos a un historial en edición</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarMensaje"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>mostrarMensaje</b></span>
+                        <a href="#mostrarMensaje"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mostrarMensaje(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, color: "success" | "danger")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="354"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:354</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                        <code>&quot;success&quot; | &quot;danger&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFechaChange"></a>
+                    <span class="name">
+                        <span ><b>onFechaChange</b></span>
+                        <a href="#onFechaChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFechaChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, campo: "desde" | "hasta")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="245"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:245</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>campo</td>
+                                            <td>
+                                                        <code>&quot;desde&quot; | &quot;hasta&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeImage"></a>
+                    <span class="name">
+                        <span ><b>removeImage</b></span>
+                        <a href="#removeImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeImage(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="223"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:223</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una imagen aún no subida</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleFormulario"></a>
+                    <span class="name">
+                        <span ><b>toggleFormulario</b></span>
+                        <a href="#toggleFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleFormulario()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="364"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:364</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verificarAdmin"></a>
+                    <span class="name">
+                        <span ><b>verificarAdmin</b></span>
+                        <a href="#verificarAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verificarAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="484"
+                                    class="link-to-prism">src/app/Pages/historial/historial.page.ts:484</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Verifica que el usuario es ADMIN, si no lo redirige</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activateRotuer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>activateRotuer</b></span>
+                        <a href="#activateRotuer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ActivatedRoute</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/Pages/historial/historial.page.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertController"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>alertController</b></span>
+                        <a href="#alertController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AlertController)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/Pages/historial/historial.page.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="archivosImagenes"></a>
+                    <span class="name">
+                        <span ><b>archivosImagenes</b></span>
+                        <a href="#archivosImagenes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>File[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/Pages/historial/historial.page.ts:77</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Imagenes seleccionadas y sus previsualizaciones</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="campoActivo"></a>
+                    <span class="name">
+                        <span ><b>campoActivo</b></span>
+                        <a href="#campoActivo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;desde&quot; | &quot;hasta&quot; | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/Pages/historial/historial.page.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copiasOriginales"></a>
+                    <span class="name">
+                        <span ><b>copiasOriginales</b></span>
+                        <a href="#copiasOriginales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/Pages/historial/historial.page.ts:88</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Copia de los historiales antes de editar para revertir cambios</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fechaActual"></a>
+                    <span class="name">
+                        <span ><b>fechaActual</b></span>
+                        <a href="#fechaActual"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date().toISOString()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/Pages/historial/historial.page.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fechaDesde"></a>
+                    <span class="name">
+                        <span ><b>fechaDesde</b></span>
+                        <a href="#fechaDesde"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/Pages/historial/historial.page.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fechaHasta"></a>
+                    <span class="name">
+                        <span ><b>fechaHasta</b></span>
+                        <a href="#fechaHasta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/Pages/historial/historial.page.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fechaTemporal"></a>
+                    <span class="name">
+                        <span ><b>fechaTemporal</b></span>
+                        <a href="#fechaTemporal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/Pages/historial/historial.page.ts:83</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha temporal y estado de campo activo para selección de fechas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileInput"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>fileInput</b></span>
+                        <a href="#fileInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;fileInput&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/Pages/historial/historial.page.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtroTexto"></a>
+                    <span class="name">
+                        <span ><b>filtroTexto</b></span>
+                        <a href="#filtroTexto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/Pages/historial/historial.page.ts:71</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filtros de búsqueda por texto y fechas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="historiales"></a>
+                    <span class="name">
+                        <span ><b>historiales</b></span>
+                        <a href="#historiales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Historial.html" target="_self" >Historial[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/Pages/historial/historial.page.ts:53</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Historiales completos y filtrados</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="historialesFiltrados"></a>
+                    <span class="name">
+                        <span ><b>historialesFiltrados</b></span>
+                        <a href="#historialesFiltrados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Historial.html" target="_self" >Historial[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/Pages/historial/historial.page.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="historialService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>historialService</b></span>
+                        <a href="#historialService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/HistorialserviceService.html" target="_self" >HistorialserviceService</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(HistorialserviceService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/Pages/historial/historial.page.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idPunto"></a>
+                    <span class="name">
+                        <span ><b>idPunto</b></span>
+                        <a href="#idPunto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/Pages/historial/historial.page.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Identificador del punto seleccionado</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenesBlob"></a>
+                    <span class="name">
+                        <span ><b>imagenesBlob</b></span>
+                        <a href="#imagenesBlob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/Pages/historial/historial.page.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenesHistorial"></a>
+                    <span class="name">
+                        <span ><b>imagenesHistorial</b></span>
+                        <a href="#imagenesHistorial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/Pages/historial/historial.page.ts:67</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Imágenes relacionadas con el historial</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagePreviewUrls"></a>
+                    <span class="name">
+                        <span ><b>imagePreviewUrls</b></span>
+                        <a href="#imagePreviewUrls"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/Pages/historial/historial.page.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalAbierto"></a>
+                    <span class="name">
+                        <span ><b>modalAbierto</b></span>
+                        <a href="#modalAbierto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/Pages/historial/historial.page.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarFechas"></a>
+                    <span class="name">
+                        <span ><b>mostrarFechas</b></span>
+                        <a href="#mostrarFechas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/Pages/historial/historial.page.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarFormulario"></a>
+                    <span class="name">
+                        <span ><b>mostrarFormulario</b></span>
+                        <a href="#mostrarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/Pages/historial/historial.page.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variables de control de estado</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevaCaptura"></a>
+                    <span class="name">
+                        <span ><b>nuevaCaptura</b></span>
+                        <a href="#nuevaCaptura"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Historial.html" target="_self" >Historial</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/Pages/historial/historial.page.ts:64</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto de nueva captura a registrar</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedFileNames"></a>
+                    <span class="name">
+                        <span ><b>selectedFileNames</b></span>
+                        <a href="#selectedFileNames"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/Pages/historial/historial.page.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastController"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>toastController</b></span>
+                        <a href="#toastController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastController)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/Pages/historial/historial.page.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit, ViewEncapsulation, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import {
+  IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader,
+  IonCardTitle, IonContent, IonFooter, IonHeader, IonList,
+  IonTitle, IonToolbar, IonInput, IonTextarea,
+  IonLabel,
+  IonItem,
+  ToastController,
+  IonDatetime,
+  IonIcon,
+  IonDatetimeButton,
+  IonModal,
+  IonPopover,
+  IonNote,
+  IonRow, IonImg } from &#x27;@ionic/angular/standalone&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { formatDate } from &#x27;@angular/common&#x27;;
+import { Historial, ImagenHistorial } from &#x27;src/app/shared/interfaces/historial&#x27;;
+import { jwtDecode } from &#x27;jwt-decode&#x27;;
+import { HistorialserviceService } from &#x27;src/app/shared/historialservice.service&#x27;;
+import { addIcons } from &#x27;ionicons&#x27;;
+import { calendarOutline, closeCircle, imagesOutline, searchOutline } from &#x27;ionicons/icons&#x27;;
+//detector par el doom
+import { ChangeDetectorRef } from &#x27;@angular/core&#x27;;
+import { SafeUrl } from &#x27;@angular/platform-browser&#x27;;
+import { AlertController } from &#x27;@ionic/angular&#x27;;
+
+/**
+ * Página para visualizar, filtrar y gestionar el historial de capturas
+ */
+@Component({
+  selector: &#x27;app-historial&#x27;,
+  templateUrl: &#x27;./historial.page.html&#x27;,
+  styleUrls: [&#x27;./historial.page.scss&#x27;],
+  standalone: true,
+  imports: [IonImg, IonContent, IonHeader, IonTitle,
+    IonToolbar, CommonModule, FormsModule,IonButtons,
+    IonButton,IonCard,IonCardContent,
+    IonCardTitle,IonCardHeader,IonList,IonLabel,
+    IonItem,IonInput,IonTextarea,IonDatetime,IonIcon
+    ,IonDatetimeButton,IonModal,IonPopover,IonNote,IonRow ]
+})
+export class HistorialPage implements OnInit {
+
+  private activateRotuer:ActivatedRoute &#x3D; inject(ActivatedRoute);
+  private historialService:HistorialserviceService &#x3D; inject(HistorialserviceService);
+  private alertController &#x3D; inject(AlertController);
+  private toastController &#x3D; inject(ToastController);
+
+  /** Historiales completos y filtrados */
+  historiales: Historial[] &#x3D; [];
+  historialesFiltrados: Historial[] &#x3D; [];
+
+  /** Variables de control de estado */
+  mostrarFormulario &#x3D; false;
+  modalAbierto: boolean &#x3D; false;
+
+  /** Identificador del punto seleccionado */
+  idPunto!: number;
+
+  /** Objeto de nueva captura a registrar */
+  nuevaCaptura!: Historial;
+
+  /** Imágenes relacionadas con el historial */
+  imagenesHistorial: string[] &#x3D; [];
+  imagenesBlob: { [nombre: string]: SafeUrl } &#x3D; {};
+
+  /** Filtros de búsqueda por texto y fechas */
+  filtroTexto: string &#x3D; &#x27;&#x27;;
+  mostrarFechas: boolean &#x3D; false;
+  fechaDesde: string | null &#x3D; null;
+  fechaHasta: string | null &#x3D; null;
+
+  /** Imagenes seleccionadas y sus previsualizaciones */
+  archivosImagenes: File[] &#x3D; [];
+  selectedFileNames: string[] &#x3D; [];
+  imagePreviewUrls: string[] &#x3D; [];
+  @ViewChild(&quot;fileInput&quot;) fileInput!: ElementRef;
+
+  /** Fecha temporal y estado de campo activo para selección de fechas */
+  fechaTemporal: string &#x3D; &#x27;&#x27;;
+  campoActivo: &#x27;desde&#x27; | &#x27;hasta&#x27; | null &#x3D; null;
+  fechaActual: string &#x3D; new Date().toISOString();
+
+  /** Copia de los historiales antes de editar para revertir cambios */
+  copiasOriginales: { [idHistorial: number]: Historial } &#x3D; {};
+
+  constructor(private router: Router,private cdr: ChangeDetectorRef) {
+          addIcons({
+                      &#x27;search-outline&#x27;: searchOutline,
+                      &#x27;calendar-outline&#x27;: calendarOutline,
+                      &#x27;images-outline&#x27;: imagesOutline,
+                      &#x27;close-circle&#x27;:closeCircle
+                    });
+                  }
+  
+
+  ngOnInit() {
+    this.fechaActual &#x3D; formatDate(new Date(), &#x27;yyyy-MM-ddTHH:mm&#x27;, &#x27;en-US&#x27;);
+      const navigation &#x3D; this.router.getCurrentNavigation();
+      const id &#x3D; this.activateRotuer.snapshot.paramMap.get(&#x27;idPunto&#x27;) ?? &#x27;&#x27;;
+      this.idPunto &#x3D; Number(id);
+     this.getHistorial(this.idPunto!);
+  }
+
+   /** Muestra imágenes asociadas a un historial */
+  getImagenes(idHistorial: number) {
+    this.historialService.getImagenesDeHistorial(idHistorial).then(imagenes &#x3D;&gt; {
+    this.imagenesHistorial &#x3D; imagenes;
+  });
+
+  }
+
+   /** Obtiene historiales de un punto y carga sus imágenes */
+  async getHistorial(idPunto: number) {
+  if (!idPunto) {
+    return;
+  }
+
+  try {
+    const data &#x3D; await this.historialService.getHistorial(idPunto);
+    this.historiales &#x3D; data;
+    console.log(&#x27;Historiales:&#x27;, this.historiales);
+    await this.cargarImagenesDeHistoriales(this.historiales);
+    this.aplicarFiltros();
+  } catch (error) {
+    console.error(&#x27;Error al obtener historial:&#x27;, error);
+  }
+}
+/** Carga las imágenes de los historiales usando el servicio */
+ async cargarImagenesDeHistoriales(historiales: Historial[]) {
+    for (const historial of historiales) {
+      for (const img of historial.imagenes || []) {
+              const nombre &#x3D; img.nombre;
+        if (!this.imagenesBlob[nombre]) {
+          try {
+             const url &#x3D; await this.historialService.obtenerImagen(nombre);
+              this.imagenesBlob[nombre] &#x3D; url;
+       
+          } catch (error) {
+            console.error(&#x27;Error cargando imagen:&#x27;, nombre, error);
+          }
+        }
+      }
+    }
+  }
+
+
+  /** Guarda una nueva captura con imágenes */
+async guardarCaptura() {
+  if (!this.nuevaCaptura.descripcion || this.nuevaCaptura.descripcion.trim() &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+    this.mostrarMensaje(&#x27;La descripción no puede estar vacía&#x27;, &#x27;danger&#x27;);
+    return;
+  }
+
+  if (!this.nuevaCaptura.imagenes || this.nuevaCaptura.imagenes.length &#x3D;&#x3D;&#x3D; 0) {
+    this.mostrarMensaje(&#x27;Debes agregar al menos una imagen&#x27;, &#x27;danger&#x27;);
+    return;
+  }
+
+  try {
+    this.nuevaCaptura.idPunto &#x3D; this.idPunto;
+
+    const historialGuardado &#x3D; await this.historialService.addHistorial(this.nuevaCaptura);
+
+    for (let archivo of this.archivosImagenes) {
+      await this.historialService.subirImagen(archivo, historialGuardado.idHistorial!);
+    }
+
+    this.mostrarFormulario &#x3D; false;
+    this.nuevaCaptura &#x3D; {
+      idPunto: this.idPunto,
+      fecha: formatDate(new Date(), &#x27;yyyy-MM-ddTHH:mm&#x27;, &#x27;en-US&#x27;),
+      descripcion: &#x27;&#x27;,
+      imagenes: []
+    };
+    this.archivosImagenes &#x3D; [];
+    this.selectedFileNames &#x3D; [];
+    this.imagePreviewUrls &#x3D; [];
+
+    this.mostrarMensaje(&#x27;Captura guardada correctamente&#x27;, &#x27;success&#x27;);
+    this.getHistorial(this.idPunto);
+  } catch (err) {
+    console.error(&#x27;Error al guardar captura&#x27;, err);
+    this.mostrarMensaje(&#x27;Error al guardar la captura&#x27;, &#x27;danger&#x27;);
+  }
+}
+
+ /** Carga imágenes seleccionadas para una nueva captura */
+cargarImagenes(event: any) {
+  const files: FileList &#x3D; event.target.files;
+
+  if (files &amp;&amp; files.length) {
+    this.selectedFileNames &#x3D; this.selectedFileNames || [];
+    this.imagePreviewUrls &#x3D; this.imagePreviewUrls || [];
+    this.archivosImagenes &#x3D; this.archivosImagenes || [];
+    this.nuevaCaptura.imagenes &#x3D; this.nuevaCaptura.imagenes || [];
+
+    for (let i &#x3D; 0; i &lt; files.length; i++) {
+      const file &#x3D; files[i];
+
+      if (!this.selectedFileNames.includes(file.name)) {
+        this.archivosImagenes.push(file);
+        this.selectedFileNames.push(file.name);
+
+        this.nuevaCaptura.imagenes.push({ nombre: file.name });
+
+        const reader &#x3D; new FileReader();
+        reader.onload &#x3D; (e: any) &#x3D;&gt; {
+          this.imagePreviewUrls.push(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    event.target.value &#x3D; &#x27;&#x27;;
+  }
+}
+
+  /** Elimina una imagen aún no subida */
+ removeImage(index: number, event: Event) {
+  /*
+  const seguro &#x3D; await this.confirmarAccion(&#x27;¿Estás seguro de que deseas eliminar esta imagen?&#x27;);
+  
+  if (!seguro) {
+    return;
+  }
+    */
+  event.stopPropagation();
+
+  const nombre &#x3D; this.archivosImagenes[index]?.name;
+
+  this.archivosImagenes.splice(index, 1);
+  this.selectedFileNames.splice(index, 1);
+  this.imagePreviewUrls.splice(index, 1);
+
+  const idx &#x3D; this.nuevaCaptura.imagenes?.findIndex(img &#x3D;&gt; img.nombre &#x3D;&#x3D;&#x3D; nombre);
+  if (idx !&#x3D;&#x3D; -1 &amp;&amp; idx !&#x3D;&#x3D; undefined) {
+    this.nuevaCaptura.imagenes?.splice(idx, 1);
+  }
+}
+
+onFechaChange(event: any, campo: &#x27;desde&#x27; | &#x27;hasta&#x27;) {
+  const valor &#x3D; event.target.value;
+  if (campo &#x3D;&#x3D;&#x3D; &#x27;desde&#x27;) {
+    this.fechaDesde &#x3D; valor;
+  } else {
+    this.fechaHasta &#x3D; valor;
+  }
+}
+/** Confirma la fecha seleccionada */
+confirmarFecha(event: any) {
+  const valor: string &#x3D; event.detail.value; 
+  const soloFecha &#x3D; valor.split(&#x27;T&#x27;)[0]; 
+
+  if (this.campoActivo &#x3D;&#x3D;&#x3D; &#x27;desde&#x27;) {
+    this.fechaDesde &#x3D; soloFecha;
+  } else if (this.campoActivo &#x3D;&#x3D;&#x3D; &#x27;hasta&#x27;) {
+    this.fechaHasta &#x3D; soloFecha;
+  }
+
+  this.modalAbierto &#x3D; false;
+  this.campoActivo &#x3D; null;
+}
+
+cancelarFiltro() {
+  this.fechaDesde &#x3D; null;
+  this.fechaHasta &#x3D; null;
+  this.mostrarFechas &#x3D; false;
+  this.aplicarFiltros();
+}
+/** Aplica filtros de texto y fecha sobre los historiales */
+aplicarFiltros() {
+  this.historialesFiltrados &#x3D; this.historiales.filter(h &#x3D;&gt; {
+    const descripcionOk &#x3D; !this.filtroTexto || (h.descripcion ?? &#x27;&#x27;).toLowerCase().includes(this.filtroTexto.toLowerCase());
+
+    const fechaRegistro &#x3D; new Date(h.fecha ?? &#x27;&#x27;);
+    const desde &#x3D; this.fechaDesde ? new Date(this.fechaDesde) : null;
+    const hasta &#x3D; this.fechaHasta ? new Date(this.fechaHasta) : null;
+
+    if (hasta) {
+      hasta.setHours(23, 59, 59, 999);
+    }
+
+    const fechaOk &#x3D;
+      (!desde || fechaRegistro &gt;&#x3D; desde) &amp;&amp;
+      (!hasta || fechaRegistro &lt;&#x3D; hasta);
+
+    return descripcionOk &amp;&amp; fechaOk;
+  });
+}
+ /** Elimina un historial tras confirmar */
+async eliminarHistorial(id:number){
+
+  const seguro &#x3D; await this.confirmarAccion(&#x27;¿Estás seguro de que deseas eliminar la captura?&#x27;);
+
+    if (!seguro) {
+    return;
+  }
+
+
+  if (!id) {
+    this.mostrarMensaje(&#x27;Error al intentar la captura&#x27;, &#x27;danger&#x27;);
+    return;
+  }
+  this.historialService.borrarHisorial(id).then(()&#x3D;&gt;{
+    this.historialesFiltrados &#x3D; this.historialesFiltrados.filter(h &#x3D;&gt; h.idHistorial !&#x3D;&#x3D; id);
+    this.historiales &#x3D; this.historiales.filter(h &#x3D;&gt; h.idHistorial !&#x3D;&#x3D; id);
+    this.mostrarMensaje(&#x27;Captura eliminada correctamente&#x27;, &#x27;success&#x27;);
+  })
+
+}
+/** Lanza un alert de confirmación */
+async confirmarAccion(mensaje: string): Promise&lt;boolean&gt; {
+  return new Promise(async (resolve) &#x3D;&gt; {
+    const alert &#x3D; await this.alertController.create({
+      header: &#x27;Confirmación&#x27;,
+      message: mensaje,
+      buttons: [
+        {
+          text: &#x27;Cancelar&#x27;,
+          role: &#x27;cancel&#x27;,
+          handler: () &#x3D;&gt; resolve(false),
+        },
+        {
+          text: &#x27;Aceptar&#x27;,
+          handler: () &#x3D;&gt; resolve(true),
+        },
+      ],
+    });
+
+    await alert.present();
+  });
+}
+
+
+/** Activa el modo edición en un historial */
+editarHistorial(index: number) {
+  const historial &#x3D; this.historialesFiltrados[index];
+  historial.editando &#x3D; true;
+
+  this.copiasOriginales[historial.idHistorial!] &#x3D; JSON.parse(JSON.stringify(historial));
+
+  if (historial.fecha) {
+    const fecha &#x3D; new Date(historial.fecha);
+    historial.fecha &#x3D; fecha.toISOString().split(&#x27;T&#x27;)[0];
+  }
+}
+
+
+
+async mostrarMensaje(mensaje: string, color: &#x27;success&#x27; | &#x27;danger&#x27;) {
+    const toast &#x3D; await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      position: &#x27;top&#x27;,
+      color: color
+    });
+    toast.present();
+  }
+
+  toggleFormulario() {
+    this.mostrarFormulario &#x3D; !this.mostrarFormulario;
+    if (this.mostrarFormulario) {
+      this.nuevaCaptura &#x3D; {
+        fecha: new Date().toISOString(),
+        descripcion: &#x27;&#x27;,
+        imagenes: []
+      };
+    }
+  }
+
+
+  cancelarFormulario() {
+  this.mostrarFormulario &#x3D; false;
+
+  this.nuevaCaptura &#x3D; {
+    fecha: new Date().toISOString(), 
+    descripcion: &#x27;&#x27;,
+    imagenes: []
+  };
+  this.imagePreviewUrls &#x3D; [];
+  this.selectedFileNames &#x3D; [];
+  this.archivosImagenes &#x3D; [];
+
+  if (this.fileInput) {
+    this.fileInput.nativeElement.value &#x3D; &#x27;&#x27;;
+  }
+}
+
+
+
+//----------------------------------------------------------------edicion 
+
+
+
+async eliminarImagenExistente(historial: Historial, index: number) {
+  const imagen &#x3D; historial.imagenes![index];
+  imagen.pendienteEliminar &#x3D; true;
+}
+
+  /** Carga nuevas imágenes para un historial en edición */
+cargarImagenesEdicion(event: any, historial: Historial) {
+  const files: FileList &#x3D; event.target.files;
+
+  historial.nuevasImagenes &#x3D; historial.nuevasImagenes || [];
+  historial.nuevasPreview &#x3D; historial.nuevasPreview || [];
+
+  for (let i &#x3D; 0; i &lt; files.length; i++) {
+    const file &#x3D; files[i];
+
+    if (!historial.nuevasImagenes.find((f: File) &#x3D;&gt; f.name &#x3D;&#x3D;&#x3D; file.name)) {
+      historial.nuevasImagenes.push(file);
+
+      const reader &#x3D; new FileReader();
+      reader.onload &#x3D; (e: any) &#x3D;&gt; {
+        historial.nuevasPreview!.push(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  event.target.value &#x3D; &#x27;&#x27;;
+}
+/** Elimina una imagen recién añadida en modo edición */
+eliminarNuevaImagen(historial: Historial, index: number) {
+  historial.nuevasImagenes?.splice(index, 1);
+  historial.nuevasPreview?.splice(index, 1);
+}
+
+/** Guarda los cambios hechos a un historial en edición */
+async guardarEdicion(index: number) {
+  const historial &#x3D; this.historiales[index];
+
+  try {
+    for (let img of historial.imagenes || []) {
+      if (img.pendienteEliminar &amp;&amp; img.id) {
+        await this.historialService.borrarImagen(img.id);
+      }
+    }
+
+    historial.imagenes &#x3D; historial.imagenes?.filter(img &#x3D;&gt; !img.pendienteEliminar);
+
+    const actualizado &#x3D; await this.historialService.actualizarHistorial(historial);
+
+    for (let archivo of historial.nuevasImagenes || []) {
+      await this.historialService.subirImagen(archivo, actualizado.idHistorial!);
+    }
+
+    historial.editando &#x3D; false;
+    historial.nuevasImagenes &#x3D; [];
+    historial.nuevasPreview &#x3D; [];
+
+    this.mostrarMensaje(&#x27;Captura actualizada correctamente&#x27;, &#x27;success&#x27;);
+    this.getHistorial(this.idPunto); 
+  } catch (error) {
+    console.error(&#x27;Error al actualizar captura&#x27;, error);
+    this.mostrarMensaje(&#x27;Error al actualizar la captura&#x27;, &#x27;danger&#x27;);
+  }
+}
+
+/** Cancela la edición y restaura el historial original */
+cancelarEdicion(index: number) {
+  const h &#x3D; this.historialesFiltrados[index];
+  const copia &#x3D; this.copiasOriginales[h.idHistorial!];
+
+  if (copia) {
+    this.historialesFiltrados[index] &#x3D; JSON.parse(JSON.stringify(copia));
+    const idxOriginal &#x3D; this.historiales.findIndex(hist &#x3D;&gt; hist.idHistorial &#x3D;&#x3D;&#x3D; h.idHistorial);
+    if (idxOriginal !&#x3D;&#x3D; -1) {
+      this.historiales[idxOriginal] &#x3D; JSON.parse(JSON.stringify(copia));
+    }
+
+    delete this.copiasOriginales[h.idHistorial!];
+  }
+
+  this.historialesFiltrados[index].editando &#x3D; false;
+}
+
+
+/** Verifica que el usuario es ADMIN, si no lo redirige */
+  verificarAdmin() {
+    const token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    if (!token) {
+      this.router.navigate([&#x27;/login&#x27;]);
+      return;
+    }
+  
+    try {
+      const decodedToken: any &#x3D; jwtDecode(token);
+      const rol &#x3D; decodedToken.rol;
+      if (rol &#x3D;&#x3D;&#x3D; &#x27;USER&#x27;) {
+        this.router.navigate([&#x27;/menu&#x27;]);
+      }else if (rol &#x3D;&#x3D;&#x3D; &#x27;ADMIN&#x27;) {
+        this.router.navigate([&#x27;/menu-administrador&#x27;]);
+      }
+    } catch (error) {
+      this.router.navigate([&#x27;/login&#x27;]);
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-title&gt;Historial&lt;/ion-title&gt;
+    &lt;ion-buttons slot&#x3D;&quot;primary&quot;&gt;
+      &lt;div class&#x3D;&quot;boton-flotante&quot;&gt;
+        &lt;ion-button size&#x3D;&quot;small&quot; (click)&#x3D;&quot;toggleFormulario()&quot;&gt;Añadir captura&lt;/ion-button&gt;
+      &lt;/div&gt;
+    &lt;/ion-buttons&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content&gt;
+  &lt;div class&#x3D;&quot;historial-container&quot;&gt;
+      &lt;div class&#x3D;&quot;buscador&quot;&gt;
+        &lt;ion-item&gt;
+            &lt;ion-icon name&#x3D;&quot;search-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+            &lt;ion-input
+              placeholder&#x3D;&quot;Buscar por descripción&quot;
+              [(ngModel)]&#x3D;&quot;filtroTexto&quot;
+              (ionChange)&#x3D;&quot;aplicarFiltros()&quot;
+            &gt;&lt;/ion-input&gt;
+          &lt;/ion-item&gt;
+
+          &lt;ion-item lines&#x3D;&quot;none&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;calendar-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+            &lt;ion-button fill&#x3D;&quot;outline&quot; (click)&#x3D;&quot;mostrarFechas &#x3D; !mostrarFechas&quot;&gt;
+              Filtrar por fecha
+            &lt;/ion-button&gt;
+          &lt;/ion-item&gt;
+
+          &lt;ng-container *ngIf&#x3D;&quot;mostrarFechas&quot;&gt;
+              &lt;ion-item class&#x3D;&quot;calendario&quot;&gt;
+            &lt;ion-label&gt;Desde&lt;/ion-label&gt;
+            &lt;ion-icon name&#x3D;&quot;calendar-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+            &lt;input
+              type&#x3D;&quot;date&quot;
+              [value]&#x3D;&quot;fechaDesde ? (fechaDesde | date:&#x27;yyyy-MM-dd&#x27;) : null&quot;
+              (change)&#x3D;&quot;onFechaChange($event, &#x27;desde&#x27;)&quot;
+              class&#x3D;&quot;native-date&quot;
+            /&gt;
+          &lt;/ion-item&gt;
+
+          &lt;ion-item class&#x3D;&quot;calendario&quot;&gt;
+            &lt;ion-label&gt;Hasta&lt;/ion-label&gt;
+            &lt;ion-icon name&#x3D;&quot;calendar-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+            &lt;input
+              type&#x3D;&quot;date&quot;
+              [value]&#x3D;&quot;fechaHasta ? (fechaHasta | date:&#x27;yyyy-MM-dd&#x27;) : null&quot;
+              (change)&#x3D;&quot;onFechaChange($event, &#x27;hasta&#x27;)&quot;
+              class&#x3D;&quot;native-date&quot;
+            /&gt;
+          &lt;/ion-item&gt;
+
+
+            &lt;ion-row class&#x3D;&quot;ion-justify-content-between ion-padding&quot;&gt;
+              &lt;ion-button size&#x3D;&quot;small&quot;  (click)&#x3D;&quot;cancelarFiltro()&quot;&gt;
+                Cancelar
+              &lt;/ion-button&gt;
+              &lt;ion-button size&#x3D;&quot;small&quot;  (click)&#x3D;&quot;aplicarFiltros()&quot;&gt;
+                Buscar
+              &lt;/ion-button&gt;
+            &lt;/ion-row&gt;
+          &lt;/ng-container&gt;
+
+          &lt;ion-modal [isOpen]&#x3D;&quot;modalAbierto&quot; (didDismiss)&#x3D;&quot;modalAbierto &#x3D; false&quot;&gt;
+            &lt;ng-template&gt;
+              &lt;ion-datetime
+                presentation&#x3D;&quot;date&quot;
+                [(ngModel)]&#x3D;&quot;fechaTemporal&quot;
+                [max]&#x3D;&quot;fechaActual&quot;
+                (ionChange)&#x3D;&quot;confirmarFecha($event)&quot;
+                show-default-buttons&#x3D;&quot;true&quot;
+              &gt;&lt;/ion-datetime&gt;
+            &lt;/ng-template&gt;
+          &lt;/ion-modal&gt;
+
+        &lt;/div&gt;
+        
+    &lt;form *ngIf&#x3D;&quot;mostrarFormulario&quot; (ngSubmit)&#x3D;&quot;guardarCaptura()&quot;&gt;
+      &lt;ion-item class&#x3D;&quot;calendario&quot;&gt;
+        &lt;ion-icon name&#x3D;&quot;calendar-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+        &lt;input
+          type&#x3D;&quot;date&quot;
+          [(ngModel)]&#x3D;&quot;nuevaCaptura.fecha&quot;
+          name&#x3D;&quot;fechaForm&quot;
+          class&#x3D;&quot;native-date&quot;
+          placeholder&#x3D;&quot;Selecciona una fecha&quot; /&gt;
+      &lt;/ion-item&gt;
+
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Descripción&lt;/ion-label&gt;
+        &lt;ion-textarea [(ngModel)]&#x3D;&quot;nuevaCaptura.descripcion&quot; name&#x3D;&quot;descripcion&quot; required&gt;&lt;/ion-textarea&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item class&#x3D;&quot;file-upload-container&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Imágenes&lt;/ion-label&gt;
+        &lt;div class&#x3D;&quot;custom-file-upload&quot;&gt;
+          &lt;div class&#x3D;&quot;file-upload-button&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;images-outline&quot;&gt;&lt;/ion-icon&gt;
+            &lt;span&gt;Seleccionar imágenes&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;input type&#x3D;&quot;file&quot; accept&#x3D;&quot;image/*&quot; multiple (change)&#x3D;&quot;cargarImagenes($event)&quot; class&#x3D;&quot;file-input&quot; #fileInput /&gt;
+          &lt;div class&#x3D;&quot;file-names&quot; *ngIf&#x3D;&quot;selectedFileNames &amp;&amp; selectedFileNames.length &gt; 0&quot;&gt;
+            &lt;div class&#x3D;&quot;file-count&quot;&gt;{{ selectedFileNames.length }} {{ selectedFileNames.length &#x3D;&#x3D;&#x3D; 1 ? &#x27;imagen seleccionada&#x27; : &#x27;imágenes seleccionadas&#x27; }}&lt;/div&gt;
+            &lt;div class&#x3D;&quot;file-preview&quot;&gt;
+            &lt;div class&#x3D;&quot;preview-image&quot; *ngFor&#x3D;&quot;let url of imagePreviewUrls; let i &#x3D; index&quot;&gt;
+               &lt;img [src]&#x3D;&quot;url&quot; alt&#x3D;&quot;Imagen seleccionada&quot; /&gt;
+              &lt;div class&#x3D;&quot;remove-image&quot; (click)&#x3D;&quot;removeImage(i, $event)&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;close-circle&quot;&gt;&lt;/ion-icon&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ion-item&gt;
+      &lt;ion-button expand&#x3D;&quot;block&quot; type&#x3D;&quot;submit&quot;&gt;Guardar captura&lt;/ion-button&gt;
+      &lt;ion-button expand&#x3D;&quot;block&quot; class&#x3D;&quot;boton-eliminar&quot; (click)&#x3D;&quot;cancelarFormulario()&quot;&gt;Cancelar&lt;/ion-button&gt;
+    &lt;/form&gt;
+  
+    &lt;ion-list *ngIf&#x3D;&quot;historialesFiltrados.length &gt; 0&quot;&gt;
+
+      &lt;ion-card *ngFor&#x3D;&quot;let h of historialesFiltrados; let i &#x3D; index&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;!h.editando&quot;&gt;
+          &lt;ion-card-header&gt;
+            &lt;ion-card-title&gt;Fecha: {{ h.fecha | date:&#x27;shortDate&#x27; }}&lt;/ion-card-title&gt;
+          &lt;/ion-card-header&gt;
+          &lt;ion-card-content&gt;
+            &lt;p&gt;{{ h.descripcion }}&lt;/p&gt;
+           &lt;div class&#x3D;&quot;preview-image&quot; *ngFor&#x3D;&quot;let imagen of h.imagenes; let i &#x3D; index&quot;&gt;
+              &lt;img
+                [src]&#x3D;&quot;imagenesBlob[imagen.nombre]&quot;
+                alt&#x3D;&quot;Imagen de historial&quot;
+                class&#x3D;&quot;imagen&quot;
+                &gt;
+            &lt;/div&gt;
+
+
+            &lt;div class&#x3D;&quot;botones-accion&quot;&gt;
+              &lt;ion-button class&#x3D;&quot;boton-editar&quot; fill&#x3D;&quot;solid&quot; (click)&#x3D;&quot;editarHistorial(i)&quot;&gt;EDITAR&lt;/ion-button&gt;
+              &lt;ion-button class&#x3D;&quot;boton-eliminar&quot;  fill&#x3D;&quot;solid&quot; (click)&#x3D;&quot;eliminarHistorial(h.idHistorial!)&quot;&gt;ELIMINAR&lt;/ion-button&gt;
+            &lt;/div&gt;
+          &lt;/ion-card-content&gt;
+        &lt;/div&gt;
+        
+      &lt;div class&#x3D;&quot;edicion&quot; *ngIf&#x3D;&quot;h.editando&quot;&gt;
+          &lt;ion-card-header&gt;
+            &lt;ion-item&gt;
+              &lt;ion-icon name&#x3D;&quot;calendar-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+              &lt;input
+                type&#x3D;&quot;date&quot;
+                [(ngModel)]&#x3D;&quot;h.fecha&quot;
+                name&#x3D;&quot;fechaTemp&quot;
+                class&#x3D;&quot;native-date&quot;
+                placeholder&#x3D;&quot;Selecciona una fecha&quot;&gt;
+            &lt;/ion-item&gt;
+          &lt;/ion-card-header&gt;
+
+          &lt;ion-card-content&gt;
+            &lt;ion-item&gt;
+              &lt;ion-textarea [(ngModel)]&#x3D;&quot;h.descripcion&quot; name&#x3D;&quot;descripcionTemp&quot; required&gt;&lt;/ion-textarea&gt;
+            &lt;/ion-item&gt;
+
+            &lt;div class&#x3D;&quot;imagenes&quot;&gt;
+              &lt;ng-container *ngFor&#x3D;&quot;let img of h.imagenes; let i &#x3D; index&quot;&gt;
+                &lt;div class&#x3D;&quot;preview-image&quot; *ngIf&#x3D;&quot;!img.pendienteEliminar&quot;&gt;
+                  &lt;img [src]&#x3D;&quot;imagenesBlob[img.nombre]&quot; alt&#x3D;&quot;Imagen de historial&quot;&gt;
+                  &lt;div class&#x3D;&quot;remove-image&quot; (click)&#x3D;&quot;eliminarImagenExistente(h, i)&quot;&gt;
+                    &lt;ion-icon name&#x3D;&quot;close-circle&quot;&gt;&lt;/ion-icon&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+
+            &lt;ion-item class&#x3D;&quot;file-upload-container&quot;&gt;
+              &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Agregar imágenes&lt;/ion-label&gt;
+              &lt;div class&#x3D;&quot;custom-file-upload&quot;&gt;
+                &lt;div class&#x3D;&quot;file-upload-button&quot;&gt;
+                  &lt;ion-icon name&#x3D;&quot;images-outline&quot;&gt;&lt;/ion-icon&gt;
+                  &lt;span&gt;Seleccionar imágenes&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;input type&#x3D;&quot;file&quot; accept&#x3D;&quot;image/*&quot; multiple (change)&#x3D;&quot;cargarImagenesEdicion($event, h)&quot; class&#x3D;&quot;file-input&quot; /&gt;
+                &lt;div class&#x3D;&quot;file-names&quot; *ngIf&#x3D;&quot;h.nuevasPreview?.length&quot;&gt;
+                  &lt;div class&#x3D;&quot;file-count&quot;&gt;
+                    {{ h.nuevasPreview?.length }} nueva{{ h.nuevasPreview?.length &#x3D;&#x3D;&#x3D; 1 ? &#x27;&#x27; : &#x27;s&#x27; }} imagen{{ h.nuevasPreview?.length &#x3D;&#x3D;&#x3D; 1 ? &#x27;&#x27; : &#x27;es&#x27; }}
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;file-preview&quot;&gt;
+                    &lt;div class&#x3D;&quot;preview-image&quot; *ngFor&#x3D;&quot;let url of h.nuevasPreview; let j &#x3D; index&quot;&gt;
+                      &lt;img [src]&#x3D;&quot;url&quot; alt&#x3D;&quot;Imagen seleccionada&quot; /&gt;
+                      &lt;div class&#x3D;&quot;remove-image&quot; (click)&#x3D;&quot;eliminarNuevaImagen(h, j)&quot;&gt;
+                        &lt;ion-icon name&#x3D;&quot;close-circle&quot;&gt;&lt;/ion-icon&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/ion-item&gt;
+
+            &lt;div class&#x3D;&quot;botones-accion&quot;&gt;
+              &lt;ion-button class&#x3D;&quot;boton-guardar&quot; fill&#x3D;&quot;solid&quot; (click)&#x3D;&quot;guardarEdicion(i)&quot;&gt;GUARDAR&lt;/ion-button&gt;
+              &lt;ion-button class&#x3D;&quot;boton-eliminar&quot; fill&#x3D;&quot;solid&quot; (click)&#x3D;&quot;cancelarEdicion(i)&quot;&gt;CANCELAR&lt;/ion-button&gt;
+            &lt;/div&gt;
+          &lt;/ion-card-content&gt;
+        &lt;/div&gt;
+
+
+      &lt;/ion-card&gt;
+    &lt;/ion-list&gt;
+
+    &lt;div *ngIf&#x3D;&quot;historialesFiltrados.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;sin-historial&quot;&gt;
+      &lt;p&gt;No hay historial para este punto.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./historial.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url(&#x27;/assets/img/fondos/historial-fondo.jpg&#x27;) no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* HEADER Y TOOLBAR */
+ion-header ion-toolbar {
+  --background: rgba(34, 34, 34, 0.95);
+  --color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+ion-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.boton-flotante {
+  margin: 0.5rem 0;
+  text-align: right;
+}
+
+.boton-flotante ion-button {
+  --background: #0066ff;
+  --color: #ffffff;
+  --border-radius: 6px;
+  font-size: 0.8rem;
+  height: 32px;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+/* CONTENIDO PRINCIPAL */
+ion-content {
+  --background: transparent;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.historial-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 6rem; 
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ESTILOS DEL BUSCADOR */
+.buscador {
+  margin: 0.5rem;
+  background: rgba(34, 34, 34, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Ajustes para los items dentro del buscador */
+.buscador ion-item {
+  --background: rgba(30, 30, 30, 0.95);
+  --border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-end: 12px;
+  --highlight-color-focused: transparent;
+  --highlight-height: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 8px;
+}
+
+/* Estilos para los iconos dentro del buscador */
+.buscador ion-icon {
+  color: #ffffff !important;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+/* Estilos para el input de búsqueda */
+.buscador ion-input {
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+}
+
+/* Estilos para los botones dentro del buscador */
+.buscador ion-button {
+  --background: transparent;
+  --color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.5);
+  --border-radius: 20px;
+  --border-width: 1px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  font-size: 0.85rem;
+  height: 36px;
+  font-weight: 500;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Estilos para los botones de acción (Buscar, Cancelar) */
+.buscador ion-row ion-button[color&#x3D;&quot;medium&quot;] {
+  --background: rgba(60, 60, 60, 0.8);
+  --color: #ffffff;
+  --border-radius: 6px;
+  margin: 0 4px;
+}
+
+.buscador ion-row ion-button[color&#x3D;&quot;primary&quot;] {
+  --background: #0066ff;
+  --color: #ffffff;
+  --border-radius: 6px;
+  margin: 0 4px;
+}
+
+/* Estilos para las etiquetas dentro del buscador */
+.buscador ion-label {
+  color: #ffffff !important;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* Estilos para los botones con fechas */
+.buscador ion-button ion-icon {
+  margin-right: 4px;
+}
+
+/* Ajuste para el padding de la fila de botones */
+.buscador ion-row.ion-padding {
+  padding: 8px 0 !important;
+}
+
+/* Estilos para la etiqueta de rango de fechas */
+.buscador .label-rango {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+/* Estilos para el item que contiene la etiqueta de rango */
+.buscador ion-item:last-child {
+  --background: transparent;
+  --border-color: transparent;
+  --box-shadow: none;
+}
+
+/* ESTILOS PARA FORMULARIOS Y ELEMENTOS DE ENTRADA */
+form {
+  background: rgba(34, 34, 34, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ion-item {
+  --background: rgba(30, 30, 30, 0.95);
+  --border-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+  border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-end: 12px;
+  --highlight-color-focused: transparent;
+  --highlight-height: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+ion-label {
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Ajuste general para todos los inputs y textareas */
+ion-input,
+ion-textarea {
+  --color: #ffffff !important;
+  --placeholder-color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.95rem;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+}
+
+/* ESTILOS PARA CALENDARIO */
+ion-item.calendario {
+  --background: #1e1e1e !important;
+  --color: white !important;
+  --border-color: transparent !important;
+  --highlight-color-focused: transparent !important;
+  --highlight-height: 0 !important;
+  border-radius: 8px !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+ion-item.calendario ion-icon {
+  color: white !important;
+  margin-right: 8px !important;
+}
+
+ion-item.calendario input.native-date {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px !important;
+  font-size: 0.95rem !important;
+  width: 100% !important;
+
+}
+
+ion-input input[type&#x3D;&quot;date&quot;]::-webkit-calendar-picker-indicator,
+input.native-date::-webkit-calendar-picker-indicator {
+  filter: invert(1); 
+  opacity: 1;
+  cursor: pointer;
+}
+input[type&#x3D;&quot;date&quot;]:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+ion-datetime {
+  --background: rgba(34, 34, 34, 0.95);
+  --color: #ffffff |;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-datetime-button {
+  --background: rgba(30, 30, 30, 0.95);
+  --color: #ffffff;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+}
+
+ion-popover {
+  --width: 300px;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-modal ion-datetime {
+  --background: rgba(34, 34, 34, 0.95);
+  --color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.calendario-modal::part(content) {
+  --width: 300px;
+  --height: auto;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fecha-edicion {
+  --background: transparent;
+  --border-color: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  margin: 0;
+}
+
+/* ESTILOS PARA SELECTOR DE ARCHIVOS */
+input[type&#x3D;&quot;file&quot;] {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.file-upload-container {
+  --background: rgba(34, 34, 34, 0.9) !important;
+  --border-color: transparent !important;
+  border-radius: 8px !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  --padding-start: 12px !important;
+  --padding-end: 12px !important;
+  --inner-padding-end: 12px !important;
+  --highlight-color-focused: transparent !important;
+  --highlight-height: 0 !important;
+}
+
+.file-upload-container ion-label {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+}
+
+.custom-file-upload {
+  width: 100%;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.file-upload-button {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.file-upload-button:active {
+  background: #333333;
+}
+
+.file-upload-button ion-icon {
+  font-size: 1.3rem;
+  margin-right: 10px;
+  color: #0066ff;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-names {
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.file-count {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+
+
+.preview-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edicion ion-item ion-icon[name&#x3D;&quot;calendar-outline&quot;] {
+  color: #ffffff !important;
+  opacity: 0.8; /* opcional, igualar a otros iconos */
+}
+
+.preview-image:hover {
+  transform: scale(1.05);
+}
+
+.remove-image {
+  position: absolute;
+  top: 8px; /* antes estaba -8px */
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6); /* más opaco */
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.remove-image ion-icon {
+  color: #992020e5;
+  font-size: 20px;
+}
+
+
+/* ESTILOS PARA BOTONES */
+ion-button[expand&#x3D;&quot;block&quot;] {
+  margin-top: 0.5rem;
+  height: 44px;
+  font-size: 0.95rem;
+  --border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+
+ion-button[color&#x3D;&quot;medium&quot;] {
+  --background: #666666;
+  --color: white;
+}
+
+/* ESTILOS PARA LISTA DE HISTORIALES */
+ion-list {
+  background: transparent !important;
+  padding: 0;
+}
+
+ion-card {
+  background: rgba(34, 34, 34, 0.9);
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+ion-card-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+ion-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+  margin: 0;
+}
+
+ion-card-content {
+  padding: 16px;
+}
+
+ion-card-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+}
+
+.imagen{
+  width: 100%;
+  height: auto!important; 
+  margin-bottom: 10px;
+}
+
+.imagenes img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* BOTONES DE ACCIÓN */
+.botones-accion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.botones-accion ion-button {
+  flex: 1;
+  margin: 0 4px;
+  height: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  --border-radius: 6px;
+}
+
+
+
+ion-card ion-card-header ion-item ion-input[type&#x3D;&quot;date&quot;],
+ion-card ion-card-header ion-item input.native-date {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px !important;
+  font-size: 0.95rem !important;
+  width: 100% !important;
+  color-scheme: white !important;
+  ::picker-icon {
+    color: white !important;
+  }
+}
+input[type&#x3D;&quot;date&quot;]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+/* Cambiar el color del icono del calendario */
+ion-card ion-card-header ion-item input[type&#x3D;&quot;date&quot;]::-webkit-calendar-picker-indicator,
+ion-card ion-card-header ion-item input.native-date::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+}
+
+/* Estilos para el textarea en el modo de edición */
+ion-card ion-card-content ion-item ion-textarea {
+  --color: #ffffff !important;
+  --placeholder-color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.95rem !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+  --padding-top: 8px !important;
+  --padding-bottom: 8px !important;
+}
+
+/* Estilos para los botones de acción en el modo de edición */
+ion-card .botones-accion ion-button[class&#x3D;&quot;success&quot;] {
+  --background: #28a745;
+  --color: #ffffff;
+}
+.boton-editar{
+  --background: #0d6efd;
+  --color: #ffffff;
+}
+
+.boton-eliminar {
+  --background: #992020e5 !important;
+  --color: #ffffff;
+}
+
+.boton-guardar{
+  --background: #28a745;
+  --color: #ffffff;
+}
+
+
+
+
+.sin-historial {
+  text-align: center;
+  background: rgba(34, 34, 34, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 360px) {
+  .imagenes img {
+     width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 8px
+
+  }
+  
+  ion-card-title {
+    font-size: 0.9rem;
+  }
+  
+  .botones-accion {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .botones-accion ion-button {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar>    <ion-title>Historial</ion-title>    <ion-buttons slot="primary">      <div class="boton-flotante">        <ion-button size="small" (click)="toggleFormulario()">Añadir captura</ion-button>      </div>    </ion-buttons>  </ion-toolbar></ion-header><ion-content>  <div class="historial-container">      <div class="buscador">        <ion-item>            <ion-icon name="search-outline" slot="start"></ion-icon>            <ion-input              placeholder="Buscar por descripción"              [(ngModel)]="filtroTexto"              (ionChange)="aplicarFiltros()"            ></ion-input>          </ion-item>          <ion-item lines="none">            <ion-icon name="calendar-outline" slot="start"></ion-icon>            <ion-button fill="outline" (click)="mostrarFechas = !mostrarFechas">              Filtrar por fecha            </ion-button>          </ion-item>          <ng-container *ngIf="mostrarFechas">              <ion-item class="calendario">            <ion-label>Desde</ion-label>            <ion-icon name="calendar-outline" slot="start"></ion-icon>            <input              type="date"              [value]="fechaDesde ? (fechaDesde | date:\'yyyy-MM-dd\') : null"              (change)="onFechaChange($event, \'desde\')"              class="native-date"            />          </ion-item>          <ion-item class="calendario">            <ion-label>Hasta</ion-label>            <ion-icon name="calendar-outline" slot="start"></ion-icon>            <input              type="date"              [value]="fechaHasta ? (fechaHasta | date:\'yyyy-MM-dd\') : null"              (change)="onFechaChange($event, \'hasta\')"              class="native-date"            />          </ion-item>            <ion-row class="ion-justify-content-between ion-padding">              <ion-button size="small"  (click)="cancelarFiltro()">                Cancelar              </ion-button>              <ion-button size="small"  (click)="aplicarFiltros()">                Buscar              </ion-button>            </ion-row>          </ng-container>          <ion-modal [isOpen]="modalAbierto" (didDismiss)="modalAbierto = false">            <ng-template>              <ion-datetime                presentation="date"                [(ngModel)]="fechaTemporal"                [max]="fechaActual"                (ionChange)="confirmarFecha($event)"                show-default-buttons="true"              ></ion-datetime>            </ng-template>          </ion-modal>        </div>            <form *ngIf="mostrarFormulario" (ngSubmit)="guardarCaptura()">      <ion-item class="calendario">        <ion-icon name="calendar-outline" slot="start"></ion-icon>        <input          type="date"          [(ngModel)]="nuevaCaptura.fecha"          name="fechaForm"          class="native-date"          placeholder="Selecciona una fecha" />      </ion-item>      <ion-item>        <ion-label position="stacked">Descripción</ion-label>        <ion-textarea [(ngModel)]="nuevaCaptura.descripcion" name="descripcion" required></ion-textarea>      </ion-item>      <ion-item class="file-upload-container">        <ion-label position="stacked">Imágenes</ion-label>        <div class="custom-file-upload">          <div class="file-upload-button">            <ion-icon name="images-outline"></ion-icon>            <span>Seleccionar imágenes</span>          </div>          <input type="file" accept="image/*" multiple (change)="cargarImagenes($event)" class="file-input" #fileInput />          <div class="file-names" *ngIf="selectedFileNames && selectedFileNames.length > 0">            <div class="file-count">{{ selectedFileNames.length }} {{ selectedFileNames.length === 1 ? \'imagen seleccionada\' : \'imágenes seleccionadas\' }}</div>            <div class="file-preview">            <div class="preview-image" *ngFor="let url of imagePreviewUrls; let i = index">               <img [src]="url" alt="Imagen seleccionada" />              <div class="remove-image" (click)="removeImage(i, $event)">                <ion-icon name="close-circle"></ion-icon>              </div>            </div>          </div>          </div>        </div>      </ion-item>      <ion-button expand="block" type="submit">Guardar captura</ion-button>      <ion-button expand="block" class="boton-eliminar" (click)="cancelarFormulario()">Cancelar</ion-button>    </form>      <ion-list *ngIf="historialesFiltrados.length > 0">      <ion-card *ngFor="let h of historialesFiltrados; let i = index">        <div *ngIf="!h.editando">          <ion-card-header>            <ion-card-title>Fecha: {{ h.fecha | date:\'shortDate\' }}</ion-card-title>          </ion-card-header>          <ion-card-content>            <p>{{ h.descripcion }}</p>           <div class="preview-image" *ngFor="let imagen of h.imagenes; let i = index">              <img                [src]="imagenesBlob[imagen.nombre]"                alt="Imagen de historial"                class="imagen"                >            </div>            <div class="botones-accion">              <ion-button class="boton-editar" fill="solid" (click)="editarHistorial(i)">EDITAR</ion-button>              <ion-button class="boton-eliminar"  fill="solid" (click)="eliminarHistorial(h.idHistorial!)">ELIMINAR</ion-button>            </div>          </ion-card-content>        </div>              <div class="edicion" *ngIf="h.editando">          <ion-card-header>            <ion-item>              <ion-icon name="calendar-outline" slot="start"></ion-icon>              <input                type="date"                [(ngModel)]="h.fecha"                name="fechaTemp"                class="native-date"                placeholder="Selecciona una fecha">            </ion-item>          </ion-card-header>          <ion-card-content>            <ion-item>              <ion-textarea [(ngModel)]="h.descripcion" name="descripcionTemp" required></ion-textarea>            </ion-item>            <div class="imagenes">              <ng-container *ngFor="let img of h.imagenes; let i = index">                <div class="preview-image" *ngIf="!img.pendienteEliminar">                  <img [src]="imagenesBlob[img.nombre]" alt="Imagen de historial">                  <div class="remove-image" (click)="eliminarImagenExistente(h, i)">                    <ion-icon name="close-circle"></ion-icon>                  </div>                </div>              </ng-container>            </div>            <ion-item class="file-upload-container">              <ion-label position="stacked">Agregar imágenes</ion-label>              <div class="custom-file-upload">                <div class="file-upload-button">                  <ion-icon name="images-outline"></ion-icon>                  <span>Seleccionar imágenes</span>                </div>                <input type="file" accept="image/*" multiple (change)="cargarImagenesEdicion($event, h)" class="file-input" />                <div class="file-names" *ngIf="h.nuevasPreview?.length">                  <div class="file-count">                    {{ h.nuevasPreview?.length }} nueva{{ h.nuevasPreview?.length === 1 ? \'\' : \'s\' }} imagen{{ h.nuevasPreview?.length === 1 ? \'\' : \'es\' }}                  </div>                  <div class="file-preview">                    <div class="preview-image" *ngFor="let url of h.nuevasPreview; let j = index">                      <img [src]="url" alt="Imagen seleccionada" />                      <div class="remove-image" (click)="eliminarNuevaImagen(h, j)">                        <ion-icon name="close-circle"></ion-icon>                      </div>                    </div>                  </div>                </div>              </div>            </ion-item>            <div class="botones-accion">              <ion-button class="boton-guardar" fill="solid" (click)="guardarEdicion(i)">GUARDAR</ion-button>              <ion-button class="boton-eliminar" fill="solid" (click)="cancelarEdicion(i)">CANCELAR</ion-button>            </div>          </ion-card-content>        </div>      </ion-card>    </ion-list>    <div *ngIf="historialesFiltrados.length === 0" class="sin-historial">      <p>No hay historial para este punto.</p>    </div>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'GestionPage', 'selector': 'app-gestion'},{'name': 'HistorialPage', 'selector': 'app-historial'},{'name': 'InicioPage', 'selector': 'app-inicio'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MapaPage', 'selector': 'app-mapa'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MisPuntosPage', 'selector': 'app-mis-puntos'},{'name': 'PerfilPage', 'selector': 'app-perfil'},{'name': 'RegistroPage', 'selector': 'app-registro'},{'name': 'TablaMedidasPage', 'selector': 'app-tabla-medidas'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HistorialPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HistorialPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

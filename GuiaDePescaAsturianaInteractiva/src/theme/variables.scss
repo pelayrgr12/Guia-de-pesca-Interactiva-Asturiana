@@ -1,0 +1,65 @@
+:root {
+    //login
+  --color-primario: #007bff;
+  --color-primario-hover: #0056b3;
+  --color-texto-principal: #222;
+  --color-overlay: rgba(0, 0, 0, 0.3);
+  --color-login-card-bg: rgba(255, 255, 255, 0.95);
+  --color-alerta-bg: #ffe5e5;
+  --color-alerta-borde: #ff5c5c;
+  --color-alerta-texto: #c62828;
+  --color-icono-password: #444;
+  --color-input-password: #191919;
+    //registro
+  --color-boton-fondo: #0066cc;
+  --color-boton-hover: #003366;
+  --color-boton-shadow: rgba(0, 102, 204, 0.4);
+  --color-boton-shadow-hover: rgba(0, 102, 204, 0.6);
+  //menu
+  --color-input-bg: rgba(255, 255, 255, 0.85);
+  --color-input-text: #000;
+  --color-input-label: #000;
+  --color-header-bg: #0066ff;
+  --color-header-text: #ffffff;
+  --color-boton-bg: #0066ff;
+  --color-boton-text: #ffffff;
+  //perfil
+  --color-perfil-bg: #000;;
+  //mis-puntos
+  --color-search-bg: #f0f0f0;
+  --color-search-text: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    //login
+    --color-primario: #66b2ff;
+    --color-primario-hover: #3385ff;
+    --color-texto-principal: #f1f1f1;
+    --color-overlay: rgba(0, 0, 0, 0.5);
+    --color-login-card-bg: rgba(30, 30, 30, 0.95);
+    --color-alerta-bg: #3c0d0d;
+    --color-alerta-borde: #ff5c5c;
+    --color-alerta-texto: #ffb3b3;
+    --color-icono-password: #ccc;
+    --color-input-password: #eeeeee;
+    //registro
+    --color-boton-fondo: #3399ff;
+    --color-boton-hover: #0055aa;
+    --color-boton-shadow: rgba(51, 153, 255, 0.3);
+    --color-boton-shadow-hover: rgba(51, 153, 255, 0.6);
+    //menu
+    --color-input-bg: rgba(30, 30, 30, 0.95);
+    --color-input-text: #ffffff;
+    --color-input-label: #cccccc;
+    --color-header-bg: #000000;
+    --color-header-text: #ffffff;
+    --color-boton-bg: #000000;
+    --color-boton-text: #ffffff;
+    //perfil
+      --color-perfil-bg: #000;;
+    //mis-puntos 
+    --color-search-bg: #000;
+    --color-search-text: #ffffff;
+  }
+}

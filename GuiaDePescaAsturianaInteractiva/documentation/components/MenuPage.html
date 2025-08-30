@@ -1,0 +1,1310 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GuiaDePescaAsturianaInteractiva documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">GuiaDePescaAsturianaInteractiva documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MenuPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Pages/menu/menu.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-menu</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>IonLabel</code>
+                            <code>IonItem</code>
+                            <code>IonCardTitle</code>
+                            <code>IonCardHeader</code>
+                            <code>IonCard</code>
+                            <code>IonContent</code>
+                            <code>IonHeader</code>
+                            <code>IonTitle</code>
+                            <code>IonToolbar</code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>IonCardContent</code>
+                            <code>IonFooter</code>
+                            <code>IonButtons</code>
+                            <code>IonButton</code>
+                            <code>IonIcon</code>
+                            <code>IonInput</code>
+                            <code>IonCol</code>
+                            <code>IonRow</code>
+                            <code>IonGrid</code>
+                            <code>IonCardSubtitle</code>
+                            <code>IonSpinner</code>
+                            <code>IonText</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./menu.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./menu.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargando" >cargando</a>
+                            </li>
+                            <li>
+                                <a href="#ciudad" >ciudad</a>
+                            </li>
+                            <li>
+                                <a href="#clima" >clima</a>
+                            </li>
+                            <li>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#openWeather" >openWeather</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#router" >router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buscarClima" >buscarClima</a>
+                            </li>
+                            <li>
+                                <a href="#getDescripcionViento" >getDescripcionViento</a>
+                            </li>
+                            <li>
+                                <a href="#getIcono" >getIcono</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/Pages/menu/menu.page.ts:46</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarClima"></a>
+                    <span class="name">
+                        <span ><b>buscarClima</b></span>
+                        <a href="#buscarClima"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarClima()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/Pages/menu/menu.page.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Realiza la llamada al servicio OpenWeather para obtener el clima actual</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDescripcionViento"></a>
+                    <span class="name">
+                        <span ><b>getDescripcionViento</b></span>
+                        <a href="#getDescripcionViento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDescripcionViento(grados: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/Pages/menu/menu.page.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Devuelve una descripción textual de la dirección del viento a partir de grados</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>grados</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Valor en grados del viento (0-360)</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Dirección cardinal como cadena (Norte, Este, etc.)</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getIcono"></a>
+                    <span class="name">
+                        <span ><b>getIcono</b></span>
+                        <a href="#getIcono"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getIcono(icon: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/Pages/menu/menu.page.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el path del icono del clima según el código proporcionado por OpenWeather</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>icon</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Código del icono proporcionado por la API de clima</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Ruta de imagen o recurso correspondiente al icono</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/Pages/menu/menu.page.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Ciclo de vida de la vista: ejecuta la búsqueda del clima al iniciar</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargando"></a>
+                    <span class="name">
+                        <span ><b>cargando</b></span>
+                        <a href="#cargando"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/Pages/menu/menu.page.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si se están cargando los datos del clima</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ciudad"></a>
+                    <span class="name">
+                        <span ><b>ciudad</b></span>
+                        <a href="#ciudad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Gijon&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/Pages/menu/menu.page.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ciudad por defecto para la consulta del clima</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clima"></a>
+                    <span class="name">
+                        <span ><b>clima</b></span>
+                        <a href="#clima"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/Pages/menu/menu.page.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto con los datos del clima obtenidos</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/Pages/menu/menu.page.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de error si ocurre al consultar el clima</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openWeather"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>openWeather</b></span>
+                        <a href="#openWeather"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(OpenWeatherService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/Pages/menu/menu.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Pages/menu/menu.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import {
+  IonContent, IonHeader, IonTitle, IonToolbar, IonCard,
+  IonCardHeader, IonCardTitle, IonCardContent, IonFooter, IonButtons,
+  IonButton, IonIcon, IonItem, IonLabel, IonInput,
+  IonCol, IonRow, IonGrid, IonCardSubtitle, IonSpinner, IonText
+} from &#x27;@ionic/angular/standalone&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { OpenWeatherService } from &#x27;src/app/shared/services/open-weather.service&#x27;;
+import { addIcons } from &#x27;ionicons&#x27;;
+import {
+  cloudOutline, navigateOutline, searchOutline,
+  speedometerOutline, thunderstormOutline, waterOutline
+} from &#x27;ionicons/icons&#x27;;
+
+@Component({
+  selector: &#x27;app-menu&#x27;,
+  templateUrl: &#x27;./menu.page.html&#x27;,
+  styleUrls: [&#x27;./menu.page.scss&#x27;],
+  standalone: true,
+  imports: [
+    IonLabel, IonItem, IonCardTitle, IonCardHeader, IonCard,
+    IonContent, IonHeader, IonTitle, IonToolbar,
+    CommonModule, FormsModule, IonCardContent,
+    IonFooter, IonButtons, IonButton, IonIcon, IonInput, IonCol,
+    IonRow, IonGrid, IonCardSubtitle, IonSpinner, IonText
+  ]
+})
+export class MenuPage implements OnInit {
+
+  private router: Router &#x3D; inject(Router);
+  private openWeather &#x3D; inject(OpenWeatherService);
+
+  /** Ciudad por defecto para la consulta del clima */
+  ciudad: string &#x3D; &#x27;Gijon&#x27;;
+
+  /** Objeto con los datos del clima obtenidos */
+  clima: any &#x3D; null;
+
+  /** Indica si se están cargando los datos del clima */
+  cargando &#x3D; false;
+
+  /** Mensaje de error si ocurre al consultar el clima */
+  error &#x3D; &quot;&quot;;
+
+  constructor() {
+    addIcons({
+      &#x27;navigate-outline&#x27;: navigateOutline,
+      &#x27;cloud-outline&#x27;: cloudOutline,
+      &#x27;thunderstorm-outline&#x27;: thunderstormOutline,
+      &#x27;search-outline&#x27;: searchOutline,
+      &#x27;water-outline&#x27;: waterOutline,
+      &#x27;speedometer-outline&#x27;: speedometerOutline,
+    });
+  }
+
+  /**
+   * Ciclo de vida de la vista: ejecuta la búsqueda del clima al iniciar
+   */
+  ngOnInit() {
+    this.buscarClima();
+  }
+
+  /**
+   * Devuelve una descripción textual de la dirección del viento a partir de grados
+   * @param grados Valor en grados del viento (0-360)
+   * @returns Dirección cardinal como cadena (Norte, Este, etc.)
+   */
+  getDescripcionViento(grados: number): string {
+    const direcciones &#x3D; [&quot;Norte&quot;, &quot;Noreste&quot;, &quot;Este&quot;, &quot;Sureste&quot;, &quot;Sur&quot;, &quot;Suroeste&quot;, &quot;Oeste&quot;, &quot;Noroeste&quot;];
+    const indice &#x3D; Math.round((grados % 360) / 45) % 8;
+    return direcciones[indice];
+  }
+
+  /**
+   * Realiza la llamada al servicio OpenWeather para obtener el clima actual
+   */
+  buscarClima() {
+    this.cargando &#x3D; true;
+    this.error &#x3D; &quot;&quot;;
+    this.openWeather.getWeather(this.ciudad).subscribe({
+      next: (data) &#x3D;&gt; {
+        console.log(&#x27;Datos del clima:&#x27;, data);
+        this.clima &#x3D; data;
+        this.cargando &#x3D; false;
+      },
+      error: (error) &#x3D;&gt; {
+        console.error(&#x27;Error al obtener el clima:&#x27;, error);
+        this.error &#x3D; &#x27;No se pudo obtener el clima.&#x27;;
+        this.cargando &#x3D; false;
+      }
+    });
+  }
+
+  /**
+   * Obtiene el path del icono del clima según el código proporcionado por OpenWeather
+   * @param icon Código del icono proporcionado por la API de clima
+   * @returns Ruta de imagen o recurso correspondiente al icono
+   */
+  getIcono(icon: string) {
+    return this.openWeather.getIcono(icon);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content class&#x3D;&quot;ion-padding&quot;&gt;
+  &lt;div class&#x3D;&quot;header-container&quot;&gt;
+    &lt;h1&gt;Consulta del Tiempo&lt;/h1&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-container&quot;&gt;
+    &lt;ion-item&gt;
+      &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Ciudad&lt;/ion-label&gt;
+      &lt;ion-input [(ngModel)]&#x3D;&quot;ciudad&quot;&gt;&lt;/ion-input&gt;
+    &lt;/ion-item&gt;
+    
+    &lt;ion-button expand&#x3D;&quot;block&quot; (click)&#x3D;&quot;buscarClima()&quot; [disabled]&#x3D;&quot;cargando&quot;&gt;
+      &lt;ion-icon name&#x3D;&quot;search-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+      BUSCAR TIEMPO
+    &lt;/ion-button&gt;
+  &lt;/div&gt;
+
+  &lt;div *ngIf&#x3D;&quot;cargando&quot; class&#x3D;&quot;loading-container&quot;&gt;
+    &lt;ion-spinner name&#x3D;&quot;crescent&quot;&gt;&lt;/ion-spinner&gt;
+    &lt;p&gt;Buscando información del clima...&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;error&quot;&gt;
+    &lt;ion-text&gt;{{ error }}&lt;/ion-text&gt;
+  &lt;/div&gt;
+
+  &lt;ion-card *ngIf&#x3D;&quot;clima&quot;&gt;
+    &lt;ion-card-content&gt;
+      &lt;div class&#x3D;&quot;pais-container&quot;&gt;
+        {{ clima.sys.country }}
+      &lt;/div&gt;
+      
+      &lt;h2 class&#x3D;&quot;ciudad-titulo&quot;&gt;El clima actual en {{ clima.name }}&lt;/h2&gt;
+      
+      &lt;div class&#x3D;&quot;temperatura-principal&quot;&gt;
+        &lt;div class&#x3D;&quot;temp-valor&quot;&gt;{{ clima.main.temp | number:&#x27;1.0-0&#x27; }}°C&lt;/div&gt;
+        &lt;div class&#x3D;&quot;temp-icono&quot;&gt;
+          &lt;img [src]&#x3D;&quot;getIcono(clima.weather[0].icon)&quot; alt&#x3D;&quot;Icono del clima&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class&#x3D;&quot;sensacion-container&quot;&gt;
+        &lt;div&gt;Sensación térmica: {{ clima.main.feels_like | number:&#x27;1.0-0&#x27; }}°C&lt;/div&gt;
+        &lt;div class&#x3D;&quot;condicion-clima&quot;&gt;{{ clima.weather[0].description }}&lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class&#x3D;&quot;separador&quot;&gt;&lt;/div&gt;
+      
+      &lt;div class&#x3D;&quot;info-grid&quot;&gt;
+        &lt;div class&#x3D;&quot;info-item&quot;&gt;
+          &lt;div class&#x3D;&quot;info-icon&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;water-outline&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;info-content&quot;&gt;
+            &lt;div class&#x3D;&quot;info-label&quot;&gt;Humedad&lt;/div&gt;
+            &lt;div class&#x3D;&quot;info-value&quot;&gt;{{ clima.main.humidity }}%&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;info-item&quot;&gt;
+          &lt;div class&#x3D;&quot;info-icon&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;speedometer-outline&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;info-content&quot;&gt;
+            &lt;div class&#x3D;&quot;info-label&quot;&gt;Presión&lt;/div&gt;
+            &lt;div class&#x3D;&quot;info-value&quot;&gt;{{ clima.main.pressure }} hPa&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;info-item&quot;&gt;
+          &lt;div class&#x3D;&quot;info-icon&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;navigate-outline&quot; &gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;info-content&quot;&gt;
+            &lt;div class&#x3D;&quot;info-label&quot;&gt;Viento&lt;/div&gt;
+            &lt;div class&#x3D;&quot;info-value&quot;&gt;{{ clima.wind.speed }} m/s&lt;/div&gt;
+            &lt;div class&#x3D;&quot;info-subvalue&quot;&gt;{{ getDescripcionViento(clima.wind.deg) }} ({{ clima.wind.deg }}°)&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;info-item&quot;&gt;
+          &lt;div class&#x3D;&quot;info-icon&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;cloud-outline&quot; &gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;info-content&quot;&gt;
+            &lt;div class&#x3D;&quot;info-label&quot;&gt;Nubosidad&lt;/div&gt;
+            &lt;div class&#x3D;&quot;info-value&quot;&gt;{{ clima.clouds.all }}%&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;info-item&quot; *ngIf&#x3D;&quot;clima.wind.gust&quot;&gt;
+          &lt;div class&#x3D;&quot;info-icon&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;thunderstorm-outline&quot; &gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;info-content&quot;&gt;
+            &lt;div class&#x3D;&quot;info-label&quot;&gt;Ráfagas de viento&lt;/div&gt;
+            &lt;div class&#x3D;&quot;info-value&quot;&gt;{{ clima.wind.gust }} m/s&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ion-card-content&gt;
+  &lt;/ion-card&gt;
+&lt;/ion-content&gt;
+  &lt;div class&#x3D;&quot;bottom-spacer&quot;&gt;&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./menu.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(&#x27;/assets/img/fondos/menu-fondo.jpg&#x27;);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; 
+}
+
+ion-content {
+  --background: transparent;
+  padding: 0.5rem;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  --padding-bottom: 60px; 
+}
+
+
+ion-content::part(scroll) {
+  padding-bottom: 60px; 
+}
+
+.header-container {
+  background-color: #0066ff;
+  margin: -16px -16px 16px -16px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+  
+  h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.form-container {
+  margin-bottom: 16px;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+ion-label,
+ion-input {
+  color: #000;
+}
+
+ion-button {
+  margin-top: 0.5rem;
+  --background: #0066ff;
+  --border-radius: 8px;
+  font-weight: bold;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  
+  ion-spinner {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+    --color: white;
+  }
+  
+  p {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.error-message {
+  margin: 10px 0;
+  color: #ff4d4f;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+ion-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  padding: 0;
+  color: #000;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+ion-card-content {
+  padding: 0;
+}
+
+.pais-container {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.ciudad-titulo {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  padding: 0 16px;
+}
+
+.temperatura-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.temp-valor {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.temp-icono {
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.sensacion-container {
+  text-align: center;
+  padding: 0 16px 16px;
+  
+  .condicion-clima {
+    text-transform: capitalize;
+    margin-top: 5px;
+    font-weight: 500;
+  }
+}
+
+.separador {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 16px;
+}
+
+.info-grid {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-icon {
+  margin-right: 12px;
+  
+  ion-icon {
+    font-size: 24px;
+    color: #0066ff;
+  }
+}
+
+.info-content {
+  .info-label {
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .info-subvalue {
+    font-size: 0.8rem;
+    color: #555;
+  }
+}
+
+.bottom-spacer {
+  height: 50px; 
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-item {
+    --background: rgba(255, 255, 255, 0.85); 
+  }
+
+  ion-label,
+  ion-input {
+    color: #000 !important; 
+  }
+
+  ion-button {
+    --background: #0066ff; 
+    --color: #fff; 
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content class="ion-padding">  <div class="header-container">    <h1>Consulta del Tiempo</h1>  </div>  <div class="form-container">    <ion-item>      <ion-label position="floating">Ciudad</ion-label>      <ion-input [(ngModel)]="ciudad"></ion-input>    </ion-item>        <ion-button expand="block" (click)="buscarClima()" [disabled]="cargando">      <ion-icon name="search-outline" slot="start"></ion-icon>      BUSCAR TIEMPO    </ion-button>  </div>  <div *ngIf="cargando" class="loading-container">    <ion-spinner name="crescent"></ion-spinner>    <p>Buscando información del clima...</p>  </div>  <div class="error-message" *ngIf="error">    <ion-text>{{ error }}</ion-text>  </div>  <ion-card *ngIf="clima">    <ion-card-content>      <div class="pais-container">        {{ clima.sys.country }}      </div>            <h2 class="ciudad-titulo">El clima actual en {{ clima.name }}</h2>            <div class="temperatura-principal">        <div class="temp-valor">{{ clima.main.temp | number:\'1.0-0\' }}°C</div>        <div class="temp-icono">          <img [src]="getIcono(clima.weather[0].icon)" alt="Icono del clima">        </div>      </div>            <div class="sensacion-container">        <div>Sensación térmica: {{ clima.main.feels_like | number:\'1.0-0\' }}°C</div>        <div class="condicion-clima">{{ clima.weather[0].description }}</div>      </div>            <div class="separador"></div>            <div class="info-grid">        <div class="info-item">          <div class="info-icon">            <ion-icon name="water-outline"></ion-icon>          </div>          <div class="info-content">            <div class="info-label">Humedad</div>            <div class="info-value">{{ clima.main.humidity }}%</div>          </div>        </div>                <div class="info-item">          <div class="info-icon">            <ion-icon name="speedometer-outline"></ion-icon>          </div>          <div class="info-content">            <div class="info-label">Presión</div>            <div class="info-value">{{ clima.main.pressure }} hPa</div>          </div>        </div>                <div class="info-item">          <div class="info-icon">            <ion-icon name="navigate-outline" ></ion-icon>          </div>          <div class="info-content">            <div class="info-label">Viento</div>            <div class="info-value">{{ clima.wind.speed }} m/s</div>            <div class="info-subvalue">{{ getDescripcionViento(clima.wind.deg) }} ({{ clima.wind.deg }}°)</div>          </div>        </div>                <div class="info-item">          <div class="info-icon">            <ion-icon name="cloud-outline" ></ion-icon>          </div>          <div class="info-content">            <div class="info-label">Nubosidad</div>            <div class="info-value">{{ clima.clouds.all }}%</div>          </div>        </div>                <div class="info-item" *ngIf="clima.wind.gust">          <div class="info-icon">            <ion-icon name="thunderstorm-outline" ></ion-icon>          </div>          <div class="info-content">            <div class="info-label">Ráfagas de viento</div>            <div class="info-value">{{ clima.wind.gust }} m/s</div>          </div>        </div>      </div>    </ion-card-content>  </ion-card></ion-content>  <div class="bottom-spacer"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'GestionPage', 'selector': 'app-gestion'},{'name': 'HistorialPage', 'selector': 'app-historial'},{'name': 'InicioPage', 'selector': 'app-inicio'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MapaPage', 'selector': 'app-mapa'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MisPuntosPage', 'selector': 'app-mis-puntos'},{'name': 'PerfilPage', 'selector': 'app-perfil'},{'name': 'RegistroPage', 'selector': 'app-registro'},{'name': 'TablaMedidasPage', 'selector': 'app-tabla-medidas'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MenuPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MenuPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<ion-content class="login-background">
+  <div class="overlay">
+    <div class="login-card">
+      <h2>Inicio de sesión</h2>
+
+      <form [formGroup]="userForm" (ngSubmit)="login()">
+        <ion-item lines="full">
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" formControlName="correo" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Contraseña</ion-label>
+          <div class="contenedor-password">
+            <ion-input class="input-password" [type]="verConfirmar ? 'text' : 'password'" formControlName="password" required></ion-input>
+            <ion-icon class="icono-password" [name]="verConfirmar ? 'eye-off' : 'eye'" slot="icon-only" (click)="toggleConfirmarVisibility()"></ion-icon>
+          </div>
+        </ion-item>
+
+        <ion-button  expand="block" type="submit" class="ion-margin-top">Iniciar sesión</ion-button>
+      </form>
+
+      <div class="extra-links">
+        <a (click)="mostrarEnlaceRecuperar()" class="linkPassword">Olvidé mi contraseña</a>
+        <div *ngIf="mostrarInputRecuperar" class="recuperar">
+          <ion-input [(ngModel)]="correo" type="email" placeholder="Introduce tu correo" fill="outline"></ion-input>
+          <ion-button expand="block" (click)="recuperarPassword()">Enviar recuperación</ion-button>
+        </div>
+        <p *ngIf="!mostrarInputRecuperar">¿No tienes cuenta? <a (click)="navRegistro()" class="link">Regístrate</a></p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,165 @@
+// Variables para personalización (reducidas)
+$tab-background: rgba(0, 0, 0, 0.8); 
+$tab-text-color: rgba(255, 255, 255, 0.7); 
+$tab-selected-color: #3880ff; 
+$tab-selected-text-color: #ffffff; 
+$tab-hover-color: rgba(255, 255, 255, 0.2); 
+$tab-transition: all 0.3s ease; 
+$tab-icon-size: 16px; // Reducido aún más para caber en una fila
+$tab-label-size: 0.65rem; // Reducido aún más para caber en una fila
+
+ion-tab-bar {
+  --background: #{$tab-background};
+  height: 3.5rem; // Reducido significativamente para una sola fila
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+  border: none;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.2);
+  transition: $tab-transition;
+}
+
+ion-tab-button {
+  --color: #{$tab-text-color};
+  --color-selected: #{$tab-selected-color};
+  --ripple-color: #{$tab-selected-color};
+  position: relative;
+  overflow: hidden;
+  transition: $tab-transition;
+  padding: 2px 0; // Reducido padding
+  flex: 1; // Asegura que todos los botones tengan el mismo ancho
+  min-width: 0; // Permite que los botones se reduzcan si es necesario
+  
+  &:hover {
+    --color: #{$tab-selected-text-color};
+    background-color: $tab-hover-color;
+  }
+
+  &.tab-selected {
+    --color: #{$tab-selected-color};
+
+    ion-icon {
+      transform: translateY(-1px) scale(1.05);
+    }
+
+    ion-label {
+      color: #{$tab-selected-color};
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 2px;
+      background-color: #{$tab-selected-color}; 
+      border-radius: 2px 2px 0 0;
+    }
+  }
+}
+
+ion-tab-button ion-icon {
+  font-size: $tab-icon-size;
+  margin-bottom: 2px;
+  transition: $tab-transition;
+}
+
+ion-tab-button ion-label {
+  font-size: $tab-label-size;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: $tab-transition;
+  opacity: 0.9;
+  padding: 0 2px; // Añadido padding horizontal mínimo
+}
+
+ion-tab-button[tab="menu"] {
+  &.tab-selected::after {
+    background-color: #3880ff;
+  }
+}
+
+ion-tab-button[tab="mapa"] {
+  &.tab-selected::after {
+    background-color: #2dd36f !important; 
+  }
+}
+
+ion-tab-button[tab="mis-puntos"] {
+  &.tab-selected::after {
+    background-color: #ffc409; 
+  }
+}
+
+ion-tab-button[tab="tabla-medidas"] {
+  &.tab-selected::after {
+    background-color: #eb445a; 
+  }
+}
+
+ion-tab-button[tab="perfil"] {
+  &.tab-selected::after {
+    background-color: #92949c; 
+  }
+}
+
+ion-tab-button[tab="gestion"] {
+  &.tab-selected::after {
+    background-color: #6a64ff; 
+  }
+}
+
+ion-tab-button::part(native) {
+  justify-content: center;
+  align-items: center;
+}
+
+ion-tab-button .button-native {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 360px) {
+  ion-tab-button ion-label {
+    font-size: 0.6rem;
+  }
+  ion-tab-button ion-icon {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  ion-tab-button ion-label {
+    font-size: 0.55rem;
+  }
+  ion-tab-button ion-icon {
+    font-size: 0.85rem;
+  }
+}
+
+ion-tab-button:active {
+  transform: scale(0.95);
+}
+
+// Ajuste para 6 tabs (cuando esAdmin es true)
+ion-tab-bar:has(ion-tab-button[tab="gestion"]) {
+  ion-tab-button {
+    padding: 2px 0;
+  }
+  
+  ion-tab-button ion-icon {
+    font-size: calc(#{$tab-icon-size} - 1px);
+  }
+  
+  ion-tab-button ion-label {
+    font-size: calc(#{$tab-label-size} - 0.05rem);
+  }
+}

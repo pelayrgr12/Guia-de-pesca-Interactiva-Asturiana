@@ -1,0 +1,1663 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GuiaDePescaAsturianaInteractiva documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">GuiaDePescaAsturianaInteractiva documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  RegistroPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Pages/registro/registro.page.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Página de registro de usuarios.
+Permite al usuario crear una cuenta introduciendo sus datos personales y una contraseña válida.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-registro</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>IonIcon</code>
+                            <code>IonInput</code>
+                            <code>IonContent</code>
+                            <code>IonHeader</code>
+                            <code>IonTitle</code>
+                            <code>IonToolbar</code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>IonItem</code>
+                            <code>IonLabel</code>
+                            <code>IonButton</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>IonCardHeader</code>
+                            <code>IonCardTitle</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./registro.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./registro.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#httpClient" >httpClient</a>
+                            </li>
+                            <li>
+                                <a href="#registroForm" >registroForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#registroService" >registroService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#toastController" >toastController</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usuariosService" >usuariosService</a>
+                            </li>
+                            <li>
+                                <a href="#validar" >validar</a>
+                            </li>
+                            <li>
+                                <a href="#verConfirmarContrasena" >verConfirmarContrasena</a>
+                            </li>
+                            <li>
+                                <a href="#verContrasena" >verContrasena</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#mostrarMensaje" >mostrarMensaje</a>
+                            </li>
+                            <li>
+                                <a href="#navLogin" >navLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#obtenidoLogin" >obtenidoLogin</a>
+                            </li>
+                            <li>
+                                <a href="#registrar" >registrar</a>
+                            </li>
+                            <li>
+                                <a href="#toggleConfirmarContrasenaVisibility" >toggleConfirmarContrasenaVisibility</a>
+                            </li>
+                            <li>
+                                <a href="#toggleContrasenaVisibility" >toggleContrasenaVisibility</a>
+                            </li>
+                            <li>
+                                <a href="#validarFechaValida" >validarFechaValida</a>
+                            </li>
+                            <li>
+                                <a href="#validarPassword" >validarPassword</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/Pages/registro/registro.page.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor: inicializa el formulario con validaciones y registra los iconos de visibilidad.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarMensaje"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>mostrarMensaje</b></span>
+                        <a href="#mostrarMensaje"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mostrarMensaje(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, color: "success" | "danger")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un toast con un mensaje y color determinado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                        <code>&quot;success&quot; | &quot;danger&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navLogin"></a>
+                    <span class="name">
+                        <span ><b>navLogin</b></span>
+                        <a href="#navLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navLogin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Redirige a la página de login.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Hook de inicialización del componente.
+Si el usuario ya ha iniciado sesión, redirige al menú.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenidoLogin"></a>
+                    <span class="name">
+                        <span ><b>obtenidoLogin</b></span>
+                        <a href="#obtenidoLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>obtenidoLogin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Comprueba si hay un token de sesión activo.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registrar"></a>
+                    <span class="name">
+                        <span ><b>registrar</b></span>
+                        <a href="#registrar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>registrar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="124"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:124</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía el formulario de registro si es válido.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleConfirmarContrasenaVisibility"></a>
+                    <span class="name">
+                        <span ><b>toggleConfirmarContrasenaVisibility</b></span>
+                        <a href="#toggleConfirmarContrasenaVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleConfirmarContrasenaVisibility()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="184"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:184</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna la visibilidad de la confirmación de contraseña.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleContrasenaVisibility"></a>
+                    <span class="name">
+                        <span ><b>toggleContrasenaVisibility</b></span>
+                        <a href="#toggleContrasenaVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleContrasenaVisibility()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="174"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:174</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna la visibilidad de la contraseña.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validarFechaValida"></a>
+                    <span class="name">
+                        <span ><b>validarFechaValida</b></span>
+                        <a href="#validarFechaValida"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validarFechaValida(control: AbstractControl)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Validador personalizado para comprobar si una fecha es válida y está en el rango permitido.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>control</td>
+                                            <td>
+                                                        <code>AbstractControl</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>ValidationErrors | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validarPassword"></a>
+                    <span class="name">
+                        <span ><b>validarPassword</b></span>
+                        <a href="#validarPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validarPassword()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="158"
+                                    class="link-to-prism">src/app/Pages/registro/registro.page.ts:158</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Comprueba si la contraseña coincide con la confirmación.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="httpClient"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>httpClient</b></span>
+                        <a href="#httpClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HttpClient</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(HttpClient)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Pages/registro/registro.page.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cliente HTTP para peticiones</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registroForm"></a>
+                    <span class="name">
+                        <span ><b>registroForm</b></span>
+                        <a href="#registroForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/Pages/registro/registro.page.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo de registro</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registroService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>registroService</b></span>
+                        <a href="#registroService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/RegistroService.html" target="_self" >RegistroService</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(RegistroService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Pages/registro/registro.page.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio encargado del registro de usuarios</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/Pages/registro/registro.page.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Enrutador para navegar entre páginas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastController"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>toastController</b></span>
+                        <a href="#toastController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastController)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/Pages/registro/registro.page.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controlador de toasts (mensajes flotantes)</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuariosService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>usuariosService</b></span>
+                        <a href="#usuariosService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/UsuariosService.html" target="_self" >UsuariosService</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UsuariosService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/Pages/registro/registro.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio para operaciones relacionadas con usuarios</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validar"></a>
+                    <span class="name">
+                        <span ><b>validar</b></span>
+                        <a href="#validar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="153" class="link-to-prism">src/app/Pages/registro/registro.page.ts:153</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bandera de validación de contraseñas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verConfirmarContrasena"></a>
+                    <span class="name">
+                        <span ><b>verConfirmarContrasena</b></span>
+                        <a href="#verConfirmarContrasena"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/app/Pages/registro/registro.page.ts:179</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla la visibilidad del campo de confirmación de contraseña</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verContrasena"></a>
+                    <span class="name">
+                        <span ><b>verContrasena</b></span>
+                        <a href="#verContrasena"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">src/app/Pages/registro/registro.page.ts:169</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Controla la visibilidad del campo contraseña</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from &#x27;@angular/forms&#x27;;
+import { IonButton, IonContent, IonHeader, IonItem, IonLabel, IonTitle, IonToolbar, IonInput, IonIcon, ToastController, IonCardHeader, IonCardTitle } from &#x27;@ionic/angular/standalone&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { RegistroService } from &#x27;src/app/shared/services/registro.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { jwtDecode } from &#x27;jwt-decode&#x27;;
+import { addIcons } from &#x27;ionicons&#x27;;
+import { eye, eyeOff } from &#x27;ionicons/icons&#x27;;
+import { Usuario } from &#x27;src/app/shared/interfaces/Usuario&#x27;;
+import { UsuariosService } from &#x27;src/app/shared/services/usuarios.service&#x27;;
+
+/**
+ * Página de registro de usuarios.
+ * Permite al usuario crear una cuenta introduciendo sus datos personales y una contraseña válida.
+ */
+@Component({
+  selector: &#x27;app-registro&#x27;,
+  templateUrl: &#x27;./registro.page.html&#x27;,
+  styleUrls: [&#x27;./registro.page.scss&#x27;],
+  standalone: true,
+  imports: [IonIcon, IonInput, IonContent, IonHeader, IonTitle,
+    IonToolbar, CommonModule, FormsModule,
+    IonItem, IonLabel, IonButton, ReactiveFormsModule, IonCardHeader, IonCardTitle]
+})
+export class RegistroPage implements OnInit {
+
+  /** Cliente HTTP para peticiones */
+  private httpClient: HttpClient &#x3D; inject(HttpClient);
+  /** Servicio encargado del registro de usuarios */
+  private registroService: RegistroService &#x3D; inject(RegistroService);
+  /** Servicio para operaciones relacionadas con usuarios */
+  private usuariosService: UsuariosService &#x3D; inject(UsuariosService);
+  /** Enrutador para navegar entre páginas */
+  private router: Router &#x3D; inject(Router);
+  /** Controlador de toasts (mensajes flotantes) */
+  private toastController &#x3D; inject(ToastController);
+  /** Formulario reactivo de registro */
+  registroForm: FormGroup;
+
+  /**
+   * Constructor: inicializa el formulario con validaciones y registra los iconos de visibilidad.
+   */
+  constructor(private fb: FormBuilder) {
+    this.registroForm &#x3D; this.fb.group({
+      nombre: [null, [Validators.required]],
+      contrasena: [null, [Validators.required, Validators.minLength(8),
+        Validators.pattern(/^(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[ !&quot;·$%&amp;/()&#x3D;?¿^*+´{}[\]\\\-_:;,.&lt;&gt;@|#~]).{8,}$/)
+      ]],
+      correo: [null, [Validators.required, Validators.email]],
+      confirmarContrasena: [null, [Validators.required]],
+      fechaNacimiento: [null, [Validators.required, this.validarFechaValida]]
+    });
+    addIcons({
+      &#x27;eye&#x27;: eye,
+      &#x27;eye-off&#x27;: eyeOff
+    });
+  }
+
+  /**
+   * Validador personalizado para comprobar si una fecha es válida y está en el rango permitido.
+   */
+  validarFechaValida(control: AbstractControl): ValidationErrors | null {
+    const fecha &#x3D; new Date(control.value);
+    const hoy &#x3D; new Date();
+    const anioMinimo &#x3D; 1900;
+
+    if (isNaN(fecha.getTime())) {
+      return { fechaInvalida: true }; 
+    }
+
+    if (fecha.getFullYear() &lt; anioMinimo || fecha &gt; hoy) {
+      return { fueraDeRango: true }; 
+    }
+
+    return null; 
+  }
+
+  /**
+   * Muestra un toast con un mensaje y color determinado.
+   */
+  async mostrarMensaje(mensaje: string, color: &#x27;success&#x27; | &#x27;danger&#x27;) {
+    const toast &#x3D; await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      position: &#x27;top&#x27;,
+      color: color
+    });
+    toast.present();
+  }
+
+  /**
+   * Hook de inicialización del componente.
+   * Si el usuario ya ha iniciado sesión, redirige al menú.
+   */
+  async ngOnInit() {
+    if(this.obtenidoLogin()){
+      this.router.navigate([&#x27;/menu&#x27;]);
+    }
+  }
+
+  /**
+   * Comprueba si hay un token de sesión activo.
+   */
+  obtenidoLogin(): boolean {
+    const token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    if (token)
+      return true;
+    else
+      return false;
+  }
+
+  /**
+   * Redirige a la página de login.
+   */
+  navLogin() {
+    this.router.navigate([&#x27;/login&#x27;]);
+  }
+
+  /**
+   * Envía el formulario de registro si es válido.
+   */
+  registrar() {
+    if (this.registroForm.invalid) {
+      this.mostrarMensaje(&#x27;Formulario incompleto o inválido&#x27;, &#x27;danger&#x27;);
+      return;
+    }
+
+    if (this.validarPassword()) {
+      this.mostrarMensaje(&#x27;Las contraseñas no coinciden&#x27;, &#x27;danger&#x27;);
+      return;
+    }
+
+    if (this.validarPassword()) {
+      return;
+    }
+
+    this.validarPassword();
+    const usuarioRegistro &#x3D; this.registroForm.value;
+
+    this.registroService.registro(usuarioRegistro).subscribe({
+      next:(data)&#x3D;&gt;{
+        this.router.navigate([&#x27;/login&#x27;]);
+        this.mostrarMensaje(&#x27;Registro exitoso&#x27;, &#x27;success&#x27;);
+      }, error:(error)&#x3D;&gt;{
+        this.mostrarMensaje(&#x27;Error en el registro&#x27;, &#x27;danger&#x27;);
+      }
+    })
+  }
+
+  /** Bandera de validación de contraseñas */
+  validar: boolean &#x3D; false;
+
+  /**
+   * Comprueba si la contraseña coincide con la confirmación.
+   */
+  validarPassword() {
+    let password &#x3D; this.registroForm.get(&#x27;contrasena&#x27;)?.value;
+    let confirmarPassword &#x3D; this.registroForm.get(&#x27;confirmarContrasena&#x27;)?.value;
+    if (password !&#x3D;&#x3D; confirmarPassword) {
+       return this.validar &#x3D; true; 
+    } else {
+      return this.validar &#x3D; false; 
+    }
+  }
+
+  /** Controla la visibilidad del campo contraseña */
+  verContrasena &#x3D; false;
+
+  /**
+   * Alterna la visibilidad de la contraseña.
+   */
+  toggleContrasenaVisibility() {
+    this.verContrasena &#x3D; !this.verContrasena;
+  }
+
+  /** Controla la visibilidad del campo de confirmación de contraseña */
+  verConfirmarContrasena &#x3D; false;
+
+  /**
+   * Alterna la visibilidad de la confirmación de contraseña.
+   */
+  toggleConfirmarContrasenaVisibility() {
+    this.verConfirmarContrasena &#x3D; !this.verConfirmarContrasena;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content&gt;
+  
+  &lt;div class&#x3D;&quot;registro-container&quot;&gt;
+    &lt;ion-card-header class&#x3D;&quot;card-header&quot;&gt;
+      &lt;ion-card-title class&#x3D;&quot;card-title&quot;&gt; 🎣 Registro&lt;/ion-card-title&gt;
+    &lt;/ion-card-header&gt;
+    &lt;form [formGroup]&#x3D;&quot;registroForm&quot; (ngSubmit)&#x3D;&quot;registrar()&quot;&gt;
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Nombre&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;nombre&quot; required&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+      &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;nombre&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;nombre&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;nombre&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Correo electrónico&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;correo&quot; required&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+      &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;correo&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;correo&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;correo&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;correo&#x27;)?.errors?.[&#x27;email&#x27;]&quot;&gt;Tiene que ser un email&lt;/div&gt;
+      &lt;/div&gt;
+
+        &lt;ion-item lines&#x3D;&quot;full&quot;&gt;
+          &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Contraseña&lt;/ion-label&gt;
+          &lt;div class&#x3D;&quot;contenedor-password&quot;&gt;
+            &lt;ion-input class&#x3D;&quot;input-password&quot; [type]&#x3D;&quot;verContrasena ? &#x27;text&#x27; : &#x27;password&#x27;&quot; formControlName&#x3D;&quot;contrasena&quot; required&gt;&lt;/ion-input&gt;
+            &lt;ion-icon class&#x3D;&quot;icono-password&quot; [name]&#x3D;&quot;verContrasena ? &#x27;eye-off&#x27; : &#x27;eye&#x27;&quot; slot&#x3D;&quot;icon-only&quot; (click)&#x3D;&quot;toggleContrasenaVisibility()&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+        &lt;/ion-item&gt;
+
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;contrasena&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;contrasena&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;contrasena&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;contrasena&#x27;)?.errors?.[&#x27;minlength&#x27;]&quot;&gt;Debe tener al menos 8 caracteres&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;contrasena&#x27;)?.errors?.[&#x27;pattern&#x27;]&quot;&gt;Debe incluir mayúsculas, minúsculas y un carácter especial&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;ion-item&gt;
+          &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Confirmar contraseña&lt;/ion-label&gt;
+          &lt;div class&#x3D;&quot;contenedor-password&quot;&gt;
+          &lt;ion-input [type]&#x3D;&quot;verConfirmarContrasena ? &#x27;text&#x27; : &#x27;password&#x27;&quot;formControlName&#x3D;&quot;confirmarContrasena&quot; required&gt;&lt;/ion-input&gt;
+          &lt;ion-icon class&#x3D;&quot;icono-password&quot; [name]&#x3D;&quot;verConfirmarContrasena ? &#x27;eye-off&#x27; : &#x27;eye&#x27;&quot; slot&#x3D;&quot;icon-only&quot; (click)&#x3D;&quot;toggleConfirmarContrasenaVisibility()&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/div&gt;
+        &lt;/ion-item&gt;
+
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;confirmarContrasena&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;confirmarContrasena&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;confirmarContrasena&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;confirmarContrasena&#x27;)?.errors?.[&#x27;minlength&#x27;]&quot;&gt;Mínimo 6 caracteres&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;validar&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;Las contraseñas no coinciden&lt;/div&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Fecha de nacimiento&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;fechaNacimiento&quot; required&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.invalid &amp;&amp; registroForm.get(&#x27;fechaNacimiento&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.errors?.[&#x27;fechaInvalida&#x27;]&quot;&gt;Fecha no válida&lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;registroForm.get(&#x27;fechaNacimiento&#x27;)?.errors?.[&#x27;fueraDeRango&#x27;]&quot;&gt;La fecha debe estar en un rango valido&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;button-container&quot;&gt;
+        &lt;ion-button expand&#x3D;&quot;block&quot; type&#x3D;&quot;submit&quot;&gt;Registrarse&lt;/ion-button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;div class&#x3D;&quot;register-container&quot;&gt;
+      &lt;p&gt;¿Ya tienes cuenta ? &lt;a (click)&#x3D;&quot;navLogin()&quot; class&#x3D;&quot;link&quot;&gt;Inicia sesión&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./registro.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;src/theme/variables.scss&#x27;;
+
+:host {
+  display: block;
+  height: 100%;
+  background-image: url(&#x27;/assets/img/fondos/login-fondo.jpg&#x27;);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ion-content {
+  --background: transparent;
+  overflow-y: hidden !important;
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  position: relative;
+  display: inline-block;
+  padding-left: 30px; /* Espacio para el icono */
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-texto-principal);
+}
+
+.card-header {
+  text-align: center;
+}
+
+.registro-container {
+  background: var(--color-login-card-bg);
+  margin: 1.5rem 1rem 1rem;
+  padding: 1.25rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.link {
+  color: var(--color-primario);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--color-primario-hover);
+}
+
+.alert {
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.alert-danger {
+  background-color: var(--color-alerta-bg);
+  border: 1px solid var(--color-alerta-borde);
+  color: var(--color-alerta-texto);
+}
+
+input.ng-invalid.ng-touched,
+ion-input.ng-invalid.ng-touched {
+  border-bottom: 2px solid var(--color-alerta-borde) !important;
+  --highlight-color-focused: var(--color-alerta-borde);
+}
+
+ion-item.ng-invalid.ng-touched {
+  --highlight-color-focused: var(--color-alerta-borde);
+}
+
+ion-icon {
+  color: white;
+}
+
+.contenedor-password {
+  position: relative;
+  width: 100%;
+}
+
+.input-password {
+  box-sizing: border-box;
+  color: var(--color-input-password);
+  padding: 15px 40px 15px 15px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.icono-password {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--color-icono-password);
+  font-size: 20px;
+  z-index: 10;
+  pointer-events: all;
+}
+
+ion-content {
+  --background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  max-height: 100vh;
+  overscroll-behavior: contain;
+}
+
+body, html {
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.button-container {
+  position: relative;
+  overflow: hidden;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+ion-button {
+  --background: var(--color-boton-fondo);
+  --background-hover: var(--color-boton-hover);
+  --background-activated: var(--color-boton-hover);
+  --background-focused: var(--color-boton-hover);
+  --box-shadow: 0 4px 14px var(--color-boton-shadow);
+  transition: all 0.3s ease;
+}
+
+ion-button:hover {
+  --box-shadow: 0 6px 20px var(--color-boton-shadow-hover);
+  transform: translateY(-3px);
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content>    <div class="registro-container">    <ion-card-header class="card-header">      <ion-card-title class="card-title"> 🎣 Registro</ion-card-title>    </ion-card-header>    <form [formGroup]="registroForm" (ngSubmit)="registrar()">      <ion-item>        <ion-label position="floating">Nombre</ion-label>        <ion-input type="text" formControlName="nombre" required></ion-input>      </ion-item>      <div *ngIf="registroForm.get(\'nombre\')?.invalid && registroForm.get(\'nombre\')?.dirty" class="mt-2 alert alert-danger">        <div *ngIf="registroForm.get(\'nombre\')?.errors?.[\'required\']">Campo obligatorio</div>      </div>      <ion-item>        <ion-label position="floating">Correo electrónico</ion-label>        <ion-input type="email" formControlName="correo" required></ion-input>      </ion-item>      <div *ngIf="registroForm.get(\'correo\')?.invalid && registroForm.get(\'correo\')?.dirty" class="mt-2 alert alert-danger">        <div *ngIf="registroForm.get(\'correo\')?.errors?.[\'required\']">Campo obligatorio</div>        <div *ngIf="registroForm.get(\'correo\')?.errors?.[\'email\']">Tiene que ser un email</div>      </div>        <ion-item lines="full">          <ion-label position="floating">Contraseña</ion-label>          <div class="contenedor-password">            <ion-input class="input-password" [type]="verContrasena ? \'text\' : \'password\'" formControlName="contrasena" required></ion-input>            <ion-icon class="icono-password" [name]="verContrasena ? \'eye-off\' : \'eye\'" slot="icon-only" (click)="toggleContrasenaVisibility()"></ion-icon>          </div>        </ion-item>        <div *ngIf="registroForm.get(\'contrasena\')?.invalid && registroForm.get(\'contrasena\')?.dirty" class="mt-2 alert alert-danger">          <div *ngIf="registroForm.get(\'contrasena\')?.errors?.[\'required\']">Campo obligatorio</div>          <div *ngIf="registroForm.get(\'contrasena\')?.errors?.[\'minlength\']">Debe tener al menos 8 caracteres</div>          <div *ngIf="registroForm.get(\'contrasena\')?.errors?.[\'pattern\']">Debe incluir mayúsculas, minúsculas y un carácter especial</div>        </div>        <ion-item>          <ion-label position="floating">Confirmar contraseña</ion-label>          <div class="contenedor-password">          <ion-input [type]="verConfirmarContrasena ? \'text\' : \'password\'"formControlName="confirmarContrasena" required></ion-input>          <ion-icon class="icono-password" [name]="verConfirmarContrasena ? \'eye-off\' : \'eye\'" slot="icon-only" (click)="toggleConfirmarContrasenaVisibility()"></ion-icon>          </div>        </ion-item>        <div *ngIf="registroForm.get(\'confirmarContrasena\')?.invalid && registroForm.get(\'confirmarContrasena\')?.dirty" class="mt-2 alert alert-danger">          <div *ngIf="registroForm.get(\'confirmarContrasena\')?.errors?.[\'required\']">Campo obligatorio</div>          <div *ngIf="registroForm.get(\'confirmarContrasena\')?.errors?.[\'minlength\']">Mínimo 6 caracteres</div>        </div>        <div *ngIf="validar" class="mt-2 alert alert-danger">Las contraseñas no coinciden</div>      <ion-item>        <ion-label position="stacked">Fecha de nacimiento</ion-label>        <ion-input type="date" formControlName="fechaNacimiento" required></ion-input>      </ion-item>      <div *ngIf="registroForm.get(\'fechaNacimiento\')?.invalid && registroForm.get(\'fechaNacimiento\')?.dirty" class="mt-2 alert alert-danger">        <div *ngIf="registroForm.get(\'fechaNacimiento\')?.errors?.[\'required\']">Campo obligatorio</div>        <div *ngIf="registroForm.get(\'fechaNacimiento\')?.errors?.[\'fechaInvalida\']">Fecha no válida</div>        <div *ngIf="registroForm.get(\'fechaNacimiento\')?.errors?.[\'fueraDeRango\']">La fecha debe estar en un rango valido</div>      </div>      <div class="button-container">        <ion-button expand="block" type="submit">Registrarse</ion-button>      </div>    </form>    <div class="register-container">      <p>¿Ya tienes cuenta ? <a (click)="navLogin()" class="link">Inicia sesión</a></p>      </div>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'GestionPage', 'selector': 'app-gestion'},{'name': 'HistorialPage', 'selector': 'app-historial'},{'name': 'InicioPage', 'selector': 'app-inicio'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MapaPage', 'selector': 'app-mapa'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MisPuntosPage', 'selector': 'app-mis-puntos'},{'name': 'PerfilPage', 'selector': 'app-perfil'},{'name': 'RegistroPage', 'selector': 'app-registro'},{'name': 'TablaMedidasPage', 'selector': 'app-tabla-medidas'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RegistroPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegistroPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

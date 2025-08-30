@@ -1,0 +1,2892 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GuiaDePescaAsturianaInteractiva documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">GuiaDePescaAsturianaInteractiva documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TablaMedidasPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Pages/tabla-medidas/tabla-medidas.page.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Página encargada de mostrar, filtrar y gestionar las medidas mínimas de captura por tipo de animal.
+Permite ver y editar especies según su tipo (pez, molusco, etc.), incluyendo su nombre común, científico,
+talla mínima y una imagen asociada.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tabla-medidas</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>IonText</code>
+                            <code>IonContent</code>
+                            <code>IonHeader</code>
+                            <code>IonTitle</code>
+                            <code>IonToolbar</code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>IonButtons</code>
+                            <code>IonButton</code>
+                            <code>IonFooter</code>
+                            <code>IonCard</code>
+                            <code>IonCardContent</code>
+                            <code>IonCardTitle</code>
+                            <code>IonCardHeader</code>
+                            <code>IonList</code>
+                            <code>IonLabel</code>
+                            <code>IonItem</code>
+                            <code>IonInput</code>
+                            <code>IonCardSubtitle</code>
+                            <code>IonImg</code>
+                            <code>IonSelectOption</code>
+                            <code>IonSelect</code>
+                            <code>IonSearchbar</code>
+                            <code>IonIcon</code>
+                            <code>IonText</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tabla-medidas.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tabla-medidas.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#alertController" >alertController</a>
+                            </li>
+                            <li>
+                                <a href="#busqueda" >busqueda</a>
+                            </li>
+                            <li>
+                                <a href="#esAdmin" >esAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#especies" >especies</a>
+                            </li>
+                            <li>
+                                <a href="#especiesFiltradasList" >especiesFiltradasList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fb" >fb</a>
+                            </li>
+                            <li>
+                                <a href="#formMedida" >formMedida</a>
+                            </li>
+                            <li>
+                                <a href="#imagenPreviewUrl" >imagenPreviewUrl</a>
+                            </li>
+                            <li>
+                                <a href="#imagenSeleccionada" >imagenSeleccionada</a>
+                            </li>
+                            <li>
+                                <a href="#medidaEdicion" >medidaEdicion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#medidaService" >medidaService</a>
+                            </li>
+                            <li>
+                                <a href="#modoEdicion" >modoEdicion</a>
+                            </li>
+                            <li>
+                                <a href="#nuevaImagen" >nuevaImagen</a>
+                            </li>
+                            <li>
+                                <a href="#nuevaTallaMinima" >nuevaTallaMinima</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoNombre" >nuevoNombre</a>
+                            </li>
+                            <li>
+                                <a href="#nuevoNombreCientifico" >nuevoNombreCientifico</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#tiposAnimales" >tiposAnimales</a>
+                            </li>
+                            <li>
+                                <a href="#tipoSeleccionado" >tipoSeleccionado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#toastController" >toastController</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activarEdicion" >activarEdicion</a>
+                            </li>
+                            <li>
+                                <a href="#cancelarEdicion" >cancelarEdicion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cargarMedidas" >cargarMedidas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cargarTipos" >cargarTipos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#crearNuevaMedida" >crearNuevaMedida</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#eliminarMedida" >eliminarMedida</a>
+                            </li>
+                            <li>
+                                <a href="#filtrasEspecies" >filtrasEspecies</a>
+                            </li>
+                            <li>
+                                <a href="#getImagenUrl" >getImagenUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#guardarCambios" >guardarCambios</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#mostrarMensaje" >mostrarMensaje</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onImagenSeleccionada" >onImagenSeleccionada</a>
+                            </li>
+                            <li>
+                                <a href="#verificarAdmin" >verificarAdmin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:73</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor: registra iconos a utilizar en la interfaz</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activarEdicion"></a>
+                    <span class="name">
+                        <span ><b>activarEdicion</b></span>
+                        <a href="#activarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>activarEdicion(especie: <a href="../interfaces/Medida.html" target="_self">Medida</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="234"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:234</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Activa el modo de edición con los datos de una especie</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>especie</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Medida.html" target="_self" >Medida</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelarEdicion"></a>
+                    <span class="name">
+                        <span ><b>cancelarEdicion</b></span>
+                        <a href="#cancelarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelarEdicion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="250"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:250</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cancela el modo de edición y resetea el formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarMedidas"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>cargarMedidas</b></span>
+                        <a href="#cargarMedidas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cargarMedidas()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga todas las medidas desde el servicio y aplica el filtro inicial</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarTipos"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>cargarTipos</b></span>
+                        <a href="#cargarTipos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cargarTipos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga los tipos de animales disponibles para clasificación</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearNuevaMedida"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>crearNuevaMedida</b></span>
+                        <a href="#crearNuevaMedida"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>crearNuevaMedida()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Crea una nueva medida con la información del formulario y la imagen</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarMedida"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>eliminarMedida</b></span>
+                        <a href="#eliminarMedida"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eliminarMedida(especie: <a href="../interfaces/Medida.html" target="_self">Medida</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="281"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:281</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Solicita confirmación al usuario y elimina una medida si acepta</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>especie</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Medida.html" target="_self" >Medida</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtrasEspecies"></a>
+                    <span class="name">
+                        <span ><b>filtrasEspecies</b></span>
+                        <a href="#filtrasEspecies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filtrasEspecies()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="133"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:133</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Filtra la lista de especies según el tipo seleccionado y el texto buscado</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getImagenUrl"></a>
+                    <span class="name">
+                        <span ><b>getImagenUrl</b></span>
+                        <a href="#getImagenUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getImagenUrl(nombre: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="258"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:258</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Construye la URL completa para acceder a una imagen de medida desde el backend</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>nombre</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarCambios"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>guardarCambios</b></span>
+                        <a href="#guardarCambios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>guardarCambios(especie: <a href="../interfaces/Medida.html" target="_self">Medida</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="204"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:204</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guarda los cambios en una medida existente, incluyendo una nueva imagen si se seleccionó</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>especie</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Medida.html" target="_self" >Medida</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarMensaje"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>mostrarMensaje</b></span>
+                        <a href="#mostrarMensaje"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mostrarMensaje(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, color: "success" | "danger")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="313"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:313</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje tipo toast en pantalla con un color específico</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                        <code>&quot;success&quot; | &quot;danger&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>init de inicialización del componente</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onImagenSeleccionada"></a>
+                    <span class="name">
+                        <span ><b>onImagenSeleccionada</b></span>
+                        <a href="#onImagenSeleccionada"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onImagenSeleccionada(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Procesa la imagen seleccionada por el usuario y genera una vista previa</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verificarAdmin"></a>
+                    <span class="name">
+                        <span ><b>verificarAdmin</b></span>
+                        <a href="#verificarAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verificarAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="264"
+                                    class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:264</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Verifica si el usuario actual es administrador según el JWT</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertController"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>alertController</b></span>
+                        <a href="#alertController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AlertController)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="busqueda"></a>
+                    <span class="name">
+                        <span ><b>busqueda</b></span>
+                        <a href="#busqueda"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:51</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variables de estado y control del formulario y edición</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="esAdmin"></a>
+                    <span class="name">
+                        <span ><b>esAdmin</b></span>
+                        <a href="#esAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:68</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Control de roles</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="especies"></a>
+                    <span class="name">
+                        <span ><b>especies</b></span>
+                        <a href="#especies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Medida.html" target="_self" >Medida[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="especiesFiltradasList"></a>
+                    <span class="name">
+                        <span ><b>especiesFiltradasList</b></span>
+                        <a href="#especiesFiltradasList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Medida.html" target="_self" >Medida[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fb"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fb</b></span>
+                        <a href="#fb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormBuilder</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(FormBuilder)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formMedida"></a>
+                    <span class="name">
+                        <span ><b>formMedida</b></span>
+                        <a href="#formMedida"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para crear o editar medidas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenPreviewUrl"></a>
+                    <span class="name">
+                        <span ><b>imagenPreviewUrl</b></span>
+                        <a href="#imagenPreviewUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenSeleccionada"></a>
+                    <span class="name">
+                        <span ><b>imagenSeleccionada</b></span>
+                        <a href="#imagenSeleccionada"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>File</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="medidaEdicion"></a>
+                    <span class="name">
+                        <span ><b>medidaEdicion</b></span>
+                        <a href="#medidaEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="medidaService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>medidaService</b></span>
+                        <a href="#medidaService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/MedidaService.html" target="_self" >MedidaService</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(MedidaService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modoEdicion"></a>
+                    <span class="name">
+                        <span ><b>modoEdicion</b></span>
+                        <a href="#modoEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevaImagen"></a>
+                    <span class="name">
+                        <span ><b>nuevaImagen</b></span>
+                        <a href="#nuevaImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevaTallaMinima"></a>
+                    <span class="name">
+                        <span ><b>nuevaTallaMinima</b></span>
+                        <a href="#nuevaTallaMinima"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoNombre"></a>
+                    <span class="name">
+                        <span ><b>nuevoNombre</b></span>
+                        <a href="#nuevoNombre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variables para nueva medida o edición</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nuevoNombreCientifico"></a>
+                    <span class="name">
+                        <span ><b>nuevoNombreCientifico</b></span>
+                        <a href="#nuevoNombreCientifico"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Inyección de dependencias necesarias para servicios y navegación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tiposAnimales"></a>
+                    <span class="name">
+                        <span ><b>tiposAnimales</b></span>
+                        <a href="#tiposAnimales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TipoAnimal.html" target="_self" >TipoAnimal[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:71</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos cargados desde el backend</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoSeleccionado"></a>
+                    <span class="name">
+                        <span ><b>tipoSeleccionado</b></span>
+                        <a href="#tipoSeleccionado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastController"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>toastController</b></span>
+                        <a href="#toastController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastController)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/Pages/tabla-medidas/tabla-medidas.page.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit } from &#x27;@angular/core&#x27;;
+import {
+  AlertController,
+  IonButton, IonButtons, IonCard,
+  IonCardContent, IonCardHeader, IonCardSubtitle,
+  IonCardTitle, IonContent, IonFooter, IonHeader,
+  IonIcon, IonImg, IonInput, IonItem, IonLabel,
+  IonList, IonSearchbar, IonSelect,
+  IonSelectOption, IonSpinner, IonTitle, IonToolbar,
+  ToastController, IonText } from &#x27;@ionic/angular/standalone&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { jwtDecode } from &#x27;jwt-decode&#x27;;
+import { TipoAnimal } from &#x27;src/app/shared/interfaces/tipo-animal&#x27;;
+import { Medida } from &#x27;src/app/shared/interfaces/medida&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { MedidaService } from &#x27;src/app/shared/services/medida.service&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { addIcons } from &#x27;ionicons&#x27;;
+import { calendarOutline, closeCircle, imagesOutline, searchOutline } from &#x27;ionicons/icons&#x27;;
+import { Icon } from &#x27;ionicons/dist/types/components/icon/icon&#x27;;
+
+/**
+ * Página encargada de mostrar, filtrar y gestionar las medidas mínimas de captura por tipo de animal.
+ * Permite ver y editar especies según su tipo (pez, molusco, etc.), incluyendo su nombre común, científico,
+ * talla mínima y una imagen asociada.
+ */
+@Component({
+  selector: &#x27;app-tabla-medidas&#x27;,
+  templateUrl: &#x27;./tabla-medidas.page.html&#x27;,
+  styleUrls: [&#x27;./tabla-medidas.page.scss&#x27;],
+  standalone: true,
+  imports: [IonText, 
+    IonContent, IonHeader, IonTitle, IonToolbar, CommonModule,
+    FormsModule, ReactiveFormsModule, IonButtons, IonButton, IonFooter,
+    IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonList,
+    IonLabel, IonItem, IonInput, IonCardSubtitle, IonImg, IonSelectOption,
+    IonSelect, IonSearchbar,IonIcon,IonText
+  ]
+})
+export class TablaMedidasPage implements OnInit {
+    /** Inyección de dependencias necesarias para servicios y navegación */
+  private router: Router &#x3D; inject(Router);
+  private fb: FormBuilder &#x3D; inject(FormBuilder);
+  private medidaService: MedidaService &#x3D; inject(MedidaService);
+  private toastController &#x3D; inject(ToastController);
+  private alertController &#x3D; inject(AlertController);
+
+  
+ /** Variables de estado y control del formulario y edición */
+  busqueda: string &#x3D; &#x27;&#x27;;
+  tipoSeleccionado: number &#x3D; 1;
+  modoEdicion &#x3D; false;
+  medidaEdicion: number | null &#x3D; null;
+
+  /** Variables para nueva medida o edición */
+  nuevoNombre: string &#x3D; &#x27;&#x27;;
+  nuevoNombreCientifico: string &#x3D; &#x27;&#x27;;
+  nuevaTallaMinima: string &#x3D; &#x27;&#x27;;
+  nuevaImagen: string &#x3D; &#x27;&#x27;;
+  imagenSeleccionada!: File;
+  imagenPreviewUrl: string | null &#x3D; null;
+
+  /** Formulario reactivo para crear o editar medidas */
+  formMedida!: FormGroup;
+
+  /** Control de roles */
+  esAdmin: boolean &#x3D; false;
+
+  /** Datos cargados desde el backend */
+  tiposAnimales: TipoAnimal[] &#x3D; [];
+  especies: Medida[] &#x3D; [];
+  especiesFiltradasList: Medida[] &#x3D; [];
+
+
+   /**
+   * Constructor: registra iconos a utilizar en la interfaz
+   */
+  constructor() {
+          addIcons({
+                          &#x27;search-outline&#x27;: searchOutline,
+                          &#x27;calendar-outline&#x27;: calendarOutline,
+                          &#x27;images-outline&#x27;: imagesOutline,
+                          &#x27;close-circle&#x27;:closeCircle
+                        });
+                      }
+  
+
+  /**
+   * init de inicialización del componente
+   */
+  ngOnInit() {
+    this.esAdmin &#x3D; this.verificarAdmin();
+    this.cargarTipos();
+    this.cargarMedidas();
+  }
+
+    /**
+   * Carga los tipos de animales disponibles para clasificación
+   */
+  async cargarTipos() {
+    try {
+      this.tiposAnimales &#x3D; await this.medidaService.getTipos();
+      console.log(&#x27;Tipos de animales cargados:&#x27;, this.tiposAnimales);
+    } catch (error) {
+      console.error(&#x27;Error al obtener los tipos de animales:&#x27;, error);
+    }
+  }
+  /**
+   * Carga todas las medidas desde el servicio y aplica el filtro inicial
+   */
+  async cargarMedidas() {
+    try {
+      const medidas &#x3D; await this.medidaService.getMedidas();
+      this.especies &#x3D; Array.isArray(medidas) ? medidas : [];
+      
+      this.filtrasEspecies();
+    } catch (error) {
+      console.error(&#x27;Error al obtener las medidas:&#x27;, error);
+    }
+
+    this.formMedida &#x3D; this.fb.group({
+      nombre: [&#x27;&#x27;, Validators.required],
+      nombreCientifico: [&#x27;&#x27;, Validators.required],
+      tallaMinima: [&#x27;&#x27;, Validators.required],
+      imagen: [&#x27;&#x27;, Validators.required],
+      tipo: [1, Validators.required],
+    });
+  }
+  /**
+   * Filtra la lista de especies según el tipo seleccionado y el texto buscado
+   */
+  filtrasEspecies() {
+    const texto &#x3D; this.busqueda.trim().toLowerCase();
+    this.especiesFiltradasList &#x3D; this.especies.filter(especie &#x3D;&gt;
+      especie.idTipo &#x3D;&#x3D;&#x3D; this.tipoSeleccionado &amp;&amp;
+      especie.nombreComun.toLowerCase().includes(texto)
+    );
+  }
+  /**
+   * Procesa la imagen seleccionada por el usuario y genera una vista previa
+   */
+    onImagenSeleccionada(event: any) {
+    let file &#x3D; event.target.files[0];
+    if (file) {
+      this.imagenSeleccionada &#x3D; file;
+
+      const reader &#x3D; new FileReader();
+      reader.onload &#x3D; () &#x3D;&gt; {
+        this.imagenPreviewUrl &#x3D; reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  /**
+   * Crea una nueva medida con la información del formulario y la imagen
+   */
+  async crearNuevaMedida() {
+    if (!this.imagenSeleccionada) {
+      console.error(&#x27;No se ha seleccionado imagen&#x27;);
+      return;
+    }
+
+    try {
+      await this.medidaService.subirImagenMedida(this.imagenSeleccionada).then((response)&#x3D;&gt;{
+        this.mostrarMensaje(&#x27;Imagen subida exitosamente&#x27;, &#x27;success&#x27;);
+
+      }).catch((error)&#x3D;&gt;{ 
+        console.error(&#x27;Error al subir la imagen:&#x27;, error);
+        this.mostrarMensaje(&#x27;Error al subir la imagen&#x27;, &#x27;danger&#x27;);
+      });
+
+      const form &#x3D; this.formMedida.value;
+      const nuevaMedida: Medida &#x3D; {
+        idMedida: 0,
+        nombreComun: form.nombre,
+        nombreCientifico: form.nombreCientifico,
+        tallaMinima: form.tallaMinima,
+        imagen: this.imagenSeleccionada.name,
+        idTipo: form.tipo
+      };
+
+      const mensaje &#x3D; await this.medidaService.crearMedida(nuevaMedida).then((response)&#x3D;&gt;{
+        this.mostrarMensaje(&#x27;Medida creada exitosamente&#x27;, &#x27;success&#x27;);
+        console.log(&#x27;Medida creada:&#x27;, nuevaMedida);
+        return response;
+      }).catch((error)&#x3D;&gt;{
+        console.error(&#x27;Error al crear la medida:&#x27;, error);
+        this.mostrarMensaje(&#x27;Error al crear la medida&#x27;, &#x27;danger&#x27;);
+        throw error; 
+      });
+      this.cargarMedidas();
+      this.cancelarEdicion();
+    } catch (error) {
+      console.error(&#x27;Error al crear la medida:&#x27;, error);
+      this.mostrarMensaje(&#x27;Error al crear la medida&#x27;, &#x27;danger&#x27;);
+    }
+  }
+
+  /**
+   * Guarda los cambios en una medida existente, incluyendo una nueva imagen si se seleccionó
+   */
+  async guardarCambios(especie: Medida) {
+  try {
+    const medidaActualizada: Medida &#x3D; {
+      ...especie, 
+      nombreComun: this.nuevoNombre?.trim() || especie.nombreComun,
+      nombreCientifico: this.nuevoNombreCientifico?.trim() || especie.nombreCientifico,
+      tallaMinima: this.nuevaTallaMinima?.trim() || especie.tallaMinima,
+      imagen: especie.imagen, 
+      idTipo: this.tipoSeleccionado || especie.idTipo
+    };
+
+    if (this.imagenSeleccionada) {
+      await this.medidaService.subirImagenMedida(this.imagenSeleccionada);
+      medidaActualizada.imagen &#x3D; this.imagenSeleccionada.name;
+    }
+
+    const mensaje &#x3D; await this.medidaService.EditarMedida(medidaActualizada);
+    this.mostrarMensaje(mensaje, &#x27;success&#x27;);
+    this.cancelarEdicion();
+    this.cargarMedidas();
+
+  } catch (error) {
+    console.error(&#x27;Error al guardar cambios:&#x27;, error);
+    this.mostrarMensaje(&#x27;Error al guardar los cambios&#x27;, &#x27;danger&#x27;);
+  }
+}
+
+  /**
+   * Activa el modo de edición con los datos de una especie
+   */
+  activarEdicion(especie: Medida) {
+  this.modoEdicion &#x3D; true;
+  this.medidaEdicion &#x3D; especie.idMedida;
+
+  this.nuevoNombre &#x3D; especie.nombreComun;
+  this.nuevoNombreCientifico &#x3D; especie.nombreCientifico;
+  this.nuevaTallaMinima &#x3D; especie.tallaMinima;
+  this.tipoSeleccionado &#x3D; especie.idTipo;
+
+  this.imagenPreviewUrl &#x3D; this.getImagenUrl(especie.imagen);
+  this.imagenSeleccionada &#x3D; null as any;
+}
+
+  /**
+   * Cancela el modo de edición y resetea el formulario
+   */
+  cancelarEdicion() {
+    this.modoEdicion &#x3D; false;
+    this.medidaEdicion &#x3D; null;
+    this.formMedida.reset();
+  }
+  /**
+   * Construye la URL completa para acceder a una imagen de medida desde el backend
+   */
+  getImagenUrl(nombre: string): string {
+    return &#x60;${environment.api}/medida/imagen/${nombre}&#x60;;
+  }
+  /**
+   * Verifica si el usuario actual es administrador según el JWT
+   */
+  verificarAdmin(): boolean {
+    const token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    if (!token) {
+      this.router.navigate([&#x27;/login&#x27;]);
+      return false;
+    }
+    try {
+      const decodedToken: any &#x3D; jwtDecode(token);
+      return decodedToken.rol &#x3D;&#x3D;&#x3D; &#x27;ADMIN&#x27;;
+    } catch (error) {
+      this.router.navigate([&#x27;/login&#x27;]);
+      return false;
+    }
+  }
+  /**
+   * Solicita confirmación al usuario y elimina una medida si acepta
+   */
+  async eliminarMedida(especie: Medida) {
+    const alert &#x3D; await this.alertController.create({
+      header: &#x27;Confirmar eliminación&#x27;,
+      message: &#x60;¿Estás seguro de que deseas eliminar ${especie.nombreComun}?&#x60;,
+      buttons: [
+        {
+          text: &#x27;Cancelar&#x27;,
+          role: &#x27;cancel&#x27;
+        },
+        {
+          text: &#x27;Eliminar&#x27;,
+          role: &#x27;destructive&#x27;,
+          handler: async () &#x3D;&gt; {
+            try {
+              const mensaje &#x3D; await this.medidaService.EliminarMedida(especie);
+              this.especies &#x3D; this.especies.filter(m &#x3D;&gt; m.idMedida !&#x3D;&#x3D; especie.idMedida);
+              this.filtrasEspecies();
+              this.mostrarMensaje(mensaje, &#x27;success&#x27;);
+            } catch (error) {
+              console.error(&#x27;Error al eliminar la medida:&#x27;, error);
+              this.mostrarMensaje(&#x27;Error al eliminar la medida&#x27;, &#x27;danger&#x27;);
+            }
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+  /**
+   * Muestra un mensaje tipo toast en pantalla con un color específico
+   */
+  async mostrarMensaje(mensaje: string, color: &#x27;success&#x27; | &#x27;danger&#x27;) {
+    const toast &#x3D; await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      position: &#x27;top&#x27;,
+      color: color
+    });
+    await toast.present();
+  }
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header [translucent]&#x3D;&quot;true&quot;&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-title&gt;Tallas Mínimas 2025&lt;/ion-title&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content class&#x3D;&quot;medidas-fondo&quot; fullscreen&gt;
+
+  &lt;ion-searchbar
+    [(ngModel)]&#x3D;&quot;busqueda&quot;
+    (ionInput)&#x3D;&quot;filtrasEspecies()&quot;
+    placeholder&#x3D;&quot;Buscar especie por nombre...&quot;&gt;
+  &lt;/ion-searchbar&gt;
+
+  &lt;ion-buttons&gt;
+    &lt;ion-button *ngIf&#x3D;&quot;esAdmin&quot; (click)&#x3D;&quot;modoEdicion &#x3D; true; medidaEdicion &#x3D; null; formMedida.reset()&quot;&gt;
+      &lt;ion-label class&#x3D;&quot;crear&quot;&gt;Crear Medida&lt;/ion-label&gt;
+    &lt;/ion-button&gt;
+  &lt;/ion-buttons&gt;
+
+  &lt;div class&#x3D;&quot;form-container&quot; *ngIf&#x3D;&quot;modoEdicion &amp;&amp; medidaEdicion &#x3D;&#x3D;&#x3D; null&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;formMedida&quot;&gt;
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Nombre&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;nombre&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Nombre científico&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;nombreCientifico&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Talla mínima&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;tallaMinima&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Tipo&lt;/ion-label&gt;
+        &lt;ion-select formControlName&#x3D;&quot;tipo&quot; interface&#x3D;&quot;popover&quot;&gt;
+          &lt;ion-select-option *ngFor&#x3D;&quot;let tipo of tiposAnimales&quot; [value]&#x3D;&quot;tipo.idtipo&quot;&gt;
+            {{ tipo.nombre }}
+          &lt;/ion-select-option&gt;
+        &lt;/ion-select&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Imagen&lt;/ion-label&gt;
+        &lt;input type&#x3D;&quot;file&quot; (change)&#x3D;&quot;onImagenSeleccionada($event)&quot; /&gt;
+      &lt;/ion-item&gt;
+
+      &lt;div class&#x3D;&quot;form-buttons&quot;&gt;
+        &lt;ion-button class&#x3D;&quot;guardar-btn&quot; expand&#x3D;&quot;block&quot; (click)&#x3D;&quot;crearNuevaMedida()&quot;&gt;GUARDAR&lt;/ion-button&gt;
+        &lt;ion-button class&#x3D;&quot;cancelar-btn&quot; expand&#x3D;&quot;block&quot; (click)&#x3D;&quot;cancelarEdicion()&quot;&gt;CANCELAR&lt;/ion-button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+  &lt;ion-item class&#x3D;&quot;filtro&quot;&gt;
+    &lt;ion-label&gt;Tipo&lt;/ion-label&gt;
+    &lt;ion-select [(ngModel)]&#x3D;&quot;tipoSeleccionado&quot; (ionChange)&#x3D;&quot;filtrasEspecies()&quot; interface&#x3D;&quot;popover&quot;&gt;
+      &lt;ion-select-option *ngFor&#x3D;&quot;let tipo of tiposAnimales&quot; [value]&#x3D;&quot;tipo.idtipo&quot;&gt;
+        {{ tipo.nombre }}
+      &lt;/ion-select-option&gt;
+    &lt;/ion-select&gt;
+  &lt;/ion-item&gt;
+
+
+  &lt;ion-card *ngFor&#x3D;&quot;let especie of especiesFiltradasList&quot;&gt;
+    &lt;ion-img
+      [src]&#x3D;&quot;getImagenUrl(especie.imagen)&quot;
+      alt&#x3D;&quot;Imagen de {{ especie.nombreComun }}&quot;&gt;
+    &lt;/ion-img&gt;
+
+    &lt;ion-card-header&gt;
+      &lt;ion-card-title&gt;{{ especie.nombreComun }}&lt;/ion-card-title&gt;
+      &lt;ion-card-subtitle&gt;&lt;i&gt;{{ especie.nombreCientifico }}&lt;/i&gt;&lt;/ion-card-subtitle&gt;
+    &lt;/ion-card-header&gt;
+
+    &lt;ion-card-content&gt;
+      &lt;ion-text&gt;
+        &lt;h3 class&#x3D;&quot;ion-text-bold&quot;&gt;Talla mínima: &lt;span&gt;{{ especie.tallaMinima }}&lt;/span&gt;&lt;/h3&gt;
+      &lt;/ion-text&gt;
+    &lt;/ion-card-content&gt;
+
+
+
+    &lt;div class&#x3D;&quot;edit-form-container&quot; *ngIf&#x3D;&quot;medidaEdicion &#x3D;&#x3D;&#x3D; especie.idMedida&quot;&gt;
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Nuevo nombre&lt;/ion-label&gt;
+        &lt;ion-input [(ngModel)]&#x3D;&quot;nuevoNombre&quot; name&#x3D;&quot;nuevoNombre&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Nuevo nombre científico&lt;/ion-label&gt;
+        &lt;ion-input [(ngModel)]&#x3D;&quot;nuevoNombreCientifico&quot; name&#x3D;&quot;nuevoNombreCientifico&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Nueva talla mínima&lt;/ion-label&gt;
+        &lt;ion-input [(ngModel)]&#x3D;&quot;nuevaTallaMinima&quot; name&#x3D;&quot;nuevaTallaMinima&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Tipo&lt;/ion-label&gt;
+        &lt;ion-select [(ngModel)]&#x3D;&quot;tipoSeleccionado&quot; name&#x3D;&quot;tipoSeleccionado&quot;&gt;
+          &lt;ion-select-option *ngFor&#x3D;&quot;let tipo of tiposAnimales&quot; [value]&#x3D;&quot;tipo.idtipo&quot;&gt;
+            {{ tipo.nombre }}
+          &lt;/ion-select-option&gt;
+        &lt;/ion-select&gt;
+      &lt;/ion-item&gt;
+
+            
+      &lt;ion-item class&#x3D;&quot;file-upload-container&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;stacked&quot;&gt;Nueva imagen&lt;/ion-label&gt;
+        &lt;div class&#x3D;&quot;custom-file-upload&quot;&gt;
+          &lt;div class&#x3D;&quot;file-upload-button&quot; (click)&#x3D;&quot;fileInputEdit.click()&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;images-outline&quot;&gt;&lt;/ion-icon&gt;
+            &lt;span&gt;Seleccionar imagen&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;input
+            type&#x3D;&quot;file&quot;
+            accept&#x3D;&quot;image/*&quot;
+            (change)&#x3D;&quot;onImagenSeleccionada($event)&quot;
+            class&#x3D;&quot;file-input&quot;
+            #fileInputEdit
+          /&gt;
+          &lt;div class&#x3D;&quot;file-preview&quot; *ngIf&#x3D;&quot;imagenSeleccionada&quot;&gt;
+            &lt;img [src]&#x3D;&quot;imagenPreviewUrl&quot; alt&#x3D;&quot;Vista previa&quot; class&#x3D;&quot;preview-thumbnail&quot; /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ion-item&gt;
+
+
+      &lt;div class&#x3D;&quot;edit-buttons&quot;&gt;
+        &lt;ion-button class&#x3D;&quot;guardar-btn&quot; (click)&#x3D;&quot;guardarCambios(especie)&quot;&gt;GUARDAR&lt;/ion-button&gt;
+        &lt;ion-button class&#x3D;&quot;cancelar-btn&quot; (click)&#x3D;&quot;cancelarEdicion()&quot;&gt;CANCELAR&lt;/ion-button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;action-buttons&quot; *ngIf&#x3D;&quot;esAdmin&quot;&gt;
+      &lt;ion-button class&#x3D;&quot;editar-btn&quot; (click)&#x3D;&quot;activarEdicion(especie)&quot;&gt;
+        EDITAR
+      &lt;/ion-button&gt;
+      &lt;ion-button class&#x3D;&quot;eliminar-btn&quot; (click)&#x3D;&quot;eliminarMedida(especie)&quot;&gt;
+        ELIMINAR
+      &lt;/ion-button&gt;
+    &lt;/div&gt;
+  &lt;/ion-card&gt;
+&lt;/ion-content&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tabla-medidas.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+:root {
+  --ion-color-primary: #0d6efd; 
+  --ion-color-primary-rgb: 13, 110, 253;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #0b5ed7;
+  --ion-color-primary-tint: #3184fd;
+  
+  --ion-color-secondary: #2c6e49;
+  --ion-color-secondary-rgb: 44, 110, 73;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-shade: #276140;
+  --ion-color-secondary-tint: #41795b;
+  
+  --ion-color-danger: #ff0e0e;
+  --ion-color-danger-rgb: 220, 53, 69;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-shade: #c13c48;
+  --ion-color-danger-tint: #e15361;
+  
+  --ion-color-success: #28a745;
+  --ion-color-success-rgb: 40, 167, 69;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-shade: #23933d;
+  --ion-color-success-tint: #3eb058;
+  
+  --ion-color-medium: #6c757d;
+  --ion-color-medium-rgb: 108, 117, 125;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-shade: #5f666d;
+  --ion-color-medium-tint: #7d868f;
+}
+
+ion-header ion-toolbar {
+  --background: #000000;
+  --color: white;
+}
+
+ion-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Fondo de la pantalla */
+.medidas-fondo {
+  --background: transparent;
+  background-image: url(&#x27;/assets/img/fondos/medidas-fondo.jpg&#x27;);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 16px;
+}
+
+ion-searchbar {
+  --background: rgba(255, 255, 255, 0.9);
+  --color: #333;
+  --placeholder-color: #666;
+  --icon-color: var(--ion-color-primary);
+  --clear-button-color: #666;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-content &gt; ion-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+ion-content &gt; ion-buttons ion-button {
+  --background: #28a745;
+  --background-activated: #218838;
+  --background-focused: #218838;
+  --background-hover: #218838;
+  --color: white;
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  text-transform: uppercase;
+  height: 44px;
+}
+
+
+form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 8px 16px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+form ion-item {
+  --background: transparent;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --padding-start: 0;
+  margin-bottom: 12px;
+  box-shadow: none;
+}
+
+form ion-button {
+  margin-top: 12px;
+  height: 44px;
+  text-transform: uppercase;
+}
+
+form ion-button[color&#x3D;&quot;primary&quot;] {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --background-focused: var(--ion-color-primary-shade);
+  --background-hover: var(--ion-color-primary-shade);
+}
+
+form ion-button[color&#x3D;&quot;medium&quot;] {
+  --background: var(--ion-color-medium);
+  --background-activated: var(--ion-color-medium-shade);
+  --background-focused: var(--ion-color-medium-shade);
+  --background-hover: var(--ion-color-medium-shade);
+}
+
+/* Selector de tipo */
+ion-item {
+  --background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-select {
+  --placeholder-color: #333;
+  --placeholder-opacity: 1;
+  width: 100%;
+  max-width: 100%;
+  font-weight: 500;
+}
+
+ion-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  margin: 0 0 16px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+
+}
+
+ion-card:active {
+  transform: scale(0.98);
+}
+
+ion-img {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ion-card-header {
+  padding: 12px 16px 0;
+}
+
+ion-card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+.filtro{
+  padding: auto;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+
+
+ion-card-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+ion-card-content {
+  padding: 8px 16px 8px;
+}
+
+ion-card-content p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #000;
+}
+
+.busqueda-vacia{
+  font-family: &#x27;Open Sans&#x27;, sans-serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  margin-bottom: 7px;
+}
+
+
+.ion-text-bold {
+  font-weight: bold;
+}
+
+ion-card-content ion-text {
+
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #000 !important;
+  display: block; 
+}
+ion-card-content h3{
+  color: var(--ion-color-secondary);
+}
+
+ion-card-content ion-text span,
+ion-card-content ion-text h3 {
+  color: var(--ion-color-secondary);
+  font-weight: bold;
+}
+
+
+/* Formulario de edición dentro de la tarjeta */
+ion-card ion-item {
+  --background: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+}
+
+ion-card ion-item ion-label {
+  color: var(--color-input-text);
+  font-weight: 500;
+}
+
+/* Estilos específicos para los botones GUARDAR/Cancelar en el formulario de edición */
+.botones-edicion {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 12px;
+  width: 100%;
+}
+
+.botones-edicion ion-button {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  margin: 0 4px;
+  height: 44px;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+/* Botón GUARDAR */
+.guardar,
+ion-button.guardar,
+.botones-edicion ion-button[color&#x3D;&quot;success&quot;] {
+  --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Botón Cancelar */
+.cancelar,
+ion-button.cancelar,
+.botones-edicion ion-button[color&#x3D;&quot;medium&quot;] {
+  --background: #992020e5 !important;
+  --background-activated: #992020e5 !important;
+  --background-focused: #992020e5 !important;
+  --background-hover: #992020e5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Botones de administrador en las tarjetas */
+ion-card ion-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+/* IMPORTANTE: Estilos específicos para los botones Editar y Eliminar */
+ion-card ion-buttons ion-button {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  flex: 1;
+  margin: 0 4px;
+  height: 44px;
+  overflow: hidden;
+}
+
+/* Botón EDITAR */
+.editar,
+ion-button.editar,
+ion-card ion-buttons ion-button:first-child {
+  --background: #0d6efd !important;
+  --background-activated: #0b5ed7 !important;
+  --background-focused: #0b5ed7 !important;
+  --background-hover: #0b5ed7 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Botón ELIMINAR */
+.eliminar,
+ion-button.eliminar,
+ion-card ion-buttons ion-button[color&#x3D;&quot;danger&quot;] {
+  --background: #ff3b3b !important;
+  --background-activated: #ff0000 !important;
+  --background-focused: #992020e5 !important;
+  --background-hover: #992020e5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Mejoras para dispositivos más pequeños */
+@media (max-width: 320px) {
+  ion-card-title {
+    font-size: 1.1rem;
+  }
+  
+  ion-card-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  ion-card-content p {
+    font-size: 0.9rem;
+  }
+  
+  ion-card ion-buttons ion-button {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animaciones para mejorar la experiencia de usuario */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-card {
+  animation: fadeIn 0.3s ease-out forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.05s);
+}
+
+/* Mejoras para el modo oscuro */
+@media (prefers-color-scheme: dark) {
+  ion-card {
+    background: rgba(30, 30, 30, 0.85);
+  }
+  
+  ion-card-title {
+    color: #fff;
+  }
+  
+  ion-card-subtitle {
+    color: #ccc;
+  }
+  
+  ion-card-content p {
+    color: #eee;
+  }
+  
+  ion-card ion-item {
+    --background: rgba(40, 40, 40, 0.85);
+    --color: white;
+  }
+  
+  form {
+    background: rgba(30, 30, 30, 0.9);
+  }
+  
+  form ion-item {
+    --color: white;
+  }
+  
+  ion-item {
+    --background: rgba(30, 30, 30, 0.85);
+    --color: white;
+  }
+  
+  ion-searchbar {
+    --background: rgba(30, 30, 30, 0.85);
+    --color: white;
+    --placeholder-color: #ccc;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    position: sticky ;  
+
+  }
+}
+
+
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+
+ion-card .edit-form-container + .action-buttons {
+  display: none;
+}
+
+
+.edit-form-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 16px;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Edit buttons container */
+.edit-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  width: 100%;
+}
+
+/* Button styles */
+.editar-btn {
+  --background: #0d6efd !important;
+  --background-activated: #0b5ed7 !important;
+  --background-focused: #0b5ed7 !important;
+  --background-hover: #0b5ed7 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+}
+
+.eliminar-btn {
+  --background: #992020e5 !important;
+  --background-activated: #992020e5 !important;
+  --background-focused: #992020e5 !important;
+  --background-hover: #992020e5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+}
+
+/* Botón GUARDAR */
+.guardar-btn {
+  --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+.cancelar-btn {
+  --background: #992020e5 !important;
+  --background-activated: #7a1a1ae5 !important;
+  --background-focused: #7a1a1ae5 !important;
+  --background-hover: #7a1a1ae5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+/* También actualiza los estilos para los botones dentro de .botones-edicion */
+.botones-edicion ion-button[color&#x3D;&quot;success&quot;],
+form ion-button[color&#x3D;&quot;success&quot;] {
+  --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+}
+
+.botones-edicion ion-button[color&#x3D;&quot;medium&quot;],
+form ion-button[color&#x3D;&quot;medium&quot;] {
+  --background: #992020e5 !important;
+  --background-activated: #7a1a1ae5 !important;
+  --background-focused: #7a1a1ae5 !important;
+  --background-hover: #7a1a1ae5 !important;
+  --color: white !important;
+}
+
+/* Asegúrate de que los botones en el formulario de edición también tengan estos estilos */
+.edit-buttons .guardar-btn {
+  --background: #28a745 !important;
+  --color: white !important;
+}
+
+.edit-buttons .cancelar-btn {
+  --background: #992020e5 !important;
+  --color: white !important;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .edit-form-container {
+    background: rgba(30, 30, 30, 0.9);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header [translucent]="true">  <ion-toolbar>    <ion-title>Tallas Mínimas 2025</ion-title>  </ion-toolbar></ion-header><ion-content class="medidas-fondo" fullscreen>  <ion-searchbar    [(ngModel)]="busqueda"    (ionInput)="filtrasEspecies()"    placeholder="Buscar especie por nombre...">  </ion-searchbar>  <ion-buttons>    <ion-button *ngIf="esAdmin" (click)="modoEdicion = true; medidaEdicion = null; formMedida.reset()">      <ion-label class="crear">Crear Medida</ion-label>    </ion-button>  </ion-buttons>  <div class="form-container" *ngIf="modoEdicion && medidaEdicion === null">    <form [formGroup]="formMedida">      <ion-item>        <ion-label position="floating">Nombre</ion-label>        <ion-input type="text" formControlName="nombre"></ion-input>      </ion-item>      <ion-item>        <ion-label position="floating">Nombre científico</ion-label>        <ion-input type="text" formControlName="nombreCientifico"></ion-input>      </ion-item>      <ion-item>        <ion-label position="floating">Talla mínima</ion-label>        <ion-input type="text" formControlName="tallaMinima"></ion-input>      </ion-item>      <ion-item>        <ion-label position="floating">Tipo</ion-label>        <ion-select formControlName="tipo" interface="popover">          <ion-select-option *ngFor="let tipo of tiposAnimales" [value]="tipo.idtipo">            {{ tipo.nombre }}          </ion-select-option>        </ion-select>      </ion-item>      <ion-item>        <ion-label position="stacked">Imagen</ion-label>        <input type="file" (change)="onImagenSeleccionada($event)" />      </ion-item>      <div class="form-buttons">        <ion-button class="guardar-btn" expand="block" (click)="crearNuevaMedida()">GUARDAR</ion-button>        <ion-button class="cancelar-btn" expand="block" (click)="cancelarEdicion()">CANCELAR</ion-button>      </div>    </form>  </div>  <ion-item class="filtro">    <ion-label>Tipo</ion-label>    <ion-select [(ngModel)]="tipoSeleccionado" (ionChange)="filtrasEspecies()" interface="popover">      <ion-select-option *ngFor="let tipo of tiposAnimales" [value]="tipo.idtipo">        {{ tipo.nombre }}      </ion-select-option>    </ion-select>  </ion-item>  <ion-card *ngFor="let especie of especiesFiltradasList">    <ion-img      [src]="getImagenUrl(especie.imagen)"      alt="Imagen de {{ especie.nombreComun }}">    </ion-img>    <ion-card-header>      <ion-card-title>{{ especie.nombreComun }}</ion-card-title>      <ion-card-subtitle><i>{{ especie.nombreCientifico }}</i></ion-card-subtitle>    </ion-card-header>    <ion-card-content>      <ion-text>        <h3 class="ion-text-bold">Talla mínima: <span>{{ especie.tallaMinima }}</span></h3>      </ion-text>    </ion-card-content>    <div class="edit-form-container" *ngIf="medidaEdicion === especie.idMedida">      <ion-item>        <ion-label position="stacked">Nuevo nombre</ion-label>        <ion-input [(ngModel)]="nuevoNombre" name="nuevoNombre"></ion-input>      </ion-item>      <ion-item>        <ion-label position="stacked">Nuevo nombre científico</ion-label>        <ion-input [(ngModel)]="nuevoNombreCientifico" name="nuevoNombreCientifico"></ion-input>      </ion-item>      <ion-item>        <ion-label position="stacked">Nueva talla mínima</ion-label>        <ion-input [(ngModel)]="nuevaTallaMinima" name="nuevaTallaMinima"></ion-input>      </ion-item>      <ion-item>        <ion-label position="stacked">Tipo</ion-label>        <ion-select [(ngModel)]="tipoSeleccionado" name="tipoSeleccionado">          <ion-select-option *ngFor="let tipo of tiposAnimales" [value]="tipo.idtipo">            {{ tipo.nombre }}          </ion-select-option>        </ion-select>      </ion-item>                  <ion-item class="file-upload-container">        <ion-label position="stacked">Nueva imagen</ion-label>        <div class="custom-file-upload">          <div class="file-upload-button" (click)="fileInputEdit.click()">            <ion-icon name="images-outline"></ion-icon>            <span>Seleccionar imagen</span>          </div>          <input            type="file"            accept="image/*"            (change)="onImagenSeleccionada($event)"            class="file-input"            #fileInputEdit          />          <div class="file-preview" *ngIf="imagenSeleccionada">            <img [src]="imagenPreviewUrl" alt="Vista previa" class="preview-thumbnail" />          </div>        </div>      </ion-item>      <div class="edit-buttons">        <ion-button class="guardar-btn" (click)="guardarCambios(especie)">GUARDAR</ion-button>        <ion-button class="cancelar-btn" (click)="cancelarEdicion()">CANCELAR</ion-button>      </div>    </div>    <div class="action-buttons" *ngIf="esAdmin">      <ion-button class="editar-btn" (click)="activarEdicion(especie)">        EDITAR      </ion-button>      <ion-button class="eliminar-btn" (click)="eliminarMedida(especie)">        ELIMINAR      </ion-button>    </div>  </ion-card></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'GestionPage', 'selector': 'app-gestion'},{'name': 'HistorialPage', 'selector': 'app-historial'},{'name': 'InicioPage', 'selector': 'app-inicio'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MapaPage', 'selector': 'app-mapa'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MisPuntosPage', 'selector': 'app-mis-puntos'},{'name': 'PerfilPage', 'selector': 'app-perfil'},{'name': 'RegistroPage', 'selector': 'app-registro'},{'name': 'TablaMedidasPage', 'selector': 'app-tabla-medidas'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TablaMedidasPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TablaMedidasPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

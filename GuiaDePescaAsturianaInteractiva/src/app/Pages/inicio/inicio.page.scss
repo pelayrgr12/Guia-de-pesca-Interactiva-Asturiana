@@ -1,0 +1,61 @@
+:host {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url('/assets/img/fondos/inicio-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  ion-content {
+    --background: transparent;
+    position: relative;
+    z-index: 1;
+  }
+  
+
+  .card-header {
+    background: transparent;
+    padding: 2.5rem 1rem 1rem;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .card-title {
+    font-size: 2.2rem; 
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  
+
+  .inicio-overlay {
+    position: absolute;
+    top: 35%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 0 1.5rem;
+    z-index: 2;
+  }
+  
+  .inicio-titulo {
+    font-size: 1.8rem; 
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+  
+  .inicio-subtitulo {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+  

@@ -1,0 +1,151 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tallas Mínimas 2025</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="medidas-fondo" fullscreen>
+
+  <ion-searchbar
+    [(ngModel)]="busqueda"
+    (ionInput)="filtrasEspecies()"
+    placeholder="Buscar especie por nombre...">
+  </ion-searchbar>
+
+  <ion-buttons>
+    <ion-button *ngIf="esAdmin" (click)="modoEdicion = true; medidaEdicion = null; formMedida.reset()">
+      <ion-label class="crear">Crear Medida</ion-label>
+    </ion-button>
+  </ion-buttons>
+
+  <div class="form-container" *ngIf="modoEdicion && medidaEdicion === null">
+    <form [formGroup]="formMedida">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nombre científico</ion-label>
+        <ion-input type="text" formControlName="nombreCientifico"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Talla mínima</ion-label>
+        <ion-input type="text" formControlName="tallaMinima"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tipo</ion-label>
+        <ion-select formControlName="tipo" interface="popover">
+          <ion-select-option *ngFor="let tipo of tiposAnimales" [value]="tipo.idtipo">
+            {{ tipo.nombre }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Imagen</ion-label>
+        <input type="file" (change)="onImagenSeleccionada($event)" />
+      </ion-item>
+
+      <div class="form-buttons">
+        <ion-button class="guardar-btn" expand="block" (click)="crearNuevaMedida()">GUARDAR</ion-button>
+        <ion-button class="cancelar-btn" expand="block" (click)="cancelarEdicion()">CANCELAR</ion-button>
+      </div>
+    </form>
+  </div>
+
+  <ion-item class="filtro">
+    <ion-label>Tipo</ion-label>
+    <ion-select [(ngModel)]="tipoSeleccionado" (ionChange)="filtrasEspecies()" interface="popover">
+      <ion-select-option *ngFor="let tipo of tiposAnimales" [value]="tipo.idtipo">
+        {{ tipo.nombre }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-card *ngFor="let especie of especiesFiltradasList">
+    <ion-img
+      [src]="getImagenUrl(especie.imagen)"
+      alt="Imagen de {{ especie.nombreComun }}">
+    </ion-img>
+
+    <ion-card-header>
+      <ion-card-title>{{ especie.nombreComun }}</ion-card-title>
+      <ion-card-subtitle><i>{{ especie.nombreCientifico }}</i></ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text>
+        <h3 class="ion-text-bold">Talla mínima: <span>{{ especie.tallaMinima }}</span></h3>
+      </ion-text>
+    </ion-card-content>
+
+
+
+    <div class="edit-form-container" *ngIf="medidaEdicion === especie.idMedida">
+      <ion-item>
+        <ion-label position="stacked">Nuevo nombre</ion-label>
+        <ion-input [(ngModel)]="nuevoNombre" name="nuevoNombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Nuevo nombre científico</ion-label>
+        <ion-input [(ngModel)]="nuevoNombreCientifico" name="nuevoNombreCientifico"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Nueva talla mínima</ion-label>
+        <ion-input [(ngModel)]="nuevaTallaMinima" name="nuevaTallaMinima"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tipo</ion-label>
+        <ion-select [(ngModel)]="tipoSeleccionado" name="tipoSeleccionado">
+          <ion-select-option *ngFor="let tipo of tiposAnimales" [value]="tipo.idtipo">
+            {{ tipo.nombre }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+            
+      <ion-item class="file-upload-container">
+        <ion-label position="stacked">Nueva imagen</ion-label>
+        <div class="custom-file-upload">
+          <div class="file-upload-button" (click)="fileInputEdit.click()">
+            <ion-icon name="images-outline"></ion-icon>
+            <span>Seleccionar imagen</span>
+          </div>
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onImagenSeleccionada($event)"
+            class="file-input"
+            #fileInputEdit
+          />
+          <div class="file-preview" *ngIf="imagenSeleccionada">
+            <img [src]="imagenPreviewUrl" alt="Vista previa" class="preview-thumbnail" />
+          </div>
+        </div>
+      </ion-item>
+
+
+      <div class="edit-buttons">
+        <ion-button class="guardar-btn" (click)="guardarCambios(especie)">GUARDAR</ion-button>
+        <ion-button class="cancelar-btn" (click)="cancelarEdicion()">CANCELAR</ion-button>
+      </div>
+    </div>
+
+
+    <div class="action-buttons" *ngIf="esAdmin">
+      <ion-button class="editar-btn" (click)="activarEdicion(especie)">
+        EDITAR
+      </ion-button>
+      <ion-button class="eliminar-btn" (click)="eliminarMedida(especie)">
+        ELIMINAR
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,123 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url('/assets/img/fondos/admin-fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    padding-bottom: 3rem;
+  }
+
+  ion-list {
+    --background: transparent !important;
+    background: transparent !important;
+  }
+
+
+  ion-header,
+  ion-toolbar {
+    --background: rgba(0, 0, 0, 0.6);
+    color: white;
+    box-shadow: none;
+  }
+  ion-label {
+    color: rgb(0, 0, 0);
+  }
+  
+  ion-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+
+  ion-content {
+    --background: transparent;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+
+  ion-list {
+    --background: transparent;
+    padding: 0;
+  }
+  
+  
+  ion-label h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+  }
+  
+  ion-label p {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.9rem;
+    color: #eee;
+  }
+  
+  ion-button[color="danger"],
+  ion-button[color="success"] {
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-left: auto;
+  }
+  
+  
+ ion-toolbar {
+    --background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  
+ion-item {
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+  --background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  flex: 1;
+  min-width: 0;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.email-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+ion-button {
+  width: 7rem !important;
+  min-width: 7rem !important;
+  max-width: 7rem !important;
+  flex-shrink: 0;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0.8rem;
+  height: 1.7rem;
+}
+
+ion-searchbar {
+  --background: rgba(255, 255, 255, 0.9);
+  --color: #333;
+  --placeholder-color: #666;
+  --icon-color: var(--ion-color-primary);
+  --clear-button-color: #666;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

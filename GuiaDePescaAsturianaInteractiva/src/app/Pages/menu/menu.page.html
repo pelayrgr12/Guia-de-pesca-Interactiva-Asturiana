@@ -1,0 +1,104 @@
+<ion-content class="ion-padding">
+  <div class="header-container">
+    <h1>Consulta del Tiempo</h1>
+  </div>
+
+  <div class="form-container">
+    <ion-item>
+      <ion-label position="floating">Ciudad</ion-label>
+      <ion-input [(ngModel)]="ciudad"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" (click)="buscarClima()" [disabled]="cargando">
+      <ion-icon name="search-outline" slot="start"></ion-icon>
+      BUSCAR TIEMPO
+    </ion-button>
+  </div>
+
+  <div *ngIf="cargando" class="loading-container">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Buscando información del clima...</p>
+  </div>
+
+  <div class="error-message" *ngIf="error">
+    <ion-text>{{ error }}</ion-text>
+  </div>
+
+  <ion-card *ngIf="clima">
+    <ion-card-content>
+      <div class="pais-container">
+        {{ clima.sys.country }}
+      </div>
+      
+      <h2 class="ciudad-titulo">El clima actual en {{ clima.name }}</h2>
+      
+      <div class="temperatura-principal">
+        <div class="temp-valor">{{ clima.main.temp | number:'1.0-0' }}°C</div>
+        <div class="temp-icono">
+          <img [src]="getIcono(clima.weather[0].icon)" alt="Icono del clima">
+        </div>
+      </div>
+      
+      <div class="sensacion-container">
+        <div>Sensación térmica: {{ clima.main.feels_like | number:'1.0-0' }}°C</div>
+        <div class="condicion-clima">{{ clima.weather[0].description }}</div>
+      </div>
+      
+      <div class="separador"></div>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="water-outline"></ion-icon>
+          </div>
+          <div class="info-content">
+            <div class="info-label">Humedad</div>
+            <div class="info-value">{{ clima.main.humidity }}%</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="speedometer-outline"></ion-icon>
+          </div>
+          <div class="info-content">
+            <div class="info-label">Presión</div>
+            <div class="info-value">{{ clima.main.pressure }} hPa</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="navigate-outline" ></ion-icon>
+          </div>
+          <div class="info-content">
+            <div class="info-label">Viento</div>
+            <div class="info-value">{{ clima.wind.speed }} m/s</div>
+            <div class="info-subvalue">{{ getDescripcionViento(clima.wind.deg) }} ({{ clima.wind.deg }}°)</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <ion-icon name="cloud-outline" ></ion-icon>
+          </div>
+          <div class="info-content">
+            <div class="info-label">Nubosidad</div>
+            <div class="info-value">{{ clima.clouds.all }}%</div>
+          </div>
+        </div>
+        
+        <div class="info-item" *ngIf="clima.wind.gust">
+          <div class="info-icon">
+            <ion-icon name="thunderstorm-outline" ></ion-icon>
+          </div>
+          <div class="info-content">
+            <div class="info-label">Ráfagas de viento</div>
+            <div class="info-value">{{ clima.wind.gust }} m/s</div>
+          </div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+  <div class="bottom-spacer"></div>

@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarSesion()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="perfil-container">
+    <ion-card *ngIf="!modoEdicion">
+      <ion-card-header>
+        <ion-card-title>{{ usuario?.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Correo:</strong> {{ usuario?.correo }}</p>
+        <p><strong>Fecha de nacimiento:</strong> {{ usuario?.fechaNacimiento | date }}</p>
+        <p><strong>Estado de la cuenta:</strong> {{ usuario?.habilitado ? 'Habilitado' : 'Deshabilitado' }}</p>
+        <ion-button expand="block" (click)="activarEdicion()">Modificar perfil</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <form *ngIf="modoEdicion" [formGroup]="formPerfil" (ngSubmit)="guardarCambios()">
+      <ion-item *ngIf="!cambioPassword">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!cambioPassword">
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="email" formControlName="correo"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!cambioPassword">
+        <ion-label position="floating">Fecha de nacimiento</ion-label>
+        <ion-input type="date" formControlName="fechaNacimiento"></ion-input>
+      </ion-item>
+
+            
+      <p>Se requiere la contraseña anctual por seguridad </p>
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña actual</ion-label>
+      
+        <ion-input [type]="verActual ? 'text' : 'password'" formControlName="contrasenaActual"></ion-input>
+        <ion-icon class="icono-password" [name]="verActual ? 'eye-off' : 'eye'" (click)="toggleActualVisibility()"></ion-icon>
+      </ion-item>
+
+     <div *ngIf="formPerfil.get('contrasenaActual')?.invalid && formPerfil.get('contrasenaActual')?.dirty" class="mt-2 alert alert-danger">
+          <div *ngIf="formPerfil.get('contrasenaActual')?.errors?.['required']">Campo obligatorio</div>
+    </div>
+
+      <ion-button size="small" class="modificar-password ion-text-wrap" (click)="activarCambioContrasena()">Cambiar de contraseña</ion-button>
+
+      <ion-item *ngIf="cambioPassword" lines="full">
+        <ion-label position="floating">Nueva contraseña</ion-label>
+        <ion-input [type]="verNueva ? 'text' : 'password'" formControlName="nuevaContrasena"></ion-input>
+        <ion-icon class="icono-password" [name]="verNueva ? 'eye-off' : 'eye'" (click)="toggleNuevaVisibility()"></ion-icon>
+      </ion-item>
+
+      <div *ngIf="formPerfil.get('nuevaContrasena')?.invalid && formPerfil.get('nuevaContrasena')?.dirty" class="mt-2 alert alert-danger">
+          <div *ngIf="formPerfil.get('nuevaContrasena')?.errors?.['required']">Campo obligatorio</div>
+          <div *ngIf="formPerfil.get('nuevaContrasena')?.errors?.['minlength']">Debe tener al menos 8 caracteres</div>
+          <div *ngIf="formPerfil.get('nuevaContrasena')?.errors?.['pattern']">Debe incluir mayúsculas, minúsculas y un carácter especial</div>
+      </div>
+
+
+      <ion-item  *ngIf="cambioPassword" lines="full">
+        <ion-label position="floating">Confirmar nueva contraseña</ion-label>
+        <ion-input [type]="verConfirmarNueva ? 'text' : 'password'" formControlName="confirmarContrasena"></ion-input>
+        <ion-icon class="icono-password" [name]="verConfirmarNueva ? 'eye-off' : 'eye'" (click)="toggleConfirmarNuevaVisibility()"></ion-icon>
+      </ion-item>
+
+      <div *ngIf="formPerfil.get('confirmarContrasena')?.invalid && formPerfil.get('confirmarContrasena')?.dirty" class="mt-2 alert alert-danger">
+          <div *ngIf="formPerfil.get('confirmarContrasena')?.errors?.['required']">Campo obligatorio</div>
+    </div>
+
+      <ion-button expand="block" type="submit">Guardar cambios</ion-button>
+      <ion-button expand="block" class="cancelar-btn" (click)="cancelarEdicion()">Cancelar</ion-button>
+    </form>
+  
+     <ion-button class="btn-gestion" *ngIf="esAdmin" (click)="navGestion()">Gestión Usuarios</ion-button>
+
+  </div>
+</ion-content>
+

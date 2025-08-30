@@ -1,0 +1,73 @@
+<ion-content>
+  
+  <div class="registro-container">
+    <ion-card-header class="card-header">
+      <ion-card-title class="card-title"> 🎣 Registro</ion-card-title>
+    </ion-card-header>
+    <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre" required></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.dirty" class="mt-2 alert alert-danger">
+        <div *ngIf="registroForm.get('nombre')?.errors?.['required']">Campo obligatorio</div>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="email" formControlName="correo" required></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.get('correo')?.invalid && registroForm.get('correo')?.dirty" class="mt-2 alert alert-danger">
+        <div *ngIf="registroForm.get('correo')?.errors?.['required']">Campo obligatorio</div>
+        <div *ngIf="registroForm.get('correo')?.errors?.['email']">Tiene que ser un email</div>
+      </div>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Contraseña</ion-label>
+          <div class="contenedor-password">
+            <ion-input class="input-password" [type]="verContrasena ? 'text' : 'password'" formControlName="contrasena" required></ion-input>
+            <ion-icon class="icono-password" [name]="verContrasena ? 'eye-off' : 'eye'" slot="icon-only" (click)="toggleContrasenaVisibility()"></ion-icon>
+          </div>
+        </ion-item>
+
+        <div *ngIf="registroForm.get('contrasena')?.invalid && registroForm.get('contrasena')?.dirty" class="mt-2 alert alert-danger">
+          <div *ngIf="registroForm.get('contrasena')?.errors?.['required']">Campo obligatorio</div>
+          <div *ngIf="registroForm.get('contrasena')?.errors?.['minlength']">Debe tener al menos 8 caracteres</div>
+          <div *ngIf="registroForm.get('contrasena')?.errors?.['pattern']">Debe incluir mayúsculas, minúsculas y un carácter especial</div>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña</ion-label>
+          <div class="contenedor-password">
+          <ion-input [type]="verConfirmarContrasena ? 'text' : 'password'"formControlName="confirmarContrasena" required></ion-input>
+          <ion-icon class="icono-password" [name]="verConfirmarContrasena ? 'eye-off' : 'eye'" slot="icon-only" (click)="toggleConfirmarContrasenaVisibility()"></ion-icon>
+          </div>
+        </ion-item>
+
+        <div *ngIf="registroForm.get('confirmarContrasena')?.invalid && registroForm.get('confirmarContrasena')?.dirty" class="mt-2 alert alert-danger">
+          <div *ngIf="registroForm.get('confirmarContrasena')?.errors?.['required']">Campo obligatorio</div>
+          <div *ngIf="registroForm.get('confirmarContrasena')?.errors?.['minlength']">Mínimo 6 caracteres</div>
+        </div>
+        <div *ngIf="validar" class="mt-2 alert alert-danger">Las contraseñas no coinciden</div>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha de nacimiento</ion-label>
+        <ion-input type="date" formControlName="fechaNacimiento" required></ion-input>
+      </ion-item>
+
+      <div *ngIf="registroForm.get('fechaNacimiento')?.invalid && registroForm.get('fechaNacimiento')?.dirty" class="mt-2 alert alert-danger">
+        <div *ngIf="registroForm.get('fechaNacimiento')?.errors?.['required']">Campo obligatorio</div>
+        <div *ngIf="registroForm.get('fechaNacimiento')?.errors?.['fechaInvalida']">Fecha no válida</div>
+        <div *ngIf="registroForm.get('fechaNacimiento')?.errors?.['fueraDeRango']">La fecha debe estar en un rango valido</div>
+      </div>
+
+      <div class="button-container">
+        <ion-button expand="block" type="submit">Registrarse</ion-button>
+      </div>
+    </form>
+    <div class="register-container">
+      <p>¿Ya tienes cuenta ? <a (click)="navLogin()" class="link">Inicia sesión</a></p>
+      </div>
+  </div>
+
+
+</ion-content>

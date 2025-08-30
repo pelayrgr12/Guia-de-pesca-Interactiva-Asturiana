@@ -1,0 +1,44 @@
+ion-content {
+  --background: transparent;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+#map {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative; 
+  z-index: 0;
+}
+
+ion-footer {
+  --background: rgba(0, 0, 0, 0.6); 
+}
+
+ion-title{
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+
+
+ion-button {
+  size: small;
+}
+
+.recargar{
+
+    --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+

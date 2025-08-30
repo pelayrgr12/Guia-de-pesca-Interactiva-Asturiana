@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis puntos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="Refresh()" size="small" class="recargar">Recargar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    [(ngModel)]="busqueda"
+    (ionInput)="filtrarPuntos()"
+    placeholder="Buscar punto por nombre...">
+  </ion-searchbar>
+
+  <ion-list>
+<ion-card *ngFor="let punto of listaPuntosFiltrados; let i = index">
+
+
+      <ion-card-header class="cabecera-punto">
+        <ion-card-title>{{ punto.nombre }}</ion-card-title>
+        <ion-button class="ver-mapa" size="small" (click)="verEnMapa(punto)">Ver mapa</ion-button>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- <p><strong>Número del punto:</strong> {{ punto.idPunto }}</p> -->
+        <p><strong>Latitud:</strong> {{ punto.latitud.toFixed(5) }}</p>
+        <p><strong>Longitud:</strong> {{ punto.longitud.toFixed(5) }}</p>
+        <p><strong>Descripción:</strong> {{ punto.descripcion }}</p>
+      </ion-card-content>
+          
+        <ion-item *ngIf="puntoEnEdicion === punto.idPunto" lines="none" class="item-sin-padding item-dark">
+          <ion-list>
+            <div class="edit-form-container">
+              <div class="edit-form-field">
+                <div class="edit-form-label">Nuevo nombre</div>
+                <ion-input
+                  class="edit-form-input"
+                  type="text"
+                  [(ngModel)]="nuevoNombre"
+                  name="nuevoNombre"
+                  placeholder="Nuevo nombre del punto">
+                </ion-input>
+              </div>
+              
+              <div class="edit-form-field">
+                <div class="edit-form-label">Descripción</div>
+                <ion-textarea
+                  class="edit-form-input"
+                  [(ngModel)]="nuevaDescripcion"
+                  name="nuevaDescripcion"
+                  ngDefaultControl
+                  placeholder="Descripción del punto"
+                  rows="3">
+                </ion-textarea>
+              </div>
+            </div>
+          </ion-list>
+        </ion-item>
+
+    <div *ngIf="puntoEnEdicion === punto.idPunto" class="botones-edicion">
+      <ion-button class="guardar" (click)="guardarCambios(punto)">GUARDAR</ion-button>
+      <ion-button class="cancelar" (click)="cancelarEdicion()">CANCELAR</ion-button>
+
+    </div>
+
+      <ion-buttons *ngIf="puntoEnEdicion !== punto.idPunto">
+        <ion-button expand="full" (click)="editarMetodo(punto)">Editar</ion-button>
+               <ion-button class="ver" (click)="verHistorial(punto.idPunto!)">historial</ion-button>
+        <ion-button class="eliminar" expand="full" (click)="eliminarPunto(punto)">Eliminar</ion-button>
+ 
+      </ion-buttons>
+    </ion-card>
+  </ion-list>
+
+  <div *ngIf="listaPuntosFiltrados.length === 0" class="alerta">
+    <p>No hay puntos que coincidan.</p>
+  </div>
+
+</ion-content>

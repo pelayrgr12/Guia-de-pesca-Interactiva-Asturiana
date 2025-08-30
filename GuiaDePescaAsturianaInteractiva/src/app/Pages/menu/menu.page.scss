@@ -1,0 +1,217 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url('/assets/img/fondos/menu-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; 
+}
+
+ion-content {
+  --background: transparent;
+  padding: 0.5rem;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  --padding-bottom: 60px; 
+}
+
+
+ion-content::part(scroll) {
+  padding-bottom: 60px; 
+}
+
+.header-container {
+  background-color: #0066ff;
+  margin: -16px -16px 16px -16px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+  
+  h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.form-container {
+  margin-bottom: 16px;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+ion-label,
+ion-input {
+  color: #000;
+}
+
+ion-button {
+  margin-top: 0.5rem;
+  --background: #0066ff;
+  --border-radius: 8px;
+  font-weight: bold;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  
+  ion-spinner {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+    --color: white;
+  }
+  
+  p {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.error-message {
+  margin: 10px 0;
+  color: #ff4d4f;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+ion-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  padding: 0;
+  color: #000;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+ion-card-content {
+  padding: 0;
+}
+
+.pais-container {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.ciudad-titulo {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  padding: 0 16px;
+}
+
+.temperatura-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.temp-valor {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.temp-icono {
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.sensacion-container {
+  text-align: center;
+  padding: 0 16px 16px;
+  
+  .condicion-clima {
+    text-transform: capitalize;
+    margin-top: 5px;
+    font-weight: 500;
+  }
+}
+
+.separador {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 16px;
+}
+
+.info-grid {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-icon {
+  margin-right: 12px;
+  
+  ion-icon {
+    font-size: 24px;
+    color: #0066ff;
+  }
+}
+
+.info-content {
+  .info-label {
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .info-subvalue {
+    font-size: 0.8rem;
+    color: #555;
+  }
+}
+
+.bottom-spacer {
+  height: 50px; 
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-item {
+    --background: rgba(255, 255, 255, 0.85); 
+  }
+
+  ion-label,
+  ion-input {
+    color: #000 !important; 
+  }
+
+  ion-button {
+    --background: #0066ff; 
+    --color: #fff; 
+  }
+}
+

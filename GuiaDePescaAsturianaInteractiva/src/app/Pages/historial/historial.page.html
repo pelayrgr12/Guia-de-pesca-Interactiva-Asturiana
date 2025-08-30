@@ -1,0 +1,215 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Historial</ion-title>
+    <ion-buttons slot="primary">
+      <div class="boton-flotante">
+        <ion-button size="small" (click)="toggleFormulario()">Añadir captura</ion-button>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="historial-container">
+      <div class="buscador">
+        <ion-item>
+            <ion-icon name="search-outline" slot="start"></ion-icon>
+            <ion-input
+              placeholder="Buscar por descripción"
+              [(ngModel)]="filtroTexto"
+              (ionChange)="aplicarFiltros()"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <ion-button fill="outline" (click)="mostrarFechas = !mostrarFechas">
+              Filtrar por fecha
+            </ion-button>
+          </ion-item>
+
+          <ng-container *ngIf="mostrarFechas">
+              <ion-item class="calendario">
+            <ion-label>Desde</ion-label>
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <input
+              type="date"
+              [value]="fechaDesde ? (fechaDesde | date:'yyyy-MM-dd') : null"
+              (change)="onFechaChange($event, 'desde')"
+              class="native-date"
+            />
+          </ion-item>
+
+          <ion-item class="calendario">
+            <ion-label>Hasta</ion-label>
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <input
+              type="date"
+              [value]="fechaHasta ? (fechaHasta | date:'yyyy-MM-dd') : null"
+              (change)="onFechaChange($event, 'hasta')"
+              class="native-date"
+            />
+          </ion-item>
+
+
+            <ion-row class="ion-justify-content-between ion-padding">
+              <ion-button size="small"  (click)="cancelarFiltro()">
+                Cancelar
+              </ion-button>
+              <ion-button size="small"  (click)="aplicarFiltros()">
+                Buscar
+              </ion-button>
+            </ion-row>
+          </ng-container>
+
+          <ion-modal [isOpen]="modalAbierto" (didDismiss)="modalAbierto = false">
+            <ng-template>
+              <ion-datetime
+                presentation="date"
+                [(ngModel)]="fechaTemporal"
+                [max]="fechaActual"
+                (ionChange)="confirmarFecha($event)"
+                show-default-buttons="true"
+              ></ion-datetime>
+            </ng-template>
+          </ion-modal>
+
+        </div>
+        
+    <form *ngIf="mostrarFormulario" (ngSubmit)="guardarCaptura()">
+      <ion-item class="calendario">
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <input
+          type="date"
+          [(ngModel)]="nuevaCaptura.fecha"
+          name="fechaForm"
+          class="native-date"
+          placeholder="Selecciona una fecha" />
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="nuevaCaptura.descripcion" name="descripcion" required></ion-textarea>
+      </ion-item>
+
+      <ion-item class="file-upload-container">
+        <ion-label position="stacked">Imágenes</ion-label>
+        <div class="custom-file-upload">
+          <div class="file-upload-button">
+            <ion-icon name="images-outline"></ion-icon>
+            <span>Seleccionar imágenes</span>
+          </div>
+          <input type="file" accept="image/*" multiple (change)="cargarImagenes($event)" class="file-input" #fileInput />
+          <div class="file-names" *ngIf="selectedFileNames && selectedFileNames.length > 0">
+            <div class="file-count">{{ selectedFileNames.length }} {{ selectedFileNames.length === 1 ? 'imagen seleccionada' : 'imágenes seleccionadas' }}</div>
+            <div class="file-preview">
+            <div class="preview-image" *ngFor="let url of imagePreviewUrls; let i = index">
+               <img [src]="url" alt="Imagen seleccionada" />
+              <div class="remove-image" (click)="removeImage(i, $event)">
+                <ion-icon name="close-circle"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </ion-item>
+      <ion-button expand="block" type="submit">Guardar captura</ion-button>
+      <ion-button expand="block" class="boton-eliminar" (click)="cancelarFormulario()">Cancelar</ion-button>
+    </form>
+  
+    <ion-list *ngIf="historialesFiltrados.length > 0">
+
+      <ion-card *ngFor="let h of historialesFiltrados; let i = index">
+        <div *ngIf="!h.editando">
+          <ion-card-header>
+            <ion-card-title>Fecha: {{ h.fecha | date:'shortDate' }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ h.descripcion }}</p>
+           <div class="preview-image" *ngFor="let imagen of h.imagenes; let i = index">
+              <img
+                [src]="imagenesBlob[imagen.nombre]"
+                alt="Imagen de historial"
+                class="imagen"
+                >
+            </div>
+
+
+            <div class="botones-accion">
+              <ion-button class="boton-editar" fill="solid" (click)="editarHistorial(i)">EDITAR</ion-button>
+              <ion-button class="boton-eliminar"  fill="solid" (click)="eliminarHistorial(h.idHistorial!)">ELIMINAR</ion-button>
+            </div>
+          </ion-card-content>
+        </div>
+        
+      <div class="edicion" *ngIf="h.editando">
+          <ion-card-header>
+            <ion-item>
+              <ion-icon name="calendar-outline" slot="start"></ion-icon>
+              <input
+                type="date"
+                [(ngModel)]="h.fecha"
+                name="fechaTemp"
+                class="native-date"
+                placeholder="Selecciona una fecha">
+            </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item>
+              <ion-textarea [(ngModel)]="h.descripcion" name="descripcionTemp" required></ion-textarea>
+            </ion-item>
+
+            <div class="imagenes">
+              <ng-container *ngFor="let img of h.imagenes; let i = index">
+                <div class="preview-image" *ngIf="!img.pendienteEliminar">
+                  <img [src]="imagenesBlob[img.nombre]" alt="Imagen de historial">
+                  <div class="remove-image" (click)="eliminarImagenExistente(h, i)">
+                    <ion-icon name="close-circle"></ion-icon>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+
+            <ion-item class="file-upload-container">
+              <ion-label position="stacked">Agregar imágenes</ion-label>
+              <div class="custom-file-upload">
+                <div class="file-upload-button">
+                  <ion-icon name="images-outline"></ion-icon>
+                  <span>Seleccionar imágenes</span>
+                </div>
+                <input type="file" accept="image/*" multiple (change)="cargarImagenesEdicion($event, h)" class="file-input" />
+                <div class="file-names" *ngIf="h.nuevasPreview?.length">
+                  <div class="file-count">
+                    {{ h.nuevasPreview?.length }} nueva{{ h.nuevasPreview?.length === 1 ? '' : 's' }} imagen{{ h.nuevasPreview?.length === 1 ? '' : 'es' }}
+                  </div>
+                  <div class="file-preview">
+                    <div class="preview-image" *ngFor="let url of h.nuevasPreview; let j = index">
+                      <img [src]="url" alt="Imagen seleccionada" />
+                      <div class="remove-image" (click)="eliminarNuevaImagen(h, j)">
+                        <ion-icon name="close-circle"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-item>
+
+            <div class="botones-accion">
+              <ion-button class="boton-guardar" fill="solid" (click)="guardarEdicion(i)">GUARDAR</ion-button>
+              <ion-button class="boton-eliminar" fill="solid" (click)="cancelarEdicion(i)">CANCELAR</ion-button>
+            </div>
+          </ion-card-content>
+        </div>
+
+
+      </ion-card>
+    </ion-list>
+
+    <div *ngIf="historialesFiltrados.length === 0" class="sin-historial">
+      <p>No hay historial para este punto.</p>
+    </div>
+  </div>
+</ion-content>

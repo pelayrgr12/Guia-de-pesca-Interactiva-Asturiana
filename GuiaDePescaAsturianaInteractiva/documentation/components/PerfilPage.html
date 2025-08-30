@@ -1,0 +1,2281 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>GuiaDePescaAsturianaInteractiva documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">GuiaDePescaAsturianaInteractiva documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PerfilPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Pages/perfil/perfil.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-perfil</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>IonContent</code>
+                            <code>IonHeader</code>
+                            <code>IonTitle</code>
+                            <code>IonToolbar</code>
+                            <code>IonFooter</code>
+                            <code>IonButtons</code>
+                            <code>IonButton</code>
+                            <code>IonCard</code>
+                            <code>IonCardHeader</code>
+                            <code>IonCardTitle</code>
+                            <code>IonCardContent</code>
+                            <code>IonSpinner</code>
+                            <code>IonInput</code>
+                            <code>IonItem</code>
+                            <code>IonLabel</code>
+                            <code>IonIcon</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./perfil.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./perfil.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cambioPassword" >cambioPassword</a>
+                            </li>
+                            <li>
+                                <a href="#esAdmin" >esAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#formPerfil" >formPerfil</a>
+                            </li>
+                            <li>
+                                <a href="#modoEdicion" >modoEdicion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#perfilService" >perfilService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#toastController" >toastController</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usuarioService" >usuarioService</a>
+                            </li>
+                            <li>
+                                <a href="#validar" >validar</a>
+                            </li>
+                            <li>
+                                <a href="#verActual" >verActual</a>
+                            </li>
+                            <li>
+                                <a href="#verConfirmarNueva" >verConfirmarNueva</a>
+                            </li>
+                            <li>
+                                <a href="#verNueva" >verNueva</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activarCambioContrasena" >activarCambioContrasena</a>
+                            </li>
+                            <li>
+                                <a href="#activarEdicion" >activarEdicion</a>
+                            </li>
+                            <li>
+                                <a href="#cancelarEdicion" >cancelarEdicion</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarSesion" >cerrarSesion</a>
+                            </li>
+                            <li>
+                                <a href="#formatearFechaInput" >formatearFechaInput</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#guardarCambios" >guardarCambios</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#mostrarMensaje" >mostrarMensaje</a>
+                            </li>
+                            <li>
+                                <a href="#navGestion" >navGestion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleActualVisibility" >toggleActualVisibility</a>
+                            </li>
+                            <li>
+                                <a href="#toggleConfirmarNuevaVisibility" >toggleConfirmarNuevaVisibility</a>
+                            </li>
+                            <li>
+                                <a href="#toggleNuevaVisibility" >toggleNuevaVisibility</a>
+                            </li>
+                            <li>
+                                <a href="#verificarAdmin" >verificarAdmin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:64</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activarCambioContrasena"></a>
+                    <span class="name">
+                        <span ><b>activarCambioContrasena</b></span>
+                        <a href="#activarCambioContrasena"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>activarCambioContrasena()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="223"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:223</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Activa o desactiva los campos de cambio de contraseña</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activarEdicion"></a>
+                    <span class="name">
+                        <span ><b>activarEdicion</b></span>
+                        <a href="#activarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>activarEdicion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Activa la edición del perfil y carga valores actuales en el formulario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelarEdicion"></a>
+                    <span class="name">
+                        <span ><b>cancelarEdicion</b></span>
+                        <a href="#cancelarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelarEdicion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="129"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cancela la edición del perfil y restaura el formulario</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarSesion"></a>
+                    <span class="name">
+                        <span ><b>cerrarSesion</b></span>
+                        <a href="#cerrarSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarSesion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="281"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:281</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cierra sesión y redirige al login</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatearFechaInput"></a>
+                    <span class="name">
+                        <span ><b>formatearFechaInput</b></span>
+                        <a href="#formatearFechaInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>formatearFechaInput(fecha: string | Date)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Formatea una fecha en formato YYYY-MM-DD para el input</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fecha</td>
+                                            <td>
+                                                        <code>string | Date</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarCambios"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>guardarCambios</b></span>
+                        <a href="#guardarCambios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>guardarCambios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guarda los cambios del perfil, incluyendo contraseña si corresponde</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarMensaje"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>mostrarMensaje</b></span>
+                        <a href="#mostrarMensaje"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mostrarMensaje(mensaje: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, color: "success" | "danger")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="231"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:231</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un mensaje tipo toast en pantalla</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mensaje</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                        <code>&quot;success&quot; | &quot;danger&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navGestion"></a>
+                    <span class="name">
+                        <span ><b>navGestion</b></span>
+                        <a href="#navGestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navGestion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="287"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:287</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navega a la sección de gestión</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa la vista, obtiene los datos del usuario y prepara el formulario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleActualVisibility"></a>
+                    <span class="name">
+                        <span ><b>toggleActualVisibility</b></span>
+                        <a href="#toggleActualVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleActualVisibility()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="242"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:242</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna la visibilidad del campo de contraseña actual</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleConfirmarNuevaVisibility"></a>
+                    <span class="name">
+                        <span ><b>toggleConfirmarNuevaVisibility</b></span>
+                        <a href="#toggleConfirmarNuevaVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleConfirmarNuevaVisibility()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="252"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:252</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna la visibilidad del campo de confirmar nueva contraseña</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleNuevaVisibility"></a>
+                    <span class="name">
+                        <span ><b>toggleNuevaVisibility</b></span>
+                        <a href="#toggleNuevaVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleNuevaVisibility()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="247"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:247</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna la visibilidad del campo de nueva contraseña</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verificarAdmin"></a>
+                    <span class="name">
+                        <span ><b>verificarAdmin</b></span>
+                        <a href="#verificarAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verificarAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="259"
+                                    class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:259</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Verifica si el usuario es admin y redirige si no lo es</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambioPassword"></a>
+                    <span class="name">
+                        <span ><b>cambioPassword</b></span>
+                        <a href="#cambioPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag para mostrar campos de cambio de contraseña</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="esAdmin"></a>
+                    <span class="name">
+                        <span ><b>esAdmin</b></span>
+                        <a href="#esAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:64</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Determina si el usuario es administrador</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formPerfil"></a>
+                    <span class="name">
+                        <span ><b>formPerfil</b></span>
+                        <a href="#formPerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para edición de perfil</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modoEdicion"></a>
+                    <span class="name">
+                        <span ><b>modoEdicion</b></span>
+                        <a href="#modoEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado para activar el modo edición del perfil</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="perfilService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>perfilService</b></span>
+                        <a href="#perfilService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(PerfilService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastController"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>toastController</b></span>
+                        <a href="#toastController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastController)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos del usuario actual</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>usuarioService</b></span>
+                        <a href="#usuarioService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UsuariosService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validar"></a>
+                    <span class="name">
+                        <span ><b>validar</b></span>
+                        <a href="#validar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:58</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag para indicar si hubo errores de validación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verActual"></a>
+                    <span class="name">
+                        <span ><b>verActual</b></span>
+                        <a href="#verActual"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:49</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado para mostrar u ocultar contraseña actual</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verConfirmarNueva"></a>
+                    <span class="name">
+                        <span ><b>verConfirmarNueva</b></span>
+                        <a href="#verConfirmarNueva"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:55</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado para mostrar u ocultar confirmación de nueva contraseña</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verNueva"></a>
+                    <span class="name">
+                        <span ><b>verNueva</b></span>
+                        <a href="#verNueva"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/Pages/perfil/perfil.page.ts:52</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado para mostrar u ocultar nueva contraseña</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import {
+  IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader,
+  IonCardTitle, IonContent, IonFooter, IonHeader, IonSpinner,
+  IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonIcon,
+  ToastController
+} from &#x27;@ionic/angular/standalone&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Usuario } from &#x27;src/app/shared/interfaces/Usuario&#x27;;
+import { UsuariosService } from &#x27;src/app/shared/services/usuarios.service&#x27;;
+import { jwtDecode } from &#x27;jwt-decode&#x27;;
+import { PerfilService } from &#x27;src/app/shared/services/perfil.service&#x27;;
+import { addIcons } from &#x27;ionicons&#x27;;
+import { eye, eyeOff } from &#x27;ionicons/icons&#x27;;
+
+@Component({
+  selector: &#x27;app-perfil&#x27;,
+  templateUrl: &#x27;./perfil.page.html&#x27;,
+  styleUrls: [&#x27;./perfil.page.scss&#x27;],
+  standalone: true,
+  imports: [
+    CommonModule, FormsModule, ReactiveFormsModule,
+    IonContent, IonHeader, IonTitle, IonToolbar,
+    IonFooter, IonButtons, IonButton, IonCard,
+    IonCardHeader, IonCardTitle, IonCardContent,
+    IonSpinner, IonInput, IonItem, IonLabel, IonIcon
+  ]
+})
+export class PerfilPage implements OnInit {
+
+  private router: Router &#x3D; inject(Router);
+  private usuarioService &#x3D; inject(UsuariosService);
+  private toastController &#x3D; inject(ToastController);
+  private perfilService &#x3D; inject(PerfilService);
+
+  /** Datos del usuario actual */
+  usuario?: Usuario;
+
+  /** Estado para activar el modo edición del perfil */
+  modoEdicion &#x3D; false;
+
+  /** Formulario reactivo para edición de perfil */
+  formPerfil!: FormGroup;
+
+  /** Estado para mostrar u ocultar contraseña actual */
+  verActual &#x3D; false;
+
+  /** Estado para mostrar u ocultar nueva contraseña */
+  verNueva &#x3D; false;
+
+  /** Estado para mostrar u ocultar confirmación de nueva contraseña */
+  verConfirmarNueva &#x3D; false;
+
+  /** Flag para indicar si hubo errores de validación */
+  validar &#x3D; false;
+
+  /** Flag para mostrar campos de cambio de contraseña */
+  cambioPassword: boolean &#x3D; false;
+
+  /** Determina si el usuario es administrador */
+  esAdmin: boolean &#x3D; false;
+
+  constructor(private fb: FormBuilder) {
+    addIcons({
+      &#x27;eye&#x27;: eye,
+      &#x27;eye-off&#x27;: eyeOff
+    });
+  }
+
+  /**
+   * Inicializa la vista, obtiene los datos del usuario y prepara el formulario.
+   */
+  async ngOnInit() {
+    this.esAdmin &#x3D; this.verificarAdmin();
+    try {
+      this.usuario &#x3D; await this.usuarioService.getUsuario();
+
+      this.formPerfil &#x3D; this.fb.group({
+        nombre: [this.usuario?.nombre, Validators.required],
+        correo: [this.usuario?.correo, [Validators.required, Validators.email]],
+        fechaNacimiento: [this.usuario?.fechaNacimiento, Validators.required],
+        contrasenaActual: [&#x27;&#x27;, Validators.required],
+        nuevaContrasena: [&#x27;&#x27;, [
+          Validators.minLength(8),
+          Validators.pattern(/^(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[ !&quot;·$%&amp;/()&#x3D;?¿^*+´{}[\]\\\-_:;,.&lt;&gt;@|#~]).{8,}$/)
+        ]],
+        confirmarContrasena: [&#x27;&#x27;]
+      });
+
+    } catch (error) {
+      console.error(&#x27;Error al obtener el usuario&#x27;, error);
+    }
+  }
+
+  /**
+   * Activa la edición del perfil y carga valores actuales en el formulario.
+   */
+  activarEdicion() {
+    this.modoEdicion &#x3D; true;
+
+    const fecha &#x3D; this.usuario?.fechaNacimiento
+      ? this.formatearFechaInput(this.usuario.fechaNacimiento)
+      : &#x27;&#x27;;
+
+    this.formPerfil.patchValue({
+      nombre: this.usuario?.nombre,
+      correo: this.usuario?.correo,
+      fechaNacimiento: fecha
+    });
+  }
+
+  /**
+   * Formatea una fecha en formato YYYY-MM-DD para el input
+   */
+  formatearFechaInput(fecha: string | Date): string {
+    const d &#x3D; new Date(fecha);
+    const year &#x3D; d.getFullYear();
+    const month &#x3D; (d.getMonth() + 1).toString().padStart(2, &#x27;0&#x27;);
+    const day &#x3D; d.getDate().toString().padStart(2, &#x27;0&#x27;);
+    return &#x60;${year}-${month}-${day}&#x60;;
+  }
+
+  /**
+   * Cancela la edición del perfil y restaura el formulario
+   */
+  cancelarEdicion() {
+    this.modoEdicion &#x3D; false;
+    this.validar &#x3D; false;
+    this.cambioPassword &#x3D; false;
+    this.formPerfil.reset({
+      nombre: this.usuario?.nombre,
+      correo: this.usuario?.correo,
+      fechaNacimiento: this.usuario?.fechaNacimiento
+    });
+  }
+
+  /**
+   * Guarda los cambios del perfil, incluyendo contraseña si corresponde
+   */
+  async guardarCambios() {
+    const nueva &#x3D; this.formPerfil.get(&#x27;nuevaContrasena&#x27;)?.value?.trim();
+    const confirmar &#x3D; this.formPerfil.get(&#x27;confirmarContrasena&#x27;)?.value?.trim();
+    const actual &#x3D; this.formPerfil.get(&#x27;contrasenaActual&#x27;)?.value?.trim();
+
+    if (!actual) {
+      this.validar &#x3D; true;
+      this.mostrarMensaje(&#x27;Debes introducir la contraseña actual para confirmar los cambios&#x27;, &#x27;danger&#x27;);
+      return;
+    }
+
+    const quiereCambiarContrasena &#x3D; nueva || confirmar;
+
+    if (quiereCambiarContrasena) {
+      if (!nueva || !confirmar || nueva !&#x3D;&#x3D; confirmar) {
+        this.validar &#x3D; true;
+        this.mostrarMensaje(&#x27;Las contraseñas no coinciden&#x27;, &#x27;danger&#x27;);
+        return;
+      }
+    }
+
+    this.validar &#x3D; false;
+
+    const dto: any &#x3D; {
+      nombre: this.formPerfil.value.nombre,
+      correo: this.formPerfil.value.correo,
+      fechaNacimiento: this.formPerfil.value.fechaNacimiento,
+      contrasenaActual: actual
+    };
+
+    if (quiereCambiarContrasena) {
+      dto.nuevaContrasena &#x3D; nueva;
+    }
+
+    try {
+      await this.perfilService.actualizarPerfil(dto);
+
+      if (dto.correo !&#x3D;&#x3D; this.usuario?.correo) {
+        this.mostrarMensaje(&#x27;Se ha cambiado el correo, por favor inicia sesión de nuevo&#x27;, &#x27;success&#x27;);
+        this.cerrarSesion();
+        this.formPerfil.reset(this.usuario);
+        this.formPerfil.patchValue({
+          contrasenaActual: &#x27;&#x27;,
+          nuevaContrasena: &#x27;&#x27;,
+          confirmarContrasena: &#x27;&#x27;
+        });
+        return;
+      }
+
+      this.mostrarMensaje(&#x27;Perfil actualizado correctamente&#x27;, &#x27;success&#x27;);
+      this.usuario &#x3D; await this.usuarioService.getUsuario();
+      this.formPerfil.reset(this.usuario);
+      this.formPerfil.patchValue({
+        contrasenaActual: &#x27;&#x27;,
+        nuevaContrasena: &#x27;&#x27;,
+        confirmarContrasena: &#x27;&#x27;
+      });
+
+      this.modoEdicion &#x3D; false;
+    } catch (error: any) {
+      let mensaje &#x3D; &#x27;Error al actualizar el perfil&#x27;;
+
+      if (error.status &#x3D;&#x3D;&#x3D; 400 || error.status &#x3D;&#x3D;&#x3D; 401) {
+        if (typeof error.body &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+          mensaje &#x3D; error.body;
+        } else if (error.body?.mensaje) {
+          mensaje &#x3D; error.body.mensaje;
+        } else {
+          mensaje &#x3D; &#x27;Contraseña actual incorrecta&#x27;;
+        }
+      }
+
+      this.mostrarMensaje(mensaje, &#x27;danger&#x27;);
+      console.error(error);
+    }
+  }
+
+  /**
+   * Activa o desactiva los campos de cambio de contraseña
+   */
+  activarCambioContrasena() {
+    this.cambioPassword &#x3D; !this.cambioPassword;
+    console.log(this.cambioPassword);
+  }
+
+  /**
+   * Muestra un mensaje tipo toast en pantalla
+   */
+  async mostrarMensaje(mensaje: string, color: &#x27;success&#x27; | &#x27;danger&#x27;) {
+    const toast &#x3D; await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      position: &#x27;top&#x27;,
+      color: color
+    });
+    toast.present();
+  }
+
+  /** Alterna la visibilidad del campo de contraseña actual */
+  toggleActualVisibility() {
+    this.verActual &#x3D; !this.verActual;
+  }
+
+  /** Alterna la visibilidad del campo de nueva contraseña */
+  toggleNuevaVisibility() {
+    this.verNueva &#x3D; !this.verNueva;
+  }
+
+  /** Alterna la visibilidad del campo de confirmar nueva contraseña */
+  toggleConfirmarNuevaVisibility() {
+    this.verConfirmarNueva &#x3D; !this.verConfirmarNueva;
+  }
+
+  /**
+   * Verifica si el usuario es admin y redirige si no lo es
+   */
+  verificarAdmin(): boolean {
+    const token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    if (!token) {
+      this.router.navigate([&#x27;/login&#x27;]);
+      return false;
+    }
+    try {
+      const decodedToken: any &#x3D; jwtDecode(token);
+      if (decodedToken.rol &#x3D;&#x3D;&#x3D; &#x27;USER&#x27;) {
+        return false;
+      } else if (decodedToken.rol &#x3D;&#x3D;&#x3D; &#x27;ADMIN&#x27;) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      this.router.navigate([&#x27;/login&#x27;]);
+      return false;
+    }
+  }
+
+  /** Cierra sesión y redirige al login */
+  cerrarSesion() {
+    localStorage.removeItem(&#x27;token&#x27;);
+    this.router.navigate([&#x27;/login&#x27;]);
+  }
+
+  /** Navega a la sección de gestión */
+  navGestion() {
+    this.router.navigate([&#x27;/tabs/gestion&#x27;]);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header [translucent]&#x3D;&quot;true&quot;&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-title&gt;Perfil&lt;/ion-title&gt;
+    &lt;ion-buttons slot&#x3D;&quot;end&quot;&gt;
+      &lt;ion-button (click)&#x3D;&quot;cerrarSesion()&quot;&gt;Cerrar sesión&lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content [fullscreen]&#x3D;&quot;true&quot;&gt;
+  &lt;div class&#x3D;&quot;perfil-container&quot;&gt;
+    &lt;ion-card *ngIf&#x3D;&quot;!modoEdicion&quot;&gt;
+      &lt;ion-card-header&gt;
+        &lt;ion-card-title&gt;{{ usuario?.nombre }}&lt;/ion-card-title&gt;
+      &lt;/ion-card-header&gt;
+      &lt;ion-card-content&gt;
+        &lt;p&gt;&lt;strong&gt;Correo:&lt;/strong&gt; {{ usuario?.correo }}&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Fecha de nacimiento:&lt;/strong&gt; {{ usuario?.fechaNacimiento | date }}&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Estado de la cuenta:&lt;/strong&gt; {{ usuario?.habilitado ? &#x27;Habilitado&#x27; : &#x27;Deshabilitado&#x27; }}&lt;/p&gt;
+        &lt;ion-button expand&#x3D;&quot;block&quot; (click)&#x3D;&quot;activarEdicion()&quot;&gt;Modificar perfil&lt;/ion-button&gt;
+      &lt;/ion-card-content&gt;
+    &lt;/ion-card&gt;
+    &lt;form *ngIf&#x3D;&quot;modoEdicion&quot; [formGroup]&#x3D;&quot;formPerfil&quot; (ngSubmit)&#x3D;&quot;guardarCambios()&quot;&gt;
+      &lt;ion-item *ngIf&#x3D;&quot;!cambioPassword&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Nombre&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;nombre&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item *ngIf&#x3D;&quot;!cambioPassword&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Correo electrónico&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;correo&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+      &lt;ion-item *ngIf&#x3D;&quot;!cambioPassword&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Fecha de nacimiento&lt;/ion-label&gt;
+        &lt;ion-input type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;fechaNacimiento&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+
+            
+      &lt;p&gt;Se requiere la contraseña anctual por seguridad &lt;/p&gt;
+      &lt;ion-item lines&#x3D;&quot;full&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Contraseña actual&lt;/ion-label&gt;
+      
+        &lt;ion-input [type]&#x3D;&quot;verActual ? &#x27;text&#x27; : &#x27;password&#x27;&quot; formControlName&#x3D;&quot;contrasenaActual&quot;&gt;&lt;/ion-input&gt;
+        &lt;ion-icon class&#x3D;&quot;icono-password&quot; [name]&#x3D;&quot;verActual ? &#x27;eye-off&#x27; : &#x27;eye&#x27;&quot; (click)&#x3D;&quot;toggleActualVisibility()&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-item&gt;
+
+     &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;contrasenaActual&#x27;)?.invalid &amp;&amp; formPerfil.get(&#x27;contrasenaActual&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;contrasenaActual&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+    &lt;/div&gt;
+
+      &lt;ion-button size&#x3D;&quot;small&quot; class&#x3D;&quot;modificar-password ion-text-wrap&quot; (click)&#x3D;&quot;activarCambioContrasena()&quot;&gt;Cambiar de contraseña&lt;/ion-button&gt;
+
+      &lt;ion-item *ngIf&#x3D;&quot;cambioPassword&quot; lines&#x3D;&quot;full&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Nueva contraseña&lt;/ion-label&gt;
+        &lt;ion-input [type]&#x3D;&quot;verNueva ? &#x27;text&#x27; : &#x27;password&#x27;&quot; formControlName&#x3D;&quot;nuevaContrasena&quot;&gt;&lt;/ion-input&gt;
+        &lt;ion-icon class&#x3D;&quot;icono-password&quot; [name]&#x3D;&quot;verNueva ? &#x27;eye-off&#x27; : &#x27;eye&#x27;&quot; (click)&#x3D;&quot;toggleNuevaVisibility()&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-item&gt;
+
+      &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;nuevaContrasena&#x27;)?.invalid &amp;&amp; formPerfil.get(&#x27;nuevaContrasena&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;nuevaContrasena&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;nuevaContrasena&#x27;)?.errors?.[&#x27;minlength&#x27;]&quot;&gt;Debe tener al menos 8 caracteres&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;nuevaContrasena&#x27;)?.errors?.[&#x27;pattern&#x27;]&quot;&gt;Debe incluir mayúsculas, minúsculas y un carácter especial&lt;/div&gt;
+      &lt;/div&gt;
+
+
+      &lt;ion-item  *ngIf&#x3D;&quot;cambioPassword&quot; lines&#x3D;&quot;full&quot;&gt;
+        &lt;ion-label position&#x3D;&quot;floating&quot;&gt;Confirmar nueva contraseña&lt;/ion-label&gt;
+        &lt;ion-input [type]&#x3D;&quot;verConfirmarNueva ? &#x27;text&#x27; : &#x27;password&#x27;&quot; formControlName&#x3D;&quot;confirmarContrasena&quot;&gt;&lt;/ion-input&gt;
+        &lt;ion-icon class&#x3D;&quot;icono-password&quot; [name]&#x3D;&quot;verConfirmarNueva ? &#x27;eye-off&#x27; : &#x27;eye&#x27;&quot; (click)&#x3D;&quot;toggleConfirmarNuevaVisibility()&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-item&gt;
+
+      &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;confirmarContrasena&#x27;)?.invalid &amp;&amp; formPerfil.get(&#x27;confirmarContrasena&#x27;)?.dirty&quot; class&#x3D;&quot;mt-2 alert alert-danger&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;formPerfil.get(&#x27;confirmarContrasena&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;Campo obligatorio&lt;/div&gt;
+    &lt;/div&gt;
+
+      &lt;ion-button expand&#x3D;&quot;block&quot; type&#x3D;&quot;submit&quot;&gt;Guardar cambios&lt;/ion-button&gt;
+      &lt;ion-button expand&#x3D;&quot;block&quot; class&#x3D;&quot;cancelar-btn&quot; (click)&#x3D;&quot;cancelarEdicion()&quot;&gt;Cancelar&lt;/ion-button&gt;
+    &lt;/form&gt;
+  
+     &lt;ion-button class&#x3D;&quot;btn-gestion&quot; *ngIf&#x3D;&quot;esAdmin&quot; (click)&#x3D;&quot;navGestion()&quot;&gt;Gestión Usuarios&lt;/ion-button&gt;
+
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./perfil.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;src/theme/variables.scss&#x27;;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url(&#x27;/assets/img/fondos/perfil-fondo.jpg&#x27;) no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+ion-header,
+ion-toolbar {
+  --background: #3a3f44;
+  --color: white;
+  box-shadow: none;
+  border: none;
+}
+
+p{
+  font-family: &#x27;Open Sans&#x27;, sans-serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  margin-bottom: 7px;
+
+}
+
+.cancelar-btn {
+  --background: #992020e5 !important;
+  --background-activated: #7a1a1ae5 !important;
+  --background-focused: #7a1a1ae5 !important;
+  --background-hover: #7a1a1ae5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+.modificar-password {
+  text-transform: none!important;
+  font-size: 0.4rem;
+  font-weight: 100;
+  --background: transparent;
+  --color: #d1d1d1;
+  --border-color: #007bff;
+  --border-style: solid;
+  --border-width: 1.5px;
+  --background-hover: rgba(0, 123, 255, 0.1);
+  --background-activated: rgba(0, 123, 255, 0.2);
+    display: block;       /* necesario para que funcione margin auto */
+  margin: 0 auto;       /* esto lo centra horizontalmente */
+  text-align: center;
+}
+
+.gestion{
+  padding: 0.5rem!important;
+}
+
+.btn-gestion {
+  display: flex;
+  text-align: center;
+  margin-top: 1rem auto;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  --background: #0066ff;
+  --background-hover: #0052cc;
+  --background-activated: #0041aa;
+  --color: #ffffff;
+
+  --border-radius: 10px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --min-height: 40px;
+
+  box-shadow: 0 4px 12px rgba(54, 53, 53, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+
+ion-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  padding-left: 16px;
+  color: white;
+}
+
+ion-buttons[slot&#x3D;&quot;end&quot;] {
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-start;
+  margin-right: 8px;
+  margin-left: auto;
+  height: 100%;
+  justify-content: center;
+  
+  ion-button {
+    --color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    height: 20px;
+    margin: 2px 0;
+    letter-spacing: 0.5px;
+    --background: transparent;
+    --background-hover: transparent;
+    --background-activated: transparent;
+    --background-focused: transparent;
+    --ripple-color: transparent;
+  }
+}
+
+ion-content {
+  --background: transparent;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.perfil-container {
+  padding: 1rem;
+  padding-bottom: 6rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+ion-card {
+  background: rgba(33, 37, 41, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+  overflow: hidden;
+}
+
+ion-card-header {
+  padding: 16px;
+  background: rgba(33, 37, 41, 0.95);
+  border-bottom: none;
+}
+
+ion-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+ion-card-content {
+  padding: 16px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+ion-card-content p {
+  margin: 12px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+ion-card-content p strong {
+  font-size: medium;
+  color: rgba(255, 255, 255);
+  margin-right: 5px;
+}
+
+ion-card-content ion-button[expand&#x3D;&quot;block&quot;] {
+  --background: #0066ff;
+  --background-activated: #0052cc;
+  --color: white;
+  max-width: 100%;
+  margin: 1rem auto 0.5rem;
+  height: 44px;
+  font-size: 1rem;
+  font-weight: 600;
+  --border-radius: 8px;
+  text-transform: none;
+}
+
+form {
+  background: rgba(33, 37, 41, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+ion-item {
+  --background: var(--color-input-bg);
+  --border-radius: 10px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --min-height: 50px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+ion-item:last-of-type {
+  margin-bottom: 16px;
+}
+
+ion-label {
+  --color: var( --color-input-text) !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+ion-input {
+  --color: var(--color-input-text);
+  font-size: 1rem;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-end: 40px; 
+}
+
+.contenedor-password {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+ion-item ion-icon.icono-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #666;
+  z-index: 10;
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+}
+
+ion-item .input-password {
+  position: relative;
+}
+
+ion-item ion-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #666;
+  z-index: 10;
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+}
+
+form ion-button {
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  height: 48px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+form ion-button[type&#x3D;&quot;submit&quot;] {
+  --background: #0066ff;
+  --background-activated: #0052cc;
+  --color: white;
+}
+
+form ion-button[color&#x3D;&quot;medium&quot;] {
+  --background: #666666;
+  --background-activated: #555555;
+  --color: white;
+}
+
+/* Estilos mejorados para los mensajes de error */
+.mt-2 {
+  margin-top: 8px;
+}
+
+.alert {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.9);
+  color: white;
+  border-left: 3px solid #ff1744;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los mensajes individuales dentro del alert */
+.alert-danger div {
+  padding: 4px 0;
+  position: relative;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Añadir un pequeño icono antes de cada mensaje de error */
+.alert-danger div::before {
+  content: &quot;•&quot;;
+  position: absolute;
+  left: 5px;
+  color: #ff8a8a;
+}
+
+/* Animación para los mensajes de error */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-tabs {
+  background: rgba(33, 37, 41, 0.95);
+}
+
+ion-tab-bar {
+  --background: transparent;
+  border-top: none;
+  padding: 5px 0;
+}
+
+ion-tab-button {
+  --color: rgba(255, 255, 255, 0.6);
+  --color-selected: #0066ff;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+}
+
+ion-tab-button ion-icon {
+  font-size: 24px;
+}
+
+ion-tab-button ion-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+ion-card, form {
+  animation: fadeIn 0.3s ease-out;
+}
+
+ion-datetime {
+  --background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+ion-spinner {
+  display: block;
+  margin: 2rem auto;
+  --color: #0066ff;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header [translucent]="true">  <ion-toolbar>    <ion-title>Perfil</ion-title>    <ion-buttons slot="end">      <ion-button (click)="cerrarSesion()">Cerrar sesión</ion-button>    </ion-buttons>  </ion-toolbar></ion-header><ion-content [fullscreen]="true">  <div class="perfil-container">    <ion-card *ngIf="!modoEdicion">      <ion-card-header>        <ion-card-title>{{ usuario?.nombre }}</ion-card-title>      </ion-card-header>      <ion-card-content>        <p><strong>Correo:</strong> {{ usuario?.correo }}</p>        <p><strong>Fecha de nacimiento:</strong> {{ usuario?.fechaNacimiento | date }}</p>        <p><strong>Estado de la cuenta:</strong> {{ usuario?.habilitado ? \'Habilitado\' : \'Deshabilitado\' }}</p>        <ion-button expand="block" (click)="activarEdicion()">Modificar perfil</ion-button>      </ion-card-content>    </ion-card>    <form *ngIf="modoEdicion" [formGroup]="formPerfil" (ngSubmit)="guardarCambios()">      <ion-item *ngIf="!cambioPassword">        <ion-label position="floating">Nombre</ion-label>        <ion-input type="text" formControlName="nombre"></ion-input>      </ion-item>      <ion-item *ngIf="!cambioPassword">        <ion-label position="floating">Correo electrónico</ion-label>        <ion-input type="email" formControlName="correo"></ion-input>      </ion-item>      <ion-item *ngIf="!cambioPassword">        <ion-label position="floating">Fecha de nacimiento</ion-label>        <ion-input type="date" formControlName="fechaNacimiento"></ion-input>      </ion-item>                  <p>Se requiere la contraseña anctual por seguridad </p>      <ion-item lines="full">        <ion-label position="floating">Contraseña actual</ion-label>              <ion-input [type]="verActual ? \'text\' : \'password\'" formControlName="contrasenaActual"></ion-input>        <ion-icon class="icono-password" [name]="verActual ? \'eye-off\' : \'eye\'" (click)="toggleActualVisibility()"></ion-icon>      </ion-item>     <div *ngIf="formPerfil.get(\'contrasenaActual\')?.invalid && formPerfil.get(\'contrasenaActual\')?.dirty" class="mt-2 alert alert-danger">          <div *ngIf="formPerfil.get(\'contrasenaActual\')?.errors?.[\'required\']">Campo obligatorio</div>    </div>      <ion-button size="small" class="modificar-password ion-text-wrap" (click)="activarCambioContrasena()">Cambiar de contraseña</ion-button>      <ion-item *ngIf="cambioPassword" lines="full">        <ion-label position="floating">Nueva contraseña</ion-label>        <ion-input [type]="verNueva ? \'text\' : \'password\'" formControlName="nuevaContrasena"></ion-input>        <ion-icon class="icono-password" [name]="verNueva ? \'eye-off\' : \'eye\'" (click)="toggleNuevaVisibility()"></ion-icon>      </ion-item>      <div *ngIf="formPerfil.get(\'nuevaContrasena\')?.invalid && formPerfil.get(\'nuevaContrasena\')?.dirty" class="mt-2 alert alert-danger">          <div *ngIf="formPerfil.get(\'nuevaContrasena\')?.errors?.[\'required\']">Campo obligatorio</div>          <div *ngIf="formPerfil.get(\'nuevaContrasena\')?.errors?.[\'minlength\']">Debe tener al menos 8 caracteres</div>          <div *ngIf="formPerfil.get(\'nuevaContrasena\')?.errors?.[\'pattern\']">Debe incluir mayúsculas, minúsculas y un carácter especial</div>      </div>      <ion-item  *ngIf="cambioPassword" lines="full">        <ion-label position="floating">Confirmar nueva contraseña</ion-label>        <ion-input [type]="verConfirmarNueva ? \'text\' : \'password\'" formControlName="confirmarContrasena"></ion-input>        <ion-icon class="icono-password" [name]="verConfirmarNueva ? \'eye-off\' : \'eye\'" (click)="toggleConfirmarNuevaVisibility()"></ion-icon>      </ion-item>      <div *ngIf="formPerfil.get(\'confirmarContrasena\')?.invalid && formPerfil.get(\'confirmarContrasena\')?.dirty" class="mt-2 alert alert-danger">          <div *ngIf="formPerfil.get(\'confirmarContrasena\')?.errors?.[\'required\']">Campo obligatorio</div>    </div>      <ion-button expand="block" type="submit">Guardar cambios</ion-button>      <ion-button expand="block" class="cancelar-btn" (click)="cancelarEdicion()">Cancelar</ion-button>    </form>       <ion-button class="btn-gestion" *ngIf="esAdmin" (click)="navGestion()">Gestión Usuarios</ion-button>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'GestionPage', 'selector': 'app-gestion'},{'name': 'HistorialPage', 'selector': 'app-historial'},{'name': 'InicioPage', 'selector': 'app-inicio'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MapaPage', 'selector': 'app-mapa'},{'name': 'MenuPage', 'selector': 'app-menu'},{'name': 'MisPuntosPage', 'selector': 'app-mis-puntos'},{'name': 'PerfilPage', 'selector': 'app-perfil'},{'name': 'RegistroPage', 'selector': 'app-registro'},{'name': 'TablaMedidasPage', 'selector': 'app-tabla-medidas'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PerfilPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PerfilPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

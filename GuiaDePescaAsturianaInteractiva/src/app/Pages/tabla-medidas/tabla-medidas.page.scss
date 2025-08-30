@@ -1,0 +1,526 @@
+
+:root {
+  --ion-color-primary: #0d6efd; 
+  --ion-color-primary-rgb: 13, 110, 253;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #0b5ed7;
+  --ion-color-primary-tint: #3184fd;
+  
+  --ion-color-secondary: #2c6e49;
+  --ion-color-secondary-rgb: 44, 110, 73;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-shade: #276140;
+  --ion-color-secondary-tint: #41795b;
+  
+  --ion-color-danger: #ff0e0e;
+  --ion-color-danger-rgb: 220, 53, 69;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-shade: #c13c48;
+  --ion-color-danger-tint: #e15361;
+  
+  --ion-color-success: #28a745;
+  --ion-color-success-rgb: 40, 167, 69;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-shade: #23933d;
+  --ion-color-success-tint: #3eb058;
+  
+  --ion-color-medium: #6c757d;
+  --ion-color-medium-rgb: 108, 117, 125;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-shade: #5f666d;
+  --ion-color-medium-tint: #7d868f;
+}
+
+ion-header ion-toolbar {
+  --background: #000000;
+  --color: white;
+}
+
+ion-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Fondo de la pantalla */
+.medidas-fondo {
+  --background: transparent;
+  background-image: url('/assets/img/fondos/medidas-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 16px;
+}
+
+ion-searchbar {
+  --background: rgba(255, 255, 255, 0.9);
+  --color: #333;
+  --placeholder-color: #666;
+  --icon-color: var(--ion-color-primary);
+  --clear-button-color: #666;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-content > ion-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+ion-content > ion-buttons ion-button {
+  --background: #28a745;
+  --background-activated: #218838;
+  --background-focused: #218838;
+  --background-hover: #218838;
+  --color: white;
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  text-transform: uppercase;
+  height: 44px;
+}
+
+
+form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 8px 16px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+form ion-item {
+  --background: transparent;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --padding-start: 0;
+  margin-bottom: 12px;
+  box-shadow: none;
+}
+
+form ion-button {
+  margin-top: 12px;
+  height: 44px;
+  text-transform: uppercase;
+}
+
+form ion-button[color="primary"] {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --background-focused: var(--ion-color-primary-shade);
+  --background-hover: var(--ion-color-primary-shade);
+}
+
+form ion-button[color="medium"] {
+  --background: var(--ion-color-medium);
+  --background-activated: var(--ion-color-medium-shade);
+  --background-focused: var(--ion-color-medium-shade);
+  --background-hover: var(--ion-color-medium-shade);
+}
+
+/* Selector de tipo */
+ion-item {
+  --background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-select {
+  --placeholder-color: #333;
+  --placeholder-opacity: 1;
+  width: 100%;
+  max-width: 100%;
+  font-weight: 500;
+}
+
+ion-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  margin: 0 0 16px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+
+}
+
+ion-card:active {
+  transform: scale(0.98);
+}
+
+ion-img {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ion-card-header {
+  padding: 12px 16px 0;
+}
+
+ion-card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+.filtro{
+  padding: auto;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+
+
+ion-card-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+ion-card-content {
+  padding: 8px 16px 8px;
+}
+
+ion-card-content p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #000;
+}
+
+.busqueda-vacia{
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  margin-bottom: 7px;
+}
+
+
+.ion-text-bold {
+  font-weight: bold;
+}
+
+ion-card-content ion-text {
+
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #000 !important;
+  display: block; 
+}
+ion-card-content h3{
+  color: var(--ion-color-secondary);
+}
+
+ion-card-content ion-text span,
+ion-card-content ion-text h3 {
+  color: var(--ion-color-secondary);
+  font-weight: bold;
+}
+
+
+/* Formulario de edición dentro de la tarjeta */
+ion-card ion-item {
+  --background: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+}
+
+ion-card ion-item ion-label {
+  color: var(--color-input-text);
+  font-weight: 500;
+}
+
+/* Estilos específicos para los botones GUARDAR/Cancelar en el formulario de edición */
+.botones-edicion {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 12px;
+  width: 100%;
+}
+
+.botones-edicion ion-button {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  margin: 0 4px;
+  height: 44px;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+/* Botón GUARDAR */
+.guardar,
+ion-button.guardar,
+.botones-edicion ion-button[color="success"] {
+  --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Botón Cancelar */
+.cancelar,
+ion-button.cancelar,
+.botones-edicion ion-button[color="medium"] {
+  --background: #992020e5 !important;
+  --background-activated: #992020e5 !important;
+  --background-focused: #992020e5 !important;
+  --background-hover: #992020e5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Botones de administrador en las tarjetas */
+ion-card ion-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+/* IMPORTANTE: Estilos específicos para los botones Editar y Eliminar */
+ion-card ion-buttons ion-button {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  flex: 1;
+  margin: 0 4px;
+  height: 44px;
+  overflow: hidden;
+}
+
+/* Botón EDITAR */
+.editar,
+ion-button.editar,
+ion-card ion-buttons ion-button:first-child {
+  --background: #0d6efd !important;
+  --background-activated: #0b5ed7 !important;
+  --background-focused: #0b5ed7 !important;
+  --background-hover: #0b5ed7 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Botón ELIMINAR */
+.eliminar,
+ion-button.eliminar,
+ion-card ion-buttons ion-button[color="danger"] {
+  --background: #ff3b3b !important;
+  --background-activated: #ff0000 !important;
+  --background-focused: #992020e5 !important;
+  --background-hover: #992020e5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+}
+
+/* Mejoras para dispositivos más pequeños */
+@media (max-width: 320px) {
+  ion-card-title {
+    font-size: 1.1rem;
+  }
+  
+  ion-card-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  ion-card-content p {
+    font-size: 0.9rem;
+  }
+  
+  ion-card ion-buttons ion-button {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animaciones para mejorar la experiencia de usuario */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-card {
+  animation: fadeIn 0.3s ease-out forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.05s);
+}
+
+/* Mejoras para el modo oscuro */
+@media (prefers-color-scheme: dark) {
+  ion-card {
+    background: rgba(30, 30, 30, 0.85);
+  }
+  
+  ion-card-title {
+    color: #fff;
+  }
+  
+  ion-card-subtitle {
+    color: #ccc;
+  }
+  
+  ion-card-content p {
+    color: #eee;
+  }
+  
+  ion-card ion-item {
+    --background: rgba(40, 40, 40, 0.85);
+    --color: white;
+  }
+  
+  form {
+    background: rgba(30, 30, 30, 0.9);
+  }
+  
+  form ion-item {
+    --color: white;
+  }
+  
+  ion-item {
+    --background: rgba(30, 30, 30, 0.85);
+    --color: white;
+  }
+  
+  ion-searchbar {
+    --background: rgba(30, 30, 30, 0.85);
+    --color: white;
+    --placeholder-color: #ccc;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    position: sticky ;  
+
+  }
+}
+
+
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+
+ion-card .edit-form-container + .action-buttons {
+  display: none;
+}
+
+
+.edit-form-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 16px;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Edit buttons container */
+.edit-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  width: 100%;
+}
+
+/* Button styles */
+.editar-btn {
+  --background: #0d6efd !important;
+  --background-activated: #0b5ed7 !important;
+  --background-focused: #0b5ed7 !important;
+  --background-hover: #0b5ed7 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+}
+
+.eliminar-btn {
+  --background: #992020e5 !important;
+  --background-activated: #992020e5 !important;
+  --background-focused: #992020e5 !important;
+  --background-hover: #992020e5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+}
+
+/* Botón GUARDAR */
+.guardar-btn {
+  --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+.cancelar-btn {
+  --background: #992020e5 !important;
+  --background-activated: #7a1a1ae5 !important;
+  --background-focused: #7a1a1ae5 !important;
+  --background-hover: #7a1a1ae5 !important;
+  --color: white !important;
+  --border-radius: 6px;
+  text-transform: uppercase !important;
+  margin: 0 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+/* También actualiza los estilos para los botones dentro de .botones-edicion */
+.botones-edicion ion-button[color="success"],
+form ion-button[color="success"] {
+  --background: #28a745 !important;
+  --background-activated: #218838 !important;
+  --background-focused: #218838 !important;
+  --background-hover: #218838 !important;
+  --color: white !important;
+}
+
+.botones-edicion ion-button[color="medium"],
+form ion-button[color="medium"] {
+  --background: #992020e5 !important;
+  --background-activated: #7a1a1ae5 !important;
+  --background-focused: #7a1a1ae5 !important;
+  --background-hover: #7a1a1ae5 !important;
+  --color: white !important;
+}
+
+/* Asegúrate de que los botones en el formulario de edición también tengan estos estilos */
+.edit-buttons .guardar-btn {
+  --background: #28a745 !important;
+  --color: white !important;
+}
+
+.edit-buttons .cancelar-btn {
+  --background: #992020e5 !important;
+  --color: white !important;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .edit-form-container {
+    background: rgba(30, 30, 30, 0.9);
+  }
+}
